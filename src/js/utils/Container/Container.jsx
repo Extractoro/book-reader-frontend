@@ -1,11 +1,8 @@
-
-import s from '../../../sass/components/_Container.scss'
+import '../../../sass/components/Container.scss'
 
 const Container = ({children}) => {
   return (
-    <div className={s['container']}>{
-      children}
-    </div>)
+    <div className='container'>{children}</div>)
 }
 
 export default Container

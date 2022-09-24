@@ -1,0 +1,22 @@
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1280px;
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media screen and (min-width: $mobile) {
+        width: 280px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 704px;
+        padding: 0 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 1248px;
+        padding: 0 16px;
+    }
+}
