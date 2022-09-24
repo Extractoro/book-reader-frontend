@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/book-reader-frontend/static/css/main.7acaea2f.css",
+    "main.js": "/book-reader-frontend/static/js/main.ecd345d1.js",
+    "index.html": "/book-reader-frontend/index.html",
+    "main.7acaea2f.css.map": "/book-reader-frontend/static/css/main.7acaea2f.css.map",
+    "main.ecd345d1.js.map": "/book-reader-frontend/static/js/main.ecd345d1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.ecd345d1.js"
+  ]
+}
