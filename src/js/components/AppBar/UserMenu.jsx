@@ -1,13 +1,17 @@
-// import './UserMenu.scss';
+import '../../../sass/components/UserMenu/UserMenu.scss';
 
-// export default function UserMenu() {
-//   return (
-//     <div className="menu-container">
-//       <img src={avatar} alt="" width="32px" className="avatar-img" />
-//       <span className="name-title"> Вітаємо {name}</span>
-//       <button type="button" onClick={exitLogin}>
-//         Вихід
-//       </button>
-//     </div>
-//   );
-// }
+export default function UserMenu() {
+  return (
+    <div className="menu-container">
+      <div className="user-box">
+        <h3 className="user-name">M</h3>
+      </div>
+
+      {/* <img src={name.split('')[0]} alt="" width="32px" className="avatar-img" /> */}
+      {/* <span className="name-title"> {name}</span> */}
+      <button type="button" className="menu-button">
+        Вихід
+      </button>
+    </div>
+  );
+}

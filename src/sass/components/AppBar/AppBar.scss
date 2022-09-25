@@ -3,6 +3,8 @@
 
 .header {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 60px;
   align-items: center;
   -webkit-box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
@@ -15,7 +17,7 @@
   margin-left: 22px;
   font-family: 'Abril Fatface';
   color: var(--second-text-color);
-  @media screen and (max-width: 768px) {
-    @include fonts(27px, 400, 20px, left, 0, none);
+  @media screen and (max-width: $mobile) {
+    @include fonts(27px, 400, 20px, center, none, none);
   }
 }

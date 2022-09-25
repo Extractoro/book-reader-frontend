@@ -1,3 +1,32 @@
-.auth-link {
-  margin-left: auto;
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  width: 40px;
+  height: 17px;
+  background: #ffff;
+
+  text-decoration-line: underline;
+}
+
+.user-name {
+  margin-left: 14px;
+  margin-right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  background: #f5f7fa;
+  border-radius: 50%;
+}
+
+.user-box {
+  border-left: 1px solid #e0e5eb;
 }
