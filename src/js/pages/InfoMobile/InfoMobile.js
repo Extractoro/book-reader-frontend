@@ -1,39 +1,36 @@
-import { useState } from 'react';
-import Modal from 'react-modal';
+// import { useState } from 'react';
+// import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom';
+import '../../../sass/pages/InfoMobile/InfoMobile.css';
 
 function InfoMobile() {
-  let [showModal, 
-    // setShowModal
-] = useState(true);
-  return (
-    <Modal
-      ariaHideApp={false}
-      isOpen={showModal}
-    //   onRequestClose={() => {
-    //     setShowModal(false);
-    //   }}
-        >
-      <h2>Books Reading</h2>
-      <p>Допоможе вам</p>
+  return(
+    <section className='infomobile'>
+      <div className='sectionInfoMobile'>
+      <h2 className='title'>Books Reading</h2>
+      <p className='titlesecond'>Допоможе вам</p>
       <ul>
-        <li>Швидше сформулювати свою ціль і розпочати читати</li>
-        <li>Пропорційно розподілити навантаження на кожний день</li>
-        <li>Відстежувати особистий успіх</li>
+        <li className='text'>Швидше сформулювати свою ціль і розпочати читати</li>
+        <li className='text'>Пропорційно розподілити навантаження на кожний день</li>
+        <li className='text'>Відстежувати особистий успіх</li>
       </ul>
-      <p>Також ви зможете </p>
+      <p className='titlesecond'>Також ви зможете </p>
       <ul>
-        <li>Формувати особисту думку незалежну від інших</li>
-        <li>Підвищити свої професійні якості опираючись на нові знання</li>
-        <li>Стати цікавим співрозмовником</li>
+        <li className='text'>Формувати особисту думку незалежну від інших</li>
+        <li className='text'>Підвищити свої професійні якості опираючись на нові знання</li>
+        <li className='text'>Стати цікавим співрозмовником</li>
       </ul>
+      </div>
+      <div className='buttonSection'>
       <NavLink to="/login">
-        <button type="submit">Увійти</button>
+        <button type="submit" className='buttonFirst'>Увійти</button>
       </NavLink>
       <NavLink to="/register">
-        <button type="submit">Реєстрація</button>
+        <button type="submit" className='buttonSecond'>Реєстрація</button>
       </NavLink>
-    </Modal>
-  );
+      </div>
+    </section>
+  )
 }
-export default InfoMobile;
+
+export default InfoMobile

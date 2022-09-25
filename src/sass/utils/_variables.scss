@@ -9,13 +9,6 @@
     --hover-buttons: #D15807
 };
 
-$size: (
-	"mobile": 320px,
-	"tablet": 768px,
-	"desktop": 1280px
-);
-
-
-@function getSize($key) {
-  @return map-get($size, $key);
-}
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1280px;
