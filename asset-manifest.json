@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/book-reader-frontend/static/css/main.250cb8ba.css",
+    "main.css": "/book-reader-frontend/static/css/main.3abb600a.css",
     "main.js": "/book-reader-frontend/static/js/main.0ec10748.js",
     "static/media/header-sprite.svg": "/book-reader-frontend/static/media/header-sprite.903541f79910de66ae47b1ea9ced8324.svg",
     "index.html": "/book-reader-frontend/index.html",
-    "main.250cb8ba.css.map": "/book-reader-frontend/static/css/main.250cb8ba.css.map",
+    "main.3abb600a.css.map": "/book-reader-frontend/static/css/main.3abb600a.css.map",
     "main.0ec10748.js.map": "/book-reader-frontend/static/js/main.0ec10748.js.map"
   },
   "entrypoints": [
-    "static/css/main.250cb8ba.css",
+    "static/css/main.3abb600a.css",
     "static/js/main.0ec10748.js"
   ]
 }
