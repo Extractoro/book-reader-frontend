@@ -1,12 +1,12 @@
 :root {
   --first-text-and-background-color: #ffffff;
-  --accent-text-and-background-color: #FF6B08;
+  --accent-text-and-background-color: #ff6b08;
   --background-and-text-color: #ffb8ca;
-  --second-text-color: #242A37;
-  --third-text-color: #898F9F;
-  --fourth-text-color: #091E3F
-  --first-background-color: #6D7A8D;
-  --hover-buttons: #D15807 ;
+  --second-text-color: #242a37;
+  --third-text-color: #898f9f;
+  --fourth-text-color: #091e3f;
+  --first-background-color: #6d7a8d;
+  --hover-buttons: #d15807;
 }
 
 .container {

@@ -1,0 +1,117 @@
+.backdrop {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.modal {
+  position: absolute;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
+  background: var(--first-text-and-background-color);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 40px 19px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 425px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-cont {
+  display: flex;
+  flex-direction: row;
+}
+
+.firstStep {
+  margin-bottom: 40px;
+}
+
+.secondStep {
+  margin-bottom: 55px;
+}
+
+.stepsTitle {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: var(--second-text-color);
+  margin-bottom: 15px;
+  line-height: 22px;
+  font-weight: 600;
+  font-size: 26px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.stepsSuptitle {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: var(--second-text-color);
+  margin-left: 20px;
+  margin-bottom: 15px;
+  line-height: 17px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.stepsParagrath {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: var(--third-text-color);
+  margin-left: 15px;
+  line-height: 17px;
+  font-weight: 300;
+  font-size: 15px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.modal-button {
+  width: 127px;
+  height: 40px;
+  border-radius: 1px;
+  line-height: 17px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  background: var(--accent-text-and-background-color);
+  padding: 12px 53px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: var(--first-text-and-background-color);
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
+}
+.modal-button:focus {
+  background-color: var(--hover-buttons);
+  position: relative;
+  top: 2px;
+}
+.modal-button:hover {
+  background-color: var(--hover-buttons);
+}
+
+.arrow-icon {
+  margin-left: 43px;
+}/*# sourceMappingURL=Modal-library.css.map */
