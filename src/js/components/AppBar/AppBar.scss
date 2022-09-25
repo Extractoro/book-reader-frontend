@@ -1,0 +1,16 @@
+@import '../../../sass/utils/mixins';
+
+.header {
+  display: flex;
+  height: 60px;
+}
+
+.label {
+  margin: auto;
+  padding-top: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--second-text-color);
+  @media screen and (max-width: 768px) {
+    @include fonts(27px, 400, 20px, center, none, none);
+  }
+}
