@@ -1,3 +1,14 @@
+:root {
+  --first-text-and-background-color: #ffffff;
+  --accent-text-and-background-color: #FF6B08;
+  --background-and-text-color: #ffb8ca;
+  --second-text-color: #242A37;
+  --third-text-color: #898F9F;
+  --fourth-text-color: #091E3F
+  --first-background-color: #6D7A8D;
+  --hover-buttons: #D15807 ;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -18,4 +29,4 @@
     width: 1248px;
     padding: 0 16px;
   }
-} /*# sourceMappingURL=Container.css.map */
+}/*# sourceMappingURL=Container.css.map */
