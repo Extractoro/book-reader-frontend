@@ -43,8 +43,12 @@ li {
     color: var(--third-text-color);
 }
 .buttonSection{
-    margin-top: 60px
-}
+    // margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    }
 .buttonFirst,
 .buttonSecond {
     @include modalWidth(130px, 40px);
@@ -70,6 +74,12 @@ li {
       background-color: var(--accent-text-and-background-color);
       }
   }
-  .buttonSecond{
+   .buttonSecond{
     margin-left: 20px;
+  }
+  .vector{
+    margin-right: 12px;
+    fill: var(--accent-text-and-background-color);
+    width: 4px;
+    height: 8px;
   }
