@@ -1,6 +1,13 @@
+@import '../../utils/mixins';
+@import '../../utils/reset';
+
 .menu-container {
+  margin-right: 20px;
   display: flex;
   align-items: center;
+  @media screen and (min-width: 420px) {
+    margin-left: 8px;
+  }
 }
 
 .menu-button {
@@ -23,10 +30,22 @@
   align-items: center;
   width: 33px;
   height: 33px;
-  background: #f5f7fa;
+  background: #ffff;
   border-radius: 50%;
+  @media screen and (min-width: 420px) {
+    position: fixed;
+    top: 12px;
+    left: 35%;
+  }
+}
+
+.user-name:hover {
+  background: #f5f7fa;
+}
+
+.user-name:active {
+  background: #f5f7fa;
 }
 
 .user-box {
-  border-left: 1px solid #e0e5eb;
 }
