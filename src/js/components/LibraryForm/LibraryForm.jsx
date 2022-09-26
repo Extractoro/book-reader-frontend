@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import '../../../sass/components/LibraryForm/LibraryForm.css';
+import Media from 'react-media';
+import sprite from '../../../sprites/library-sprite.svg';
+import s from './LibraryForm.module.css';
 
 const LibraryForm = () => {
   const [nameOfBook, setNameOfBook] = useState('');
@@ -44,7 +46,7 @@ const LibraryForm = () => {
         if (value <= date) {
           setYearOfBook(value);
         } else {
-          console.log('err');
+          console.log('Notify');
         }
         break;
 
@@ -58,63 +60,76 @@ const LibraryForm = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <label htmlFor={nameOfBookInputId} className="label">
-        <p className="paragraph">Назва книги</p>
-        <input
-          className="input"
-          onChange={handleChange}
-          type="text"
-          name="book"
-          placeholder="..."
-          value={nameOfBook}
-          required
-        />
-      </label>
+    <>
+      <Media
+        query="(max-width: 767px)"
+        render={() => (
+          <svg className={s['arrow-back']} width="30" height="25">
+            <use href={sprite + '#library-back'} />
+          </svg>
+        )}
+      />
 
-      <label htmlFor={nameOfAuthorInputId} className="label">
-        <p className="paragraph">Автор книги</p>
-        <input
-          className="input"
-          onChange={handleChange}
-          type="text"
-          name="author"
-          placeholder="..."
-          value={nameOfAuthor}
-          required
-        />
-      </label>
+      <form className={s['form']} onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor={nameOfBookInputId} className={s['input-label']}>
+            <p className={s['paragraph']}>Назва книги</p>
+            <input
+              className={s['input-1']}
+              onChange={handleChange}
+              type="text"
+              name="book"
+              placeholder="..."
+              value={nameOfBook}
+              required
+            />
+          </label>
+        </div>
 
-      <label htmlFor={yearOfBookInputId} className="label">
-        <p className="paragraph">Рік випуску</p>
-        <input
-          className="input"
-          onChange={handleChange}
-          type="number"
-          name="year"
-          placeholder="Write year lower than or equal now year"
-          value={yearOfBook}
-          required
-        />
-      </label>
+        <div className={s['inputs-cont']}>
+          <label htmlFor={nameOfAuthorInputId} className={s['input-label']}>
+            <p className={s['paragraph']}>Автор книги</p>
+            <input
+              className={s['input-2']}
+              onChange={handleChange}
+              type="text"
+              name="author"
+              placeholder="..."
+              value={nameOfAuthor}
+              required
+            />
+          </label>
+          <label htmlFor={yearOfBookInputId} className={s['input-label']}>
+            <p className={s['paragraph']}>Рік випуску</p>
+            <input
+              className={s['input-3']}
+              onChange={handleChange}
+              type="number"
+              name="year"
+              placeholder="Write year lower than or equal now year"
+              value={yearOfBook}
+              required
+            />
+          </label>
+          <label htmlFor={amountOfPagesInputId} className={s['input-label']}>
+            <p className={s['paragraph']}>Кількість сторінок</p>
+            <input
+              className={s['input-4']}
+              onChange={handleChange}
+              type="number"
+              name="pages"
+              placeholder="..."
+              value={amountOfPages}
+              required
+            />
+          </label>
+        </div>
 
-      <label htmlFor={amountOfPagesInputId} className="label">
-        <p className="paragraph">Кількість сторінок</p>
-        <input
-          className="input"
-          onChange={handleChange}
-          type="number"
-          name="pages"
-          placeholder="..."
-          value={amountOfPages}
-          required
-        />
-      </label>
-
-      <button type="submit" className="button">
-        Додати
-      </button>
-    </form>
+        <button type="submit" className={s['button']}>
+          Додати
+        </button>
+      </form>
+    </>
   );
 };
 

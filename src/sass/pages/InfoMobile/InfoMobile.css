@@ -76,7 +76,10 @@ li {
 }
 
 .buttonSection {
-  margin-top: 60px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .buttonFirst,
@@ -108,4 +111,11 @@ li {
 
 .buttonSecond {
   margin-left: 20px;
+}
+
+.vector {
+  margin-right: 12px;
+  fill: var(--accent-text-and-background-color);
+  width: 4px;
+  height: 8px;
 }/*# sourceMappingURL=InfoMobile.css.map */

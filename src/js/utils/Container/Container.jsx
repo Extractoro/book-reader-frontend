@@ -1,4 +1,4 @@
-import '../../../sass/components/Container/Container.css';
+import './Container.module.css';
 
 const Container = ({ children }) => {
   return <div className="container">{children}</div>;
