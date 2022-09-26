@@ -1,21 +1,21 @@
-
-
-
-
-
+import Title from '../Title';
+import {GoalThumb,GoalNumberSquare,GoalNumber,GoalText} from './GoalReading.styled'
 
 const GoalReading=()=>{
   return(
+
     <div>
-      <h1>Моя мета прочитати</h1>
-      <div>
-        <span>0</span>
-        <p>Кількість книжок</p>
-      </div>
-      <div>
-        <span>0</span>
-        <p>Кількість днів</p>
-      </div>
+      <Title/>
+      <GoalThumb >
+        <div className='goal-thumb_item'>
+          <GoalNumberSquare className='goal-number-square'><GoalNumber>0</GoalNumber></GoalNumberSquare>
+          <GoalText>Кількість книжок</GoalText>
+        </div>
+        <div className='goal-thumb_item'>
+          <GoalNumberSquare className='goal-number-square'><GoalNumber>0</GoalNumber></GoalNumberSquare>
+          <GoalText>Кількість днів</GoalText>
+        </div>
+      </GoalThumb>
     </div>
   )
 }

@@ -1,12 +1,16 @@
 
-
+import { StatisticsThumb,StatisticsResult,StatisticsValue,AddWorkout } from './Statistics.styled';
 
 
 const Statistics=()=>{
   return(
-    <div>
+    <StatisticsThumb>
+      <StatisticsValue >Кількість сторінок/день <span>0</span></StatisticsValue>
+      <StatisticsResult>
 
-    </div>
+      </StatisticsResult>
+      <AddWorkout className='add-workout'><span>+</span></AddWorkout>
+    </StatisticsThumb>
   )
 }
 
