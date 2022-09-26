@@ -8,6 +8,7 @@
     height: 40px;
     background:#F5F7FA;
     margin-top: 8px;
+    padding: 3px;
 }
 .label{
     display: flex;
