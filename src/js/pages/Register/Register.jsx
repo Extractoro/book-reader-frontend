@@ -40,7 +40,7 @@ export default function RegisterPage() {
 
   return (
         <form onSubmit={handleSubmit}
-        className={s.container}
+        className={s.form}
         autoComplete="off">
         <button className={s.google}>Google</button>
         <label
