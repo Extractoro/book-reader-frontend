@@ -1,10 +1,29 @@
-.container {
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+@media screen and (min-width: 768px)  and (max-width: 1199px){
+    .form{
+        width:320px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color:gainsboro;
+        padding: 40px;
+        margin-top: 64px;
+        margin-bottom: 64px;
+         }        
+}
+@media screen and (min-width: 1200px) {
+    .form {
+        width: 320px;
+        background-color: gainsboro;
+        padding: 40px;
+        
+    }
+}
+
 .input {
-    width: 280px;
     height: 40px;
     background:#F5F7FA;
     margin-top: 8px;
@@ -14,8 +33,13 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    width: 280px;
 }
-
+@media screen and (min-width: 768px) {
+    .label {
+        width: 320px;
+    }
+}
 
 .button {
     justify-content: center;
@@ -35,6 +59,13 @@
     background-color: #D15807;
     
 }
+@media screen and (min-width: 768px) {
+    .button {
+        width: 320px;
+        margin-top: 12px;
+        margin-bottom: 20px;
+    }
+}
 .google{
     display: flex;
     justify-content: center;
@@ -53,8 +84,18 @@
 }
 .quote{
     width: 230px;
-    height: 170px;
-    padding: 45px;
+    padding: 0 45px 16px 45px;
+}
+@media screen and (min-width: 768px) {
+    .quote {
+        width: 530px;
+        padding: 64px 120px 70px 120px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .quote {
+        width: 400px;
+}
 }
 .quotetext{
     font-family: 'Montserrat', sans-serif;
@@ -69,4 +110,15 @@
     color: #898F9F;
     text-align: center;
     border-top: 1px solid #242A3780;
+}
+.wrapper{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 1280px) {
+    .wrapper {
+     display: flex;
+     justify-content: center;
+    }
 }

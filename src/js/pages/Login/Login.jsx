@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import s from './Login.module.css';
+
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +23,8 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={s.container} autoComplete="off">
+    <div className={s.wrapper}>
+    <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
       <button className={s.google}>Google</button>
       <label className={s.label}>
         Email
@@ -54,13 +56,14 @@ export default function LoginPage() {
         Увійти
       </button>
       <a href="/#">Реєстрація</a>
-      <div className={s.quote}>
+      </form>
+       <div className={s.quote}>
         <p className={s.quotetext}>
           Книги - це кораблі думок, що мандрують хвилями часу і дбайливо несуть
           свій дорогоцінний вантаж від покоління до покоління.
         </p>
         <p className={s.author}>Бекон Ф.</p>
       </div>
-    </form>
+      </div>
   );
 }
