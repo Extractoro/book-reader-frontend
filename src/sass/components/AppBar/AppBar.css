@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   letter-spacing: 0.04em;
   font-size: 16px;
 }
@@ -60,6 +60,8 @@ button {
 
 .header {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 60px;
   align-items: center;
   box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
@@ -68,7 +70,7 @@ button {
 .label {
   margin-top: 16px;
   margin-left: 22px;
-  font-family: "Abril Fatface";
+  font-family: 'Abril Fatface';
   color: var(--second-text-color);
 }
 @media screen and (max-width: 768px) {
@@ -80,4 +82,4 @@ button {
     letter-spacing: 0;
     text-transform: none;
   }
-}/*# sourceMappingURL=AppBar.css.map */
+} /*# sourceMappingURL=AppBar.css.map */
