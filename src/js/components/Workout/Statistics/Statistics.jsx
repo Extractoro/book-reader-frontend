@@ -1,5 +1,6 @@
 
 import { StatisticsThumb,StatisticsResult,StatisticsValue,AddWorkout } from './Statistics.styled';
+import React from 'react';
 
 
 const Statistics=()=>{
@@ -11,6 +12,7 @@ const Statistics=()=>{
       </StatisticsResult>
       <AddWorkout className='add-workout'><span>+</span></AddWorkout>
     </StatisticsThumb>
+
   )
 }
 

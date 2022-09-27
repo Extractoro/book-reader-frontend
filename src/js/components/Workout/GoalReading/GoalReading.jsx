@@ -1,22 +1,22 @@
 import Title from '../Title';
-import {GoalThumb,GoalNumberSquare,GoalNumber,GoalText} from './GoalReading.styled'
+import {GoalThumb,GoalNumberSquare,GoalNumber,GoalText,GoalReadingBlock} from './GoalReading.styled'
 
 const GoalReading=()=>{
   return(
 
-    <div>
+    <GoalReadingBlock>
       <Title/>
       <GoalThumb >
-        <div className='goal-thumb_item'>
-          <GoalNumberSquare className='goal-number-square'><GoalNumber>0</GoalNumber></GoalNumberSquare>
+        <div>
+          <GoalNumber>0</GoalNumber>
           <GoalText>Кількість книжок</GoalText>
         </div>
-        <div className='goal-thumb_item'>
-          <GoalNumberSquare className='goal-number-square'><GoalNumber>0</GoalNumber></GoalNumberSquare>
+        <div>
+          <GoalNumber>0</GoalNumber>
           <GoalText>Кількість днів</GoalText>
         </div>
       </GoalThumb>
-    </div>
+    </GoalReadingBlock>
   )
 }
 

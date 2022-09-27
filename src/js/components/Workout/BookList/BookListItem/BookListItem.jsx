@@ -1,5 +1,4 @@
 import { Li, BookListItemName,BookListItemDesc,BookListItemText } from './BookListItem.styled';
-import {BsBriefcaseFill} from 'react-icons/all';
 
 
 const BookListItem = () => {
@@ -7,13 +6,14 @@ const BookListItem = () => {
 
 
   return (
-    <Li className='book-list-item'>
+    <Li>
       <BookListItemName>Deadline. Роман об управлении проектами.</BookListItemName>
-      <BookListItemDesc >Автор:</BookListItemDesc><BookListItemText>Том ДеМарко</BookListItemText>
-      <BookListItemDesc >Год:</BookListItemDesc><BookListItemText>2006</BookListItemText>
-      <BookListItemDesc >Стор:</BookListItemDesc><BookListItemText>188</BookListItemText>
+      <BookListItemDesc >Автор:<BookListItemText>Том ДеМарко</BookListItemText></BookListItemDesc>
+      <BookListItemDesc >Год:<BookListItemText>2006</BookListItemText></BookListItemDesc>
+      <BookListItemDesc >Стор:<BookListItemText>188</BookListItemText></BookListItemDesc>
     </Li>
   );
 };
 
 export default BookListItem;
+

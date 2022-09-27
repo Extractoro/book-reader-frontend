@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 
-export const WorkoutContainer=styled.div`
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @media screen and (min-width: 320px) {
-    width: 280px;
-
-  }
+export const WorkoutContainer
+  =styled.div`
+  //
+  //border: solid 2px tomato;
+  //margin-left: auto;
+  //margin-right: auto;
+  ////padding: 0 20px;
+  //width: 280px;
 
 `
 

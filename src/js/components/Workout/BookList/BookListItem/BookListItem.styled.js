@@ -6,6 +6,9 @@ export const Li = styled.div`
   flex-direction: column;
 
   ::before {
+    @media (min-width: 768px){
+      width: 704px;
+    }
     content: '';
     width: 280px;
     margin-bottom: 20px;
@@ -13,6 +16,10 @@ export const Li = styled.div`
   }
 
   ::after {
+
+    @media (min-width: 768px){
+      width: 704px;
+    }
     margin-top: 20px;
     content: '';
     width: 280px;
@@ -30,7 +37,7 @@ export const BookListItemName = styled.p`
   color: #242A37;
 
   ::after {
-    content: ' icon:';
+    content:  ' ';
     border: 2px solid tomato;
     display: block;
     width: 22px;
@@ -51,18 +58,19 @@ export const BookListItemName = styled.p`
 
 export const BookListItemDesc = styled.p`
 
+  margin-top: 15px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-
   color: #898F9F;
 
 `;
 
 export const BookListItemText=styled.span`
   font-family: 'Montserrat';
+  margin-left: 10px;
      font-style: normal;
      font-weight: 500;
      font-size: 12px;
