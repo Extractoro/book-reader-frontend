@@ -1,0 +1,100 @@
+.backdrop {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.modal-mobil {
+  position: absolute;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
+  background: #ffffff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 40px 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 90px);
+}
+
+@media screen and (min-width: 394px) {
+  .modal-mobil {
+    width: 334px;
+  }
+}
+
+.stepsTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: #242a37;
+  margin-bottom: 20px;
+  line-height: 22px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.button-box {
+  display: flex;
+}
+
+.modal-button {
+  width: calc(100% - 98px);
+  height: 40px;
+  border-radius: 1px;
+  line-height: 17px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background: #ffffff;
+  border: 1px solid #242a37;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+}
+
+.modal-button:focus {
+  background-color: #d15807;
+  position: relative;
+  top: 2px;
+}
+.modal-button:hover {
+  background-color: #d15807;
+  color: #ffffff;
+}
+
+.modal-button-exit {
+  width: calc(100% - 98px);
+  height: 40px;
+  border-radius: 1px;
+  line-height: 17px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background: #ffffff;
+  border: 1px solid #242a37;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  margin-left: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-button-exit {
+    margin-left: 30px;
+    width: 236px;
+  }
+}
+
+.modal-button-exit:focus {
+  background-color: #d15807;
+  position: relative;
+  top: 2px;
+}
+.modal-button-exit:hover {
+  background-color: #d15807;
+  color: #ffffff;
+}
