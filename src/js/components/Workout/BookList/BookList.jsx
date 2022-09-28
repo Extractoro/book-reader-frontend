@@ -1,12 +1,15 @@
-import BookListItems from './BookListItem';
+// import BookListItems from './BookListItem';
 import {BookListThumb} from './BooksList.styled';
+import Table from './Table';
+import React from 'react';
 
 const BookList = () => {
   return (
     <BookListThumb >
-      <ul>
-        <BookListItems />
-      </ul>
+      <Table/>
+      {/*<ul>*/}
+      {/*  <BookListItems />*/}
+      {/*</ul>*/}
     </BookListThumb>
 
   );

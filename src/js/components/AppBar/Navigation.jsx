@@ -5,7 +5,7 @@ import s from './Navigation.module.css';
 const Navigation = () => {
   return (
     <nav className={s['nav']}>
-      <NavLink to="/" className={s['link']} activeclassname={s['activeLink']}>
+      <NavLink to="/myWorkout" className={s['link']} activeclassname={s['activeLink']}>
         <svg className={s['book']} width="22" height="18">
           <use href={sprite + '#header-vector'}></use>
         </svg>
