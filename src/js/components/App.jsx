@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import LibraryForm from './LibraryForm/LibraryForm';
 import { Workout } from '../pages/workout/Workout';
 import { Layout } from './Layout/Layout';
+import AddBook from './Workout/AddBook';
 
 export const App = () => {
   return (
@@ -19,6 +20,7 @@ export const App = () => {
         <Route path="/" element={<Layout/>}>
           <Route path="library" element={<LibraryForm />} />
           <Route path='myWorkout' element ={<Workout/>}/>
+          <Route path='addBook' element={<AddBook/>}/>
         </Route>
       </Routes>
     </Container>

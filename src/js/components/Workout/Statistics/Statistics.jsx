@@ -10,7 +10,7 @@ const Statistics=()=>{
       <StatisticsResult>
 
       </StatisticsResult>
-      <AddWorkout className='add-workout'><span>+</span></AddWorkout>
+      <AddWorkout to='/addBook' ><span>+</span></AddWorkout>
     </StatisticsThumb>
 
   )

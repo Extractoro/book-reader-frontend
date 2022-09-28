@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 
 export const StatisticsThumb = styled.div`
   margin-top: 33px;
@@ -59,13 +59,15 @@ export const StatisticsResult = styled.div`
 
 
 
-export const AddWorkout = styled.button`
+export const AddWorkout = styled(Link)`
   position: absolute;
   width: 200px;
   height: 40px;
   cursor: pointer;
   background: #FF6B08;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media(max-width: 767px){
     bottom: -26px;
     left: 40%;
@@ -73,7 +75,4 @@ export const AddWorkout = styled.button`
     width: 52px;
     height: 52px;
   }
-
-
-
 `;
