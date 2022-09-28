@@ -1,14 +1,3 @@
-:root {
-  --first-text-and-background-color: #ffffff;
-  --accent-text-and-background-color: #ff6b08;
-  --background-and-text-color: #ffb8ca;
-  --second-text-color: #242a37;
-  --third-text-color: #898f9f;
-  --fourth-text-color: #091e3f;
-  --first-background-color: #6d7a8d;
-  --hover-buttons: #d15807;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -30,4 +19,4 @@
     width: 1248px;
     padding: 0 16px;
   }
-}/*# sourceMappingURL=Container.css.map */
+}

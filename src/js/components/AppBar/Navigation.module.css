@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  margin-left: auto;
+  border-right: 1px solid #e0e5eb;
+}
+
+.link {
+  margin-right: 12px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+
+  /* background: 000; */
+  /* display: inline; */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.link:hover {
+  background: #f5f7fa;
+}
+
+.link:active {
+  background: #f5f7fa;
+}
