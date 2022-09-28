@@ -39,6 +39,8 @@ export default function RegisterPage() {
   };
 
   return (
+    <div className={s.wrapper}>
+      <div className={s.overlay}>
         <form onSubmit={handleSubmit}
         className={s.form}
         autoComplete="off">
@@ -97,9 +99,13 @@ export default function RegisterPage() {
             placeholder="******"
           />
         </label>
-
         <button className={s.button} type="submit">Увійти</button>
-       <p>Ви вже з нами?<a href=""> Увійти</a></p>
+       <p className={s.login}>Ви вже з нами?<a href="/#"> Увійти</a></p>
       </form>
+      </div>
+      <div className={s.wrapper}>
+        <h2 className={s.title}>Books Reading</h2>
+      </div>
+  </div>
   );
 }
