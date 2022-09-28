@@ -1,7 +1,6 @@
 import Navigation from './Navigation';
 import UserMenu from './UserMenu';
 import s from './AppBar.module.css';
-import { Outlet } from 'react-router-dom';
 
 export default function AppBar() {
   return (
@@ -11,7 +10,6 @@ export default function AppBar() {
         <Navigation />
         <UserMenu />
       </header>
-      <Outlet />
     </>
   );
 }

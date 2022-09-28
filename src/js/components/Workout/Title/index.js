@@ -1,1 +1,1 @@
-export {default} from './Ttitle'
+export {default} from './Title'

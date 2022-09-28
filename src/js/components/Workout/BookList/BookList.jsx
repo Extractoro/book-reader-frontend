@@ -1,11 +1,15 @@
 import BookListItems from './BookListItem';
+import {BookListThumb} from './BooksList.styled';
 
-const BookList=()=>{
-  return(
+const BookList = () => {
+  return (
+    <BookListThumb >
       <ul>
-       <BookListItems/>
+        <BookListItems />
       </ul>
-  )
-}
+    </BookListThumb>
 
-export default BookList
+  );
+};
+
+export default BookList;
