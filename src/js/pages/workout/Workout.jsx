@@ -16,8 +16,6 @@ export const Workout=()=>{
       <GoalReading/>
       <BookList/>
       <Statistics/>
-
-      <AddBook/>
     </WorkoutContainer>
   )
 }

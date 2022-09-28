@@ -10,6 +10,7 @@ import Login from 'js/pages/Login/Login';
 import Register from 'js/pages/Register/Register';
 import { Workout } from 'js/pages/workout/Workout';
 import { Layout } from './Layout/Layout';
+import AddBook from './Workout/AddBook';
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/library" element={<Library />} />
           <Route path="/myWorkout" element={<Workout />} />
+
         </Route>
       </Routes>
     </Container>
