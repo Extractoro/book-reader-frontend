@@ -1,0 +1,107 @@
+.library-wrapper {
+  width: 608px;
+  height: 280px;
+  box-shadow: 0px 5px 9px 0px rgb(0 0 0 / 29%);
+  padding: 35px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.library-flex-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.library-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.library-flex-cont {
+  display: flex;
+  flex-direction: row;
+}
+
+.library-firstStep {
+  margin-top: 21px;
+  margin-bottom: 55px;
+}
+
+.library-secondStep {
+  margin-bottom: 55px;
+}
+
+.library-stepsTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: #242a37;
+  margin-bottom: 15px;
+  line-height: 22px;
+  font-weight: 600;
+  font-size: 19px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.library-stepsSuptitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: #242a37;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  line-height: 17px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.library-stepsParagrath {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: #898f9f;
+  margin-left: 15px;
+  line-height: 17px;
+  font-weight: 300;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.library-modal-button {
+  width: 127px;
+  height: 40px;
+  border-radius: 1px;
+  line-height: 17px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  background: #ff6b08;
+  padding: 12px 53px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: #fff;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
+}
+
+.library-modal-button:focus {
+  background-color: #d15807;
+  position: relative;
+  top: 2px;
+}
+
+.library-modal-button:hover {
+  background-color: #d15807;
+}
+
+.library-arrow-icon {
+  margin-left: 43px;
+}

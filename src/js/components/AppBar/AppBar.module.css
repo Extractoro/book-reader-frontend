@@ -67,19 +67,25 @@ button {
   box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
 }
 
-.label {
-  margin-top: 16px;
+.header-label {
   margin-left: 22px;
   font-family: 'Abril Fatface';
   color: var(--second-text-color);
+  line-height: 27px;
+  font-weight: 700;
+  font-size: 27px;
+  text-align: left;
+  letter-spacing: 0;
+  text-transform: none;
 }
+
 @media screen and (max-width: 768px) {
-  .label {
+  .header-label {
     line-height: 27px;
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 27px;
     text-align: left;
     letter-spacing: 0;
     text-transform: none;
   }
-} /*# sourceMappingURL=AppBar.css.map */
+}
