@@ -3,7 +3,9 @@ import s from './ModalLogout.module.css';
 
 const modalRoot = document.querySelector('#modal-root');
 
-const ModalLogout = () => {
+const ModalLogout = ({ open, onClose }) => {
+  if (!open) return null;
+
   return createPortal(
     <div className={s['backdrop']}>
       <div className={s['modal-mobil']}>
@@ -14,7 +16,11 @@ const ModalLogout = () => {
           <button className={s['modal-button']} type="button">
             Відміна
           </button>
-          <button className={s['modal-button-exit']} type="button">
+          <button
+            onClick={onClose}
+            className={s['modal-button-exit']}
+            type="button"
+          >
             Вийти
           </button>
         </div>
