@@ -1,0 +1,37 @@
+/*import styled from 'styled-components';*/
+
+
+.body{
+
+    width: 704px;
+    border-bottom: solid 1px #E0E5EB;
+    border-top: solid 1px #E0E5EB;
+}
+
+.tHead{
+    padding: 20px;
+    text-align: start;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #898F9F;
+}
+
+.tD{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #242A37;
+}
+
+
+
+
+
+
