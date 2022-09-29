@@ -1,5 +1,5 @@
 import Title from '../Title';
-import {GoalThumb,GoalNumberSquare,GoalNumber,GoalText,GoalReadingBlock} from './GoalReading.styled'
+import {GoalThumb,GoalNumber,GoalText,GoalReadingBlock} from './GoalReading.styled'
 
 const GoalReading=()=>{
   return(
