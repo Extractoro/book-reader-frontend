@@ -101,6 +101,14 @@ button {
   border-radius: 50%;
 }
 
+.user-name:hover {
+  background: #f5f7fa;
+}
+
+.user-name:active {
+  background: #f5f7fa;
+}
+
 .nav-bar {
   display: flex;
 }
