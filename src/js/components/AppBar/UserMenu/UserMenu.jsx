@@ -1,8 +1,11 @@
 import s from './UserMenu.module.css';
 import { useMatchMedia } from '../../../../hooks/use-match-media';
+import { useState } from 'react';
+import ModalLogout from '../../ModalLogout/ModalLogout';
 
 export default function UserMenu() {
   const { isMobile } = useMatchMedia();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={s['menu-container']}>
@@ -11,9 +14,14 @@ export default function UserMenu() {
       </div>
       {/* <img src={name.split('')[0]} alt="" width="32px" className="avatar-img" /> */}
       {/* <span className="name-title"> {name}</span> */}
-      <button type="button" className={s['menu-button']}>
+      <button
+        onClick={() => setIsOpen(true)}
+        type="button"
+        className={s['menu-button']}
+      >
         Вихід
       </button>
+      <ModalLogout open={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
 }

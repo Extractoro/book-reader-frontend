@@ -1,29 +1,140 @@
 // додати до реєстрації
 // import Media from 'react-media';
 // import InfoMobile from 'js/pages/InfoMobile/InfoMobile';
-
 import Container from 'js/utils/Container/Container';
 // import AppBar from './AppBar/AppBar';
-import { Route, Routes } from 'react-router-dom';
-import Library from 'js/pages/Library/Library';
-import Login from 'js/pages/Login/Login';
-import Register from 'js/pages/Register/Register';
-import { Workout } from 'js/pages/workout/Workout';
-import { Layout } from './Layout/Layout';
-import AddBook from './Workout/AddBook';
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+// import Library from 'js/pages/Library/Library';
+// import Login from 'js/pages/Login/Login';
+// import Register from 'js/pages/Register/Register';
+// import { Workout } from 'js/pages/workout/Workout';
+// import { Layout } from './Layout/Layout';
+// import AddBook from './Workout/AddBook';
 
-export const App = () => {
+const Login = lazy(async () => {
+  let obj = await import('../pages/Login/Login');
+  return typeof obj.default === 'function' ? obj : obj.default;
+});
+
+const Register = lazy(async () => {
+  let obj = await import('../pages/Register/Register');
+  return typeof obj.default === 'function' ? obj : obj.default;
+});
+
+const Layout = lazy(async () => {
+  let obj = await import('./Layout/Layout');
+  return typeof obj.default === 'function' ? obj : obj.default;
+});
+
+const Library = lazy(async () => {
+  let obj = await import('../pages/Library/Library');
+  return typeof obj.default === 'function' ? obj : obj.default;
+});
+
+const Workout = lazy(async () => {
+  let obj = await import('../pages/Workout/Workout');
+  return typeof obj.default === 'function' ? obj : obj.default;
+});
+
+// const Login = lazy(async () => (await import('../pages/Login')).Login);
+// const Register = lazy(async () => (await import('../pages/Register')).Register);
+// const Layout = lazy(async () => (await import('./Layout/Layout')).Layout);
+// const Library = lazy(async () => (await import('../pages/Library')).Library);
+// const Workout = lazy(
+//   async () => (await import('../pages/Workout/Workout')).Workout
+// );
+
+// const Login = lazy(() => import('../pages/Login/Login'));
+// const Register = lazy(() => import('../pages/Register/Register'));
+// const Layout = lazy(() => import('./Layout/Layout'));
+// const Library = lazy(() => import('../pages/Library/Library'));
+// const Workout = lazy(() => import('../pages/Workout/Workout'));
+
+// const Login = lazy(async () =>
+//   import('../pages/Login/Login').then(module => ({
+//     default: module.Login,
+//   }))
+// );
+// const Register = lazy(() =>
+//   import('../pages/Register/Register').then(module => ({
+//     default: module.Register,
+//   }))
+// );
+// const Layout = lazy(() =>
+//   import('./Layout/Layout').then(module => ({
+//     default: module.Layout,
+//   }))
+// );
+// const Library = lazy(() =>
+//   import('../pages/Library/Library').then(module => ({
+//     default: module.Library,
+//   }))
+// );
+// const Workout = lazy(() =>
+//   import('../pages/Workout/Workout').then(module => ({
+//     default: module.Workout,
+//   }))
+// );
+
+export default function App() {
   return (
     <Container>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Layout />}>
-          <Route path="/library" element={<Library />} />
-          <Route path="/myWorkout" element={<Workout />} />
-
-        </Route>
-      </Routes>
+      <Suspense fallback={<>...</>}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="/library" element={<Library />} />
+            <Route path="/myWorkout" element={<Workout />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </Container>
+    // <Container>
+    //   <Routes>
+    //     <Route
+    //       path="/login"
+    //       element={
+    //         <Suspense fallback={<>...</>}>
+    //           <Login />
+    //         </Suspense>
+    //       }
+    //     />
+    //     <Route
+    //       path="/register"
+    //       element={
+    //         <Suspense fallback={<>...</>}>
+    //           <Register />
+    //         </Suspense>
+    //       }
+    //     />
+    //     <Route
+    //       path="/"
+    //       element={
+    //         <Suspense fallback={<>...</>}>
+    //           <Layout />
+    //         </Suspense>
+    //       }
+    //     >
+    //       <Route
+    //         path="/library"
+    //         element={
+    //           <Suspense fallback={<>...</>}>
+    //             <Library />
+    //           </Suspense>
+    //         }
+    //       />
+    //       <Route
+    //         path="/myWorkout"
+    //         element={
+    //           <Suspense fallback={<>...</>}>
+    //             <Workout />
+    //           </Suspense>
+    //         }
+    //       />
+    //     </Route>
+    //   </Routes>
+    // </Container>
   );
-};
+}
