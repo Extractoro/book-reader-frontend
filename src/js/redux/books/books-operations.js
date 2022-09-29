@@ -17,9 +17,19 @@ export const getAllBooks = createAsyncThunk(
   }
 );
 
+export const addBook = createAsyncThunk(
+  'books/addBook',
+  async (_, thunkAPI) => {
+    const persistedToken = thunkAPI.getState().auth.token;
+    const response = await addBook(persistedToken);
+    console.log(response.data);
+    return response.data;
+  }
+);
+
 const authOperations = {
-  fetchAllBooks,
-  //   addBook,
+  getAllBooks,
+  addBook,
   //   getOneBook,
   //   updateBook,
   //   deleteBook,

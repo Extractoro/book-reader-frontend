@@ -13,9 +13,7 @@ const Library = () => {
     <>
       <div>
         <LibraryForm />
-        {books ? (
-          <div>{books}</div>
-        ) : (
+        {!books ? (
           <>
             <Media
               query="(min-width: 768px)"
@@ -91,6 +89,8 @@ const Library = () => {
             />
             <Media query="(max-width: 767px)" render={() => <ModalLibrary />} />
           </>
+        ) : (
+          <div>{books}</div>
         )}
       </div>
     </>

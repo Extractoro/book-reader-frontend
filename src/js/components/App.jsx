@@ -33,7 +33,7 @@ const Library = lazy(async () => {
 });
 
 const Workout = lazy(async () => {
-  let obj = await import('../pages/Workout/Workout');
+  let obj = await import('../pages/workout/Workout');
   return typeof obj.default === 'function' ? obj : obj.default;
 });
 
