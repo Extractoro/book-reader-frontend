@@ -10,9 +10,18 @@ import Login from 'js/pages/Login/Login';
 import Register from 'js/pages/Register/Register';
 import { Workout } from 'js/pages/workout/Workout';
 import { Layout } from './Layout/Layout';
-
+import { useDispatch } from 'react-redux';
+import authOperations from 'js/redux/auth/auth-operations';
+import { useEffect } from 'react';
+// import AddBook from './Workout/AddBook';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.refreshCurrentUser());
+  }, [dispatch]);
+
   return (
     <Container>
       <Routes>

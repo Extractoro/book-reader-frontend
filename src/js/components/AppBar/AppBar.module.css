@@ -63,7 +63,6 @@ button {
   justify-content: space-around;
   align-items: center;
   height: 60px;
-  align-items: center;
   box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
 }
 
@@ -88,4 +87,28 @@ button {
     letter-spacing: 0;
     text-transform: none;
   }
+}
+
+.user-name {
+  margin-left: 14px;
+  margin-right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  background: #ffff;
+  border-radius: 50%;
+}
+
+.user-name:hover {
+  background: #f5f7fa;
+}
+
+.user-name:active {
+  background: #f5f7fa;
+}
+
+.nav-bar {
+  display: flex;
 }

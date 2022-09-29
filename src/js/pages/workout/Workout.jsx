@@ -7,6 +7,7 @@ import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
 // import Table from '../../components/Workout/BookList/Table'
 
+// import { AddWorkout } from '../../components/Workout/Statistics/Statistics.styled';
 
 
 export const Workout=()=>{
