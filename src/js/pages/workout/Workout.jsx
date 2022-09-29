@@ -1,10 +1,12 @@
-import AddBook from '../../components/Workout/AddBook';
+
 import GoalReading from '../../components/Workout/GoalReading';
 import BookList from '../../components/Workout/BookList';
 import Statistics from '../../components/Workout/Statistics';
 import {WorkoutContainer} from './Workout.styled';
 import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
+// import Table from '../../components/Workout/BookList/Table'
+
 // import { AddWorkout } from '../../components/Workout/Statistics/Statistics.styled';
 
 
@@ -16,6 +18,7 @@ export const Workout=()=>{
       <GoalReading/>
       <BookList/>
       <Statistics/>
+
     </WorkoutContainer>
   )
 }
