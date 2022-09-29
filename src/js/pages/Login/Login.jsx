@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import s from './Login.module.css';
+import sprite from 'sprites/google-sprite.svg';
+
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,8 +24,13 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={s.container} autoComplete="off">
-      <button className={s.google}>Google</button>
+      <div className={s.wrapper}>
+      <div className={s.overlay}>
+    <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
+          <button className={s.google}>
+            <svg width="18" height="18">
+              <use href={sprite + '#icon-google'} /></svg>
+            Google</button>
       <label className={s.label}>
         Email
         <input
@@ -53,14 +60,16 @@ export default function LoginPage() {
       <button className={s.button} type="submit">
         Увійти
       </button>
-      <a href="/#">Реєстрація</a>
-      <div className={s.quote}>
-        <p className={s.quotetext}>
+      <a className={s.register} href="/#">Реєстрація</a>
+          </form>
+          </div>
+       <div className={s.quote}>
+        <h2 className={s.quotetext}>
           Книги - це кораблі думок, що мандрують хвилями часу і дбайливо несуть
           свій дорогоцінний вантаж від покоління до покоління.
-        </p>
+        </h2>
         <p className={s.author}>Бекон Ф.</p>
       </div>
-    </form>
+      </div>
   );
 }

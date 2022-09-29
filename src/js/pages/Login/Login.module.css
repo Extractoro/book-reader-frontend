@@ -1,21 +1,38 @@
-.container {
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+@media screen and (min-width: 768px){
+    .form{
+        width:320px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #F5F7FA;
+        padding: 40px;
+         }        
+}
+
 .input {
-    width: 280px;
     height: 40px;
     background:#F5F7FA;
     margin-top: 8px;
     padding: 3px;
+    box-shadow: inset 1px 1px 3px -1px rgba(0, 0, 0, 0.6);
 }
 .label{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    width: 280px;
+    color: #FFFF;
 }
-
+@media screen and (min-width: 768px) {
+    .label {
+        width: 320px;
+        color: rgba(166, 171, 185, 1);
+    }
+}
 
 .button {
     justify-content: center;
@@ -30,10 +47,19 @@
     font-size: 16px;
     line-height: 17px;
     color: #FFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 .button:hover,.button:focus {
     background-color: #D15807;
     
+}
+@media screen and (min-width: 768px) {
+    .button {
+        width: 320px;
+        margin-top: 12px;
+        margin-bottom: 20px;
+    }
 }
 .google{
     display: flex;
@@ -50,23 +76,84 @@
     font-size: 16px;
     line-height: 17px;
     color: #707375;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 .quote{
     width: 230px;
-    height: 170px;
-    padding: 45px;
+    margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+    .quote {
+        width: 530px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .quote {
+        width: 400px;
+        height: 320px;
+        margin: 0;
+}
 }
 .quotetext{
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: #242A37;
-    padding: 10px;
+}
+@media screen and (min-width: 768px) {
+    .quotetext {
+        width: 400px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        line-height: 38px;
+    }
 }
 .author{
     font-size: 14px;
     font-weight: 500;
     color: #898F9F;
     text-align: center;
-    border-top: 1px solid #242A3780;
+}
+.wrapper{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 1280px) {
+    .wrapper {
+     display: flex;
+     margin: 0;
+     flex-wrap:wrap;
+     gap: 300px;
+     align-items: center;
+    }
+}
+.overlay{
+    background-image:url(../../../images//mobile/overlay\ mobile.jpeg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+    box-shadow: 0px 6px 9px 0px rgb(0 0 0 / 29%);
+}
+@media screen and (min-width: 768px) {
+    .overlay {
+        background-image: url(../../../images/tablet/overlay\ tablet.jpeg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        padding: 65px 184px; 
+    }
+}
+@media screen and (min-width: 1280px) {
+    .overlay {
+        background-image: url(../../../images/desktop/overlay\ desktop.jpeg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 180px 75px;
+    }
+}
+.register {
+    color:#FF6B08;
+    margin-bottom: 45px;
 }
