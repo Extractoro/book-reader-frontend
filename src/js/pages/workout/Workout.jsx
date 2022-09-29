@@ -5,7 +5,7 @@ import Statistics from '../../components/Workout/Statistics';
 import {WorkoutContainer} from './Workout.styled';
 import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
-import { AddWorkout } from '../../components/Workout/Statistics/Statistics.styled';
+// import { AddWorkout } from '../../components/Workout/Statistics/Statistics.styled';
 
 
 export const Workout=()=>{
