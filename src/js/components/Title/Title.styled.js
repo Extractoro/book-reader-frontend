@@ -9,6 +9,13 @@ export const H1 = styled.div`
   background: #B1B8C2;
   box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
 
+
+
+@media (min-width: 1280px){
+  margin-bottom: 0;
+  width: 288px;
+}
+
 `;
 
 export const TitleText = styled.h1`

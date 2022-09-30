@@ -1,10 +1,16 @@
 import s from './Statistics.module.css';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+
+
+import { Link } from 'react-router-dom';
+
 // eslint-disable-next-line no-unused-vars
+
 import Chart from 'chart.js/auto';
 // eslint-disable-next-line no-unused-vars
 import AddBookRead from '../AddBookRead/AddBookRead';
+import Media from 'react-media';
 
 const Statistics = () => {
   const number = 2;
@@ -22,6 +28,7 @@ const Statistics = () => {
         pointHoverRadius: 5,
         pointRadius: 7,
         PointHitRadius: 7,
+
         data: [
           `${goal}`,
           `${goal}`,
@@ -42,6 +49,7 @@ const Statistics = () => {
         pointHoverRadius: 5,
         pointRadius: 7,
         PointHitRadius: 7,
+
         data: [
           `${number}`,
           `${number}`,
@@ -77,8 +85,26 @@ const Statistics = () => {
       <div className={s['result']}>
         <Line options={options} data={data} />
       </div>
+
+      <Media queries={{ medium: "(max-width: 767px)"}}>
+        {matches => (
+          <>
+            {matches.medium &&<div className={s['thumbBtn']}>
+              <Link  className={s['btnAddMyTraining']}>+</Link>
+            </div> }
+          </>
+
+        )}
+      </Media>
+
     </div>
   );
 };
 
+
+  );
+};
+
 export default Statistics;
+
+

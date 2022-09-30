@@ -4,28 +4,32 @@
   height: 40px;
   cursor: pointer;
   background: #FF6B08;
+
   display: flex;
   justify-content: center;
   align-items: center;
   color:#FFFFFF;
 }
 
+
 @media screen and (max-width: 767px){
      .thumb{
 
+       margin: 0 auto 0 auto;
        border-radius: 50%;
        width: 52px;
        height: 52px;
      }
 }
 .thumbBtn{
-  width: fit-content;
-  margin-right: auto;
-  margin-left: auto;
+
 }
 
 @media screen and (min-width: 768px){
   .thumbBtn{
+    width: fit-content;
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
     margin: 40px auto 50px auto;
   }
 }

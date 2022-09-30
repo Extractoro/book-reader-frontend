@@ -5,16 +5,14 @@ const AddBookRead=()=>{
   return(
     <div className={s['thumbBtn']}>
       <Media queries={{
-        small: "(max-width: 767px)",
+
         medium: "(min-width: 768px) and (max-width: 2100px)",
       }}>
         {matches => (
+            <>
+                {matches.medium && <Link   className={s['thumb']}><p>Почати тренування</p></Link>}
+            </>
 
-            <Link to='/addBook' className={s['thumb']}>
-            {matches.small && <p>+</p>}
-            {matches.medium && <p>Почати тренування</p>}
-
-            </Link>
         )}
 
       </Media>

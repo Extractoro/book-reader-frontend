@@ -1,4 +1,4 @@
-/*import styled from 'styled-components';*/
+
 
 
 .body{
@@ -7,6 +7,14 @@
     border-bottom: solid 1px #E0E5EB;
     border-top: solid 1px #E0E5EB;
 }
+
+@media screen and (min-width: 1280px){
+  .body{
+    width: 928px;
+  }
+}
+
+
 
 .tHead{
     padding: 20px;
