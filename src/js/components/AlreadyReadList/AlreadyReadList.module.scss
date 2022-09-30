@@ -1,0 +1,117 @@
+.container {
+    width: 270px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        width: 678px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 1200px;
+    }
+}
+
+.list {
+    width: 270px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        box-shadow: none;
+        width: 678px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 1200px;
+    }
+}
+
+.bookInfo {
+    margin-top: 10px;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        // justify-content: space-between;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 38px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        justify-content: normal;
+    }
+
+    .bookInfoText {
+        @media screen and (min-width: 768px) {
+            margin-right: 21%;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 38px;
+            color: var(--third-text-color);
+        }
+
+        @media screen and (min-width: 1280px) {
+            margin-right: 0%;
+        }
+    }
+
+    .title {
+        margin-right: 156px;
+        color: var(--third-text-color);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 38px;
+
+        @media screen and (min-width: 1280px) {
+            margin-right: 26%;
+        }
+    }
+
+    .author {
+        margin-right: 68px;
+        color: var(--third-text-color);
+
+        @media screen and (min-width: 1280px) {
+            margin-right: 16%;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 38px;
+        }
+    }
+
+    .year {
+        color: var(--third-text-color);
+        margin-right: 57px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 38px;
+
+        @media screen and (min-width: 1280px) {
+            margin-right: 7%;
+        }
+    }
+
+    .page {
+        color: var(--third-text-color);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 38px;
+        margin-right: 26px;
+
+        @media screen and (min-width: 1280px) {
+            margin-right: 9%;
+        }
+    }
+}
+
+.sectionTitle {
+    width: 134px;
+    height: 38px;
+
+    margin-bottom: 5px;
+
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 38px;
+
+    color: var(--first-background-color);
+}
