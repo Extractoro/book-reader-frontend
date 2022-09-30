@@ -1,0 +1,114 @@
+body,
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 16px;
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+  display: block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+a,
+button {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
+}
+
+.header-label {
+  margin-left: 22px;
+  font-family: 'Abril Fatface';
+  color: var(--second-text-color);
+  line-height: 27px;
+  font-weight: 700;
+  font-size: 27px;
+  text-align: left;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header-label {
+    line-height: 27px;
+    font-weight: 700;
+    font-size: 27px;
+    text-align: left;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+.user-name {
+  margin-left: 14px;
+  margin-right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  background: #ffff;
+  border-radius: 50%;
+}
+
+.user-name:hover {
+  background: #f5f7fa;
+}
+
+.user-name:active {
+  background: #f5f7fa;
+}
+
+.nav-bar {
+  display: flex;
+}

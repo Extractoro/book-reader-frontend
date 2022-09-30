@@ -1,0 +1,43 @@
+.menu-container {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container {
+    margin-left: 8px;
+  }
+}
+
+.menu-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  width: 40px;
+  height: 17px;
+  background: #ffff;
+
+  text-decoration-line: underline;
+}
+
+.user-name {
+  margin-left: 14px;
+  margin-right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  background: #ffff;
+  border-radius: 50%;
+}
+
+.user-name:hover {
+  background: #f5f7fa;
+}
+
+.user-name:active {
+  background: #f5f7fa;
+}
