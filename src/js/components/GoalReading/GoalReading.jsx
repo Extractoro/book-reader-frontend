@@ -7,11 +7,11 @@ const GoalReading=()=>{
     <div className={s['thumb']}>
       <Title/>
       <div className={s['goalThumb']} >
-        <div>
+        <div className={s['wrapper']}>
           <p className={s['number']}>0</p>
           <p className={s['text']}>Кількість книжок</p>
         </div>
-        <div>
+        <div className={s['wrapper']}>
           <p className={s['number']}>0</p>
           <p className={s['text']}>Кількість днів</p>
         </div>

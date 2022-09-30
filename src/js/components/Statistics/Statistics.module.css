@@ -1,25 +1,30 @@
 
 .thumb {
   position: relative;
-  margin-top: 33px;
-
-  margin-left: auto;
-  margin-right: auto;
+  margin: 33px auto 50px;
   width: 280px;
-  border: 2px solid tomato;
+
   height: 290px;
   background: #FFFFFF;
   box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.25);
+
 }
-@media screen and (min-width: 768px){
-  .thumb{
+
+@media screen and (min-width: 768px) {
+  .thumb {
     width: 704px;
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .thumb {
+
+    width: 928px;
+  }
+}
 
 
-.value{
+.value {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -27,46 +32,57 @@
   line-height: 15px;
   color: #242A37;
 }
-@media (max-width: 767px){
-  .value{
+
+@media (max-width: 767px) {
+  .value {
     text-align: center;
     padding-top: 25px;
   }
 }
 
-@media(min-width: 768px){
-  .value{
+@media (min-width: 768px) {
+  .value {
     padding-top: 35px;
-    margin-left:49px ;
+    margin-left: 49px;
   }
 }
 
-.result{
+.result {
   margin: 21px auto 0 auto;
   width: 236px;
   height: 190px;
+
 }
-@media(min-width: 768px){
-  .result{
-    width:607px;
+
+@media (min-width: 768px) {
+  .result {
+    width: 607px;
   }
 }
 
 
+.btnAddMyTraining {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  background: #FF6B08;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #FFFFFF;
+
+}
+
+
+.thumbBtn{
+  margin: 13px auto 0 auto;
+  width: 52px;
+  height: 52px;
+}
 
 
 
 
-/*export const AddWorkout = styled(Link)`*/
-/*  position: absolute;*/
-/*  width: 200px;*/
-/*  height: 40px;*/
-/*  cursor: pointer;*/
-/*  background: #FF6B08;*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*  @media(max-width: 767px){*/
-/*
-/*  }*/
-/*`;*/
+

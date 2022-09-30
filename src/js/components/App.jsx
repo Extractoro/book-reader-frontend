@@ -5,12 +5,13 @@ import Container from 'js/utils/Container/Container';
 // import AppBar from './AppBar/AppBar';
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import MyTrainingPlaying from './MyTrainingPlaying/MyTrainingPlaying';
 // import Library from 'js/pages/Library/Library';
 // import Login from 'js/pages/Login/Login';
 // import Register from 'js/pages/Register/Register';
 // import { Workout } from 'js/pages/workout/Workout';
 // import { Layout } from './Layout/Layout';
-// import AddBook from './Workout/AddBook';
+
 
 const Login = lazy(async () => {
   let obj = await import('../pages/Login/Login');
@@ -86,7 +87,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Layout />}>
             <Route path="/library" element={<Library />} />
-            <Route path="/myWorkout" element={<Workout />} />
+            <Route path="/myWorkout" element={<Workout />}/>
           </Route>
         </Routes>
       </Suspense>

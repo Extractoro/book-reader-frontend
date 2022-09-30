@@ -1,16 +1,18 @@
-import s from './Statistics.module.css'
+import s from './Statistics.module.css';
 import React from 'react';
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
+
+import { Link } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import AddBookRead from '../AddBookRead/AddBookRead';
+import Media from 'react-media';
 
-
-const Statistics=()=>{
+const Statistics = () => {
   const number = 2;
-  const goal= 1
+  const goal = 1;
 
   const data = {
-    labels: ["", "", "", "", "", "", ""],
+    labels: ['', '', '', '', '', '', ''],
     datasets: [
       {
         label: 'Plan',
@@ -21,7 +23,7 @@ const Statistics=()=>{
         pointHoverRadius: 5,
         pointRadius: 7,
         PointHitRadius: 7,
-        data: [`${goal}`, `${goal}`,`${goal}`, `${goal}`, `${goal}`,`${goal}`,`${goal}`],
+        data: [`${goal}`, `${goal}`, `${goal}`, `${goal}`, `${goal}`, `${goal}`, `${goal}`],
       },
       {
         label: 'Fact',
@@ -33,7 +35,7 @@ const Statistics=()=>{
         pointHoverRadius: 5,
         pointRadius: 7,
         PointHitRadius: 7,
-        data: [`${number}`, `${number}`, `${number}`, `${number}`, `${number}`,`${number}`,`${number}`],
+        data: [`${number}`, `${number}`, `${number}`, `${number}`, `${number}`, `${number}`, `${number}`],
       },
     ],
   };
@@ -52,19 +54,26 @@ const Statistics=()=>{
     maintainAspectRatio: false,
   };
 
-  return(
+  return (
     <div className={s['thumb']}>
       <p className={s['value']}>Кількість сторінок/день <span>0</span></p>
       <div className={s['result']}>
-        <Line options={options} data={data}  />
-
+        <Line options={options} data={data} />
       </div>
+      <Media queries={{ medium: "(max-width: 767px)"}}>
+        {matches => (
+          <>
+            {matches.medium &&<div className={s['thumbBtn']}>
+              <Link  className={s['btnAddMyTraining']}>+</Link>
+            </div> }
+          </>
 
-
+        )}
+      </Media>
     </div>
 
-  )
-}
+  );
+};
 
-export default Statistics
+export default Statistics;
 

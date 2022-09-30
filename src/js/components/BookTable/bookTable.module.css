@@ -10,3 +10,11 @@
     width: 704px;
   }
 }
+
+@media screen and (min-width: 1280px)
+{
+  .thumb{
+    /*margin: 0 auto 0 20px ;*/
+    width: 928px;
+  }
+}
