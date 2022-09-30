@@ -1,0 +1,58 @@
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  overflow-y: hidden;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.closeArrowColor {
+  fill: var(--accent-text-and-background-color);
+}
+
+.content {
+  position: relative;
+  background-color: var(--first-text-and-background-color);
+}
+
+.button {
+  margin-top: 75px;
+  width: 30;
+  border: none;
+  background-color: transparent;
+}
+
+.headerModal {
+  background-color: var(--background-and-text-color);
+  padding: 20px;
+  min-width: 270px;
+  max-width: 700px;
+  position: relative;
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  justify-content: space-between;
+
+  height: 60px;
+  z-index: 1100;
+
+  background-color: var(--accent-text-and-background-color);
+  box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
+}
