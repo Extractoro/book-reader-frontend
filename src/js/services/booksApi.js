@@ -18,8 +18,8 @@ export const fetchOneBook = (id, token) => {
   });
 };
 
-export const addBook = (contact, token) => {
-  return http.post(`${baseURL}/api/books`, contact, {
+export const addOneBook = (book, token) => {
+  return http.post(`${baseURL}/api/books`, book, {
     headers: {
       Authorization: token,
     },

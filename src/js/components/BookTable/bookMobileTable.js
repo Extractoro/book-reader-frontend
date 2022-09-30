@@ -1,15 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import s from './bookMobileTable.module.css';
 
-
 export default function BookTableMobile() {
-  const title='Name book'
-  const pages='test'
-  const author='test'
-  const year='test'
-
-
+  const title = 'Name book';
+  const pages = 'test';
+  const author = 'test';
+  const year = 'test';
 
   return (
     <>
@@ -28,7 +24,9 @@ export default function BookTableMobile() {
               )}
               {title}
             </p>
-            <p className={s['subtitle']}><span className={s['topic']}>Author:</span> {author}</p>
+            <p className={s['subtitle']}>
+              <span className={s['topic']}>Author:</span> {author}
+            </p>
             <p className={s['subtitle']}>
               <span className={s['topic']}>Year:</span>
               {year}

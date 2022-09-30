@@ -2,8 +2,13 @@ import s from './Statistics.module.css';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
+
 import { Link } from 'react-router-dom';
+
+// eslint-disable-next-line no-unused-vars
+
 import Chart from 'chart.js/auto';
+// eslint-disable-next-line no-unused-vars
 import AddBookRead from '../AddBookRead/AddBookRead';
 import Media from 'react-media';
 
@@ -23,7 +28,16 @@ const Statistics = () => {
         pointHoverRadius: 5,
         pointRadius: 7,
         PointHitRadius: 7,
-        data: [`${goal}`, `${goal}`, `${goal}`, `${goal}`, `${goal}`, `${goal}`, `${goal}`],
+
+        data: [
+          `${goal}`,
+          `${goal}`,
+          `${goal}`,
+          `${goal}`,
+          `${goal}`,
+          `${goal}`,
+          `${goal}`,
+        ],
       },
       {
         label: 'Fact',
@@ -35,7 +49,16 @@ const Statistics = () => {
         pointHoverRadius: 5,
         pointRadius: 7,
         PointHitRadius: 7,
-        data: [`${number}`, `${number}`, `${number}`, `${number}`, `${number}`, `${number}`, `${number}`],
+
+        data: [
+          `${number}`,
+          `${number}`,
+          `${number}`,
+          `${number}`,
+          `${number}`,
+          `${number}`,
+          `${number}`,
+        ],
       },
     ],
   };
@@ -56,10 +79,13 @@ const Statistics = () => {
 
   return (
     <div className={s['thumb']}>
-      <p className={s['value']}>Кількість сторінок/день <span>0</span></p>
+      <p className={s['value']}>
+        Кількість сторінок/день <span>0</span>
+      </p>
       <div className={s['result']}>
         <Line options={options} data={data} />
       </div>
+
       <Media queries={{ medium: "(max-width: 767px)"}}>
         {matches => (
           <>
@@ -70,10 +96,15 @@ const Statistics = () => {
 
         )}
       </Media>
+
     </div>
+  );
+};
+
 
   );
 };
 
 export default Statistics;
+
 

@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const trainingsApi = createApi({
-  reducerPath: 'trainingsApi',
+export const booksApi = createApi({
+  reducerPath: 'booksApi',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://book-reader-backend.herokuapp.com',
     prepareHeaders: (headers, { getState }) => {
@@ -57,4 +57,4 @@ export const {
   useAddBookMutation,
   useUpdateBookMutation,
   useDeleteBookMutation,
-} = trainingsApi;
+} = booksApi;

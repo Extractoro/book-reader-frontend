@@ -2,11 +2,8 @@ import s from './UserMenu.module.css';
 import { useMatchMedia } from '../../../../hooks/use-match-media';
 import { useState } from 'react';
 import ModalLogout from '../../ModalLogout/ModalLogout';
-// import { useDispatch } from 'react-redux';
-// import authOperations from '../../../redux/auth/auth-operations';
 
 export default function UserMenu() {
-  // const dispatch = useDispatch();
   const { isMobile } = useMatchMedia();
   const [isOpen, setIsOpen] = useState(false);
 

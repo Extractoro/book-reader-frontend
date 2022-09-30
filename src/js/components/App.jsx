@@ -38,56 +38,18 @@ const Workout = lazy(async () => {
   return typeof obj.default === 'function' ? obj : obj.default;
 });
 
-// const Login = lazy(async () => (await import('../pages/Login')).Login);
-// const Register = lazy(async () => (await import('../pages/Register')).Register);
-// const Layout = lazy(async () => (await import('./Layout/Layout')).Layout);
-// const Library = lazy(async () => (await import('../pages/Library')).Library);
-// const Workout = lazy(
-//   async () => (await import('../pages/Workout/Workout')).Workout
-// );
-
-// const Login = lazy(() => import('../pages/Login/Login'));
-// const Register = lazy(() => import('../pages/Register/Register'));
-// const Layout = lazy(() => import('./Layout/Layout'));
-// const Library = lazy(() => import('../pages/Library/Library'));
-// const Workout = lazy(() => import('../pages/Workout/Workout'));
-
-// const Login = lazy(async () =>
-//   import('../pages/Login/Login').then(module => ({
-//     default: module.Login,
-//   }))
-// );
-// const Register = lazy(() =>
-//   import('../pages/Register/Register').then(module => ({
-//     default: module.Register,
-//   }))
-// );
-// const Layout = lazy(() =>
-//   import('./Layout/Layout').then(module => ({
-//     default: module.Layout,
-//   }))
-// );
-// const Library = lazy(() =>
-//   import('../pages/Library/Library').then(module => ({
-//     default: module.Library,
-//   }))
-// );
-// const Workout = lazy(() =>
-//   import('../pages/Workout/Workout').then(module => ({
-//     default: module.Workout,
-//   }))
-// );
-
 export default function App() {
   return (
     <Container>
       <Suspense fallback={<>...</>}>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/" element={<Layout />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
             <Route path="/library" element={<Library />} />
-            <Route path="/myWorkout" element={<Workout />}/>
+            <Route path="/workout" element={<Workout />} />
+
           </Route>
         </Routes>
       </Suspense>

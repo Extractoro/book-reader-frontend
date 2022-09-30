@@ -1,20 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query';
+
 import authSlice from './auth/auth-slice';
-// import { booksSlice } from './books/books-slice';
-// import { booksApi } from './books/books-operations';
-// import { trainingsSlice } from './trainings/trainings-slice';
-// import { trainingsApi } from './trainings/trainings-operations';
+import { authApi } from './auth/authApi';
+// import booksSlice from './books/books-slice';
+import { booksApi } from './books/booksApi';
+
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-// import {
-//   FLUSH,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-//   PAUSE,
-//   REHYDRATE,
-// } from 'redux-persist';
-import persistStore from 'redux-persist/es/persistStore';
-import persistReducer from 'redux-persist/es/persistReducer';
 
 const authPersistConfig = {
   key: 'auth',
@@ -24,22 +26,23 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    // books: booksSlice.reducer,
-    // [booksApi.reducerPath]: booksApi.reducer,
+    // books: booksSlice,
     // trainings: trainingsSlice.reducer,
-    // [trainingsApi.reducerPath]: trainingsApi.reducer,
+    [booksApi.reducerPath]: booksApi.reducer,
+    [authApi.reducerPath]: authApi.reducer,
     auth: persistReducer(authPersistConfig, authSlice),
   },
-  // middleware: getDefaultMiddleware => [
-  //   ...getDefaultMiddleware({
-  //     serializableCheck: {
-  //       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-  //     },
-  //   }),
-  //   booksApi.middleware,
-  //   trainingsApi.middleware,
-  // ],
+  middleware: getDefaultMiddleware => [
+    ...getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+    authApi.middleware,
+  ],
   devTools: process.env.NODE_ENV === 'development',
 });
+
+setupListeners(store.dispatch);
 
 export const persistor = persistStore(store);
