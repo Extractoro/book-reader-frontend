@@ -42,9 +42,10 @@ export default function App() {
     <Container>
       <Suspense fallback={<>...</>}>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/" element={<Layout />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
             <Route path="/library" element={<Library />} />
             <Route path="/workout" element={<Workout />} />
           </Route>

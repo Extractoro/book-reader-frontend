@@ -1,11 +1,11 @@
-import { useLogoutUserQuery } from 'js/redux/auth/authApi';
+// import { useLogoutUserQuery } from 'js/redux/auth/authApi';
 import { createPortal } from 'react-dom';
 import s from './ModalLogout.module.css';
 
 const modalRoot = document.querySelector('#modal-root');
 
 const ModalLogout = ({ open, onClose }) => {
-  const logout = useLogoutUserQuery();
+  // const logout = useLogoutUserQuery();
   if (!open) return null;
 
   return createPortal(
@@ -19,7 +19,7 @@ const ModalLogout = ({ open, onClose }) => {
             Відміна
           </button>
           <button
-            onClick={() => logout()}
+            // onClick={() => ()}
             className={s['modal-button-exit']}
             type="button"
           >
