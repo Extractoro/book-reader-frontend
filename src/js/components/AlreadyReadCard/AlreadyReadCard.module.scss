@@ -1,0 +1,263 @@
+.card {
+    margin: 0;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 18px 15px 0px 10px;
+        position: relative;
+        height: 272px;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+
+        height: 62px;
+    }
+}
+
+.iconTitle {
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+        align-items: center;
+        position: absolute;
+        bottom: 74%;
+        left: 7%;
+    }
+
+    @media screen and (min-width: 768px) {
+        align-items: center;
+    }
+}
+
+.bookInfo {
+    margin-top: 20px;
+    padding-left: 55px;
+}
+
+.bookInfoWrapper {
+    @media screen and (max-width: 767px) {
+        margin-top: 30px;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+.bookTitle {
+    margin-left: 5px;
+    margin-bottom: 18px;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #242A37;
+    width: 154px;
+
+    @media screen and (min-width: 768px) {
+        margin-left: 0px;
+        margin-bottom: 0px;
+        width: 135px;
+        margin-right: 20px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 313px;
+        // margin-right: 60px;
+        font-size: 14px;
+        line-height: 2.71;
+    }
+}
+
+.navIcon {
+    width: 40px;
+    margin-bottom: 18px;
+
+    @media screen and (min-width: 768px) {
+        margin-left: 20px;
+        margin-right: 40px;
+        margin-bottom: 0px;
+        width: 0px;
+    }
+}
+
+.bookMoreInfo {
+    margin-left: 30px;
+    margin-top: 5px;
+
+    @media screen and (min-width: 768px) {
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.bookInfoText {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 2.51;
+    color: #898F9F;
+}
+
+.bookMoreInfoAuthor {
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: -5px;
+    line-height: 1.17;
+    color: #242A37;
+
+    @media screen and (min-width: 768px) {
+        width: 94px;
+        font-size: 14px;
+        height: auto;
+        line-height: 1.5;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 190px;
+        margin-right: 29px;
+        height: auto;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-left: -23px;
+    }
+}
+
+.titleText {
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 5px;
+    line-height: 1.17;
+    color: #242A37;
+    height: 26px;
+
+    @media screen and (min-width: 768px) {
+        width: 94px;
+        height: 0px;
+        font-size: 14px;
+        line-height: 1.5;
+
+        margin-top: 16px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 190px;
+        margin-right: 12px;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-left: -23px;
+    }
+}
+
+.bookMoreInfoYear {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 2.99;
+    margin-bottom: -5px;
+    color: #242A37;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+        line-height: 0.8;
+        width: 40px;
+        margin-right: 27px;
+        margin-left: 16px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-right: 74px;
+
+        font-size: 14px;
+        line-height: 2.71;
+    }
+}
+
+.bookMoreInfoPage {
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: -4px;
+    line-height: 2.99;
+    color: #242A37;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+        width: 23px;
+        margin-left: 19px;
+        line-height: 0.8;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 14px;
+        margin-left: 0px;
+        line-height: 2.71;
+    }
+}
+
+.bookInfoWrapper {
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
+}
+
+.button {
+    width: 127px;
+    height: 40px;
+    border: none;
+
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+    background-color: white;
+
+    @media screen and (min-width: 768px) {
+        width: 80px;
+        margin-top: 0px;
+
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 130px;
+        height: 40px;
+
+        margin-left: 50px;
+        margin-right: 18px;
+    }
+}
+
+.buttonText {
+    width: 59px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 38px;
+
+    text-align: center;
+    color: #242A37;
+}
+
+.marginStar {
+    height: 33px;
+    margin-bottom: -4px;
+
+    @media screen and (min-width: 768px) {
+        height: 23px;
+        margin-left: 39px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-left: 119px;
+    }
+}
