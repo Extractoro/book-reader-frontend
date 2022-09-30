@@ -1,12 +1,13 @@
-import GoalReading from '../../components/Workout/GoalReading';
-import BookList from '../../components/Workout/BookList';
-import Statistics from '../../components/Workout/Statistics';
+import GoalReading from '../../components/GoalReading';
+import BookList from '../../components/BookTable';
+import Statistics from '../../components/Statistics';
 import { WorkoutContainer } from './Workout.styled';
 import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
-// import Table from '../../components/Workout/BookList/Table'
+import AddBookRead from '../../components/AddBookRead/AddBookRead';
+// import Table from '../../components/Workout/BookTable/Table'
 
-// import { AddWorkout } from '../../components/Workout/Statistics/Statistics.styled';
+
 
 const Workout = () => {
   return (
@@ -14,6 +15,7 @@ const Workout = () => {
       <GlobalCSS />
       <GoalReading />
       <BookList />
+      <AddBookRead to='/addBook' ><span>+</span></AddBookRead>
       <Statistics />
     </WorkoutContainer>
   );

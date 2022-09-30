@@ -1,22 +1,19 @@
 import React from 'react';
 import { useTable } from 'react-table';
-import { TableBody, Td, Th } from './Table.styled';
-
+import  s from './Table.module.css';
 function Table(){
+
+
+
+
   const data = React.useMemo(
     () => [
       {
-        col1: 'Hello',
-        col2: 'World',
-      },
-      {
-        col1: 'react-table',
-        col2: 'rocks',
-      },
-      {
-        col1: 'whatever',
-        col2: 'you want',
-      },
+        col1: 'Ветер и искраы',
+        col2: 'Алексей Пехов',
+        col3: '2006',
+        col4: '315'
+      }
     ],
     [],
   );
@@ -54,14 +51,14 @@ function Table(){
 
   return (
 
-      <TableBody {...getTableProps()} >
+      <table className={s['body']} {...getTableProps()} >
         <thead >
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <Th{...column.getHeaderProps()} >
+              <th className={s['tHead']} {...column.getHeaderProps()} >
                 {column.render('Header')}
-              </Th>
+              </th>
             ))}
           </tr>
         ))}
@@ -73,21 +70,21 @@ function Table(){
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {
                   return (
-                    <Td
+                    <td className={s['tD']}
                       {...cell.getCellProps()}
                       style={{
                         padding: '20px',
                       }}
                     >
                       {cell.render('Cell')}
-                    </Td>
+                    </td>
                   );
                 })}
               </tr>
             );
           })}
         </tbody>
-      </TableBody>
+      </table>
 
   );
 }

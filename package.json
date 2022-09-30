@@ -22,6 +22,7 @@
     "react-chartjs-2": "^4.3.1",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
+    "react-ellipsis-text": "^1.2.1",
     "react-icons": "^4.4.0",
     "react-media": "^1.10.0",
     "react-modal": "^3.15.1",
@@ -63,6 +64,7 @@
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",
     "@mui/material": "^5.10.7",
-    "faker": "^6.6.6"
+    "faker": "^6.6.6",
+    "prop-types": "^15.8.1"
   }
 }

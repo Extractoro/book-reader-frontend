@@ -1,7 +1,7 @@
 import Navigation from './Navigation/Navigation';
 import UserMenu from './UserMenu/UserMenu';
 import s from './AppBar.module.css';
-import { useMatchMedia } from '../../../hooks/use-match-media';
+import { useMatchMedia } from '../../../hooks';
 
 export default function AppBar() {
   const { isTablet, isDesktop } = useMatchMedia();
