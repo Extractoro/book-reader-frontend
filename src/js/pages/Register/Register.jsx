@@ -1,10 +1,9 @@
+import { useRegistrationUserMutation } from 'js/redux/auth/authApi';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import authOperations from '../../redux/auth/auth-operations';
 import s from './Register.module.css';
 
 export default function RegisterPage() {
-  const dispatch = useDispatch();
+  const [register] = useRegistrationUserMutation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,9 +32,7 @@ export default function RegisterPage() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(
-      authOperations.register({ name, email, password, repeatPassword })
-    );
+    register({ name, email, password, repeatPassword });
     formFieldsReset();
   };
 

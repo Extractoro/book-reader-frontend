@@ -3,10 +3,10 @@ import { nanoid } from 'nanoid';
 import Media from 'react-media';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './LibraryForm.module.css';
-import { useDispatch } from 'react-redux';
+import { useAddBookMutation } from 'js/redux/books/booksApi';
 
 const LibraryForm = () => {
-  const dispatch = useDispatch();
+  const [add] = useAddBookMutation();
   const [nameOfBook, setNameOfBook] = useState('');
   const [nameOfAuthor, setNameOfAuthor] = useState('');
   const [yearOfBook, setYearOfBook] = useState('');
@@ -28,7 +28,12 @@ const LibraryForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // dispatch(book.register({ name, email, password, repeatPassword }));
+    add({
+      title: nameOfBook,
+      author: nameOfAuthor,
+      year: yearOfBook,
+      totalPages: amountOfPages,
+    });
     reset();
   };
 

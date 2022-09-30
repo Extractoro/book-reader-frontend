@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import authOperations from '../../redux/auth/auth-operations';
 import s from './Login.module.css';
 import sprite from 'sprites/google-sprite.svg';
+import { useLoginUserMutation } from 'js/redux/auth/authApi';
 
 export default function LoginPage() {
-  const dispatch = useDispatch();
+  const [login] = useLoginUserMutation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,7 +21,7 @@ export default function LoginPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.login({ email, password }));
+    login({ email, password });
     setEmail('');
     setPassword('');
   };
