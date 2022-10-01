@@ -2,33 +2,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0 32px 0;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) {
     .form {
         width: 320px;
         margin-left: auto;
         margin-right: auto;
-        background-color: #F5F7FA;
+        background-color: #FFFF;
         padding: 40px;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .form {
-        width: 320px;
-        background-color: #F5F7FA;
-        padding: 40px;
-
     }
 }
 
 .input {
     height: 40px;
-    background-color: #E5E5E5;
+    background: #F5F7FA;
     margin-top: 8px;
     padding: 3px;
-    box-shadow: inset 1px 1px 3px -1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.15) inset;
+    background: #f6f7fb;
+    border: none;
+    outline: none;
+}
+
+.input:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .label {
@@ -36,6 +35,7 @@
     flex-direction: column;
     margin-bottom: 20px;
     width: 280px;
+    color: #E5E5E5;
 }
 
 @media screen and (min-width: 768px) {
@@ -46,8 +46,7 @@
 }
 
 .button {
-    justify-content: center;
-    margin-top: 20px;
+    display: block;
     margin-bottom: 16px;
     width: 280px;
     height: 60px;
@@ -60,6 +59,7 @@
     color: #FFFF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    border: none;
 }
 
 .button:hover,
@@ -71,19 +71,15 @@
 @media screen and (min-width: 768px) {
     .button {
         width: 320px;
-        margin-top: 12px;
         margin-bottom: 20px;
     }
 }
 
 .google {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 28px;
+   display: block;
     width: 150px;
     height: 40px;
+    margin-bottom: 28px;
     background-color: #E5E5E5;
     font-family: "Roboto", sans-serif;
     font-style: normal;
@@ -93,19 +89,33 @@
     color: #707375;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    border: none;
+}
+.google_icon {
+    display: inline-block;
+    margin-right: 16px;
+}
+.linkGoogle {
+    color: #707375;
+    text-decoration: none;
 }
 .wrapper {
     margin-left: auto;
     margin-right: auto;
+    max-width: 320px;
 }
 
+@media screen and (min-width: 768px) {
+    .wrapper {
+        max-width: 768px;
+    }
+}
 @media screen and (min-width: 1280px) {
     .wrapper {
+        max-width: 1280px;
         display: flex;
         margin: 0;
-        flex-wrap: wrap;
-        gap: 300px;
-        align-items: center;
+        align-items: baseline;
     }
 }
 
@@ -114,6 +124,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 5px;
+    box-shadow: 0px 6px 9px 0px rgb(0 0 0 / 29%);
 }
 
 @media screen and (min-width: 768px) {
@@ -122,7 +133,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;
-        padding: 64px 184px;
+        margin: 0;
     }
 }
 
@@ -131,17 +142,107 @@
         background-image: url(../../../images/desktop/overlay\ desktop.jpeg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
+    }
+}
+
+.register {
+    color: #FF6B08;
+    padding-bottom: 45px;
+}
+
+.background {
+    background-color: rgba(9, 30, 63, 0.8);
+    background-blend-mode: screen;
+}
+
+@media screen and (min-width: 768px) {
+    .background {
+        padding: 64px 75px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .background {
         padding: 90px 75px;
     }
 }
+.text{
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #898F9F;
+    margin: 0;
+}
+.linkLogin{
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #FF6B08;
+    text-decoration: underline;
+}
+
+.title {
+    margin-top: 0;
+    text-align: center;
+    font-family: "Abril Fatface";
+    line-height: 38px;
+    font-weight: 400;
+    font-size: 34px;
+    margin-bottom: 48px;
+    color: var(--second-text-color);
+}
+
+.titlesecond {
+    margin-bottom: 14px;
+    font-family: "Montserrat";
+    line-height: 38px;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 0;
+    color: #242A37;
+}
+
+.text {
+    margin-bottom: 12px;
+    font-family: "Montserrat";
+    line-height: 17px;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: normal;
+    color: #898F9F;
+}
+
+.infoList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.vector {
+    margin-right: 12px;
+    fill: var(--accent-text-and-background-color);
+    width: 4px;
+    height: 8px;
+}
+
 @media screen and (min-width: 768px) {
-    .title {
-    font-family: 'Abril Fatface' sans-serif;
-        font-weight: 700;
-        font-size: 34px;
-        text-align: center;
+    .infoWrapper {
+        display: flex;
+        flex-direction: column;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 40px;
+        width: 430px;
+        margin: auto;
+        padding: 64px 0 88px;
     }
 }
-.login{
-    margin-bottom: 45px;
+
+@media screen and (min-width: 1280px) {
+    .infoWrapper {
+        width: 500px;
+    }
 }

@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
+import { NavLink } from 'react-router-dom';
 import s from './Register.module.css';
+import googleIcon from 'images/google/google icon.png';
+import sprite from '../../../sprites/mobileinfo-sprite.svg';
+
 
 export default function RegisterPage() {
   const dispatch = useDispatch();
@@ -47,8 +51,14 @@ export default function RegisterPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={s.container} autoComplete="off">
-      <button className={s.google}>Google</button>
+    <div className={s.wrapper}>
+      <div className={s.overlay}>
+        <div className={s.background}>
+        <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
+      <button className={s.google}>
+              <img src={googleIcon} alt="google-icon" className={s.google_icon} />
+              <NavLink to='/#' className={s.linkGoogle}>Google</NavLink>
+          </button>
       <label className={s.label}>
         Ім’я
         <input
@@ -99,13 +109,64 @@ export default function RegisterPage() {
           placeholder="******"
         />
       </label>
-
-      <button className={s.button} type="submit">
-        Увійти
-      </button>
-      <p>
-        Ви вже з нами?<a href="/#"> Увійти</a>
-      </p>
-    </form>
+            <button className={s.button}
+            type="submit"
+            >
+              Зареєструватися
+              </button>
+              <p className={s.text}>Ви вже з нами?
+              <NavLink to="/login"
+               className={s.linkLogin}
+              >Увійти</NavLink>
+            </p>   
+          </form>
+        </div>
+      </div>
+      <div className={s.infoWrapper}>
+        <h2 className={s.title}>Books Reading</h2>
+        <p className={s.titlesecond}>Допоможе вам: </p>
+        <ul className={s.infoList}>
+          <li className={s.text}>
+            <svg className={s.vector} width="4" height="8">
+              <use href={sprite + '#icon-Vector'}></use>
+            </svg>
+            Швидше сформулювати свою ціль і розпочати читати
+          </li>
+          <li className={s.text}>
+            <svg className={s.vector} width="4" height="8">
+              <use href={sprite + '#icon-Vector'}></use>
+            </svg>
+            Пропорційно розподілити навантаження на кожний день
+          </li>
+          <li className={s.text}>
+            <svg className={s.vector} width="4" height="8">
+              <use href={sprite + '#icon-Vector'}></use>
+            </svg>
+            Відстежувати особистий успіх
+          </li>
+        </ul>
+        <p className={s.titlesecond}>Також ви зможете:</p>
+        <ul className={s.infoList}>
+          <li className={s.text}>
+            <svg className={s.vector} width="4" height="8">
+              <use href={sprite + '#icon-Vector'}></use>
+            </svg>
+            Формувати особисту думку незалежну від інших
+          </li>
+          <li className={s.text}>
+            <svg className={s.vector} width="4" height="8">
+              <use href={sprite + '#icon-Vector'}></use>
+            </svg>
+            Підвищити свої професійні якості опираючись на нові знання
+          </li>
+          <li className={s.text}>
+            <svg className={s.vector} width="4" height="8">
+              <use href={sprite + '#icon-Vector'}></use>
+            </svg>
+            Стати цікавим співрозмовником
+          </li>
+        </ul>
+        </div>
+      </div> 
   );
 }

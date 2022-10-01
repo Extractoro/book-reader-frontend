@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
 import s from './Login.module.css';
-import sprite from 'sprites/google-sprite.svg';
+import { NavLink } from 'react-router-dom';
+import googleIcon from 'images/google/google icon.png';
+
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -30,12 +32,11 @@ export default function LoginPage() {
   return (
     <div className={s.wrapper}>
       <div className={s.overlay}>
+        <div className={s.background}>
         <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-          <button className={s.google}>
-            <svg width="18" height="18">
-              <use href={sprite + '#icon-google'} />
-            </svg>
-            Google
+            <button className={s.google}>
+              <img src={googleIcon} alt="google-icon" className={s.google_icon} />
+              <NavLink to='/#' className={s.linkGoogle}>Google</NavLink>
           </button>
           <label className={s.label}>
             Email
@@ -63,21 +64,24 @@ export default function LoginPage() {
             />
           </label>
 
-          <button className={s.button} type="submit">
+          <button className={s.button}>
             Увійти
-          </button>
-          <a className={s.register} href="/#">
+            </button>
+            <NavLink to="/register" className={s.linkRegister}>
             Реєстрація
-          </a>
-        </form>
+            </NavLink>
+          </form>
+        </div>
       </div>
-      <div className={s.quote}>
+     <div className={s.quote}>
+        <span className={s.symbol}>“</span>
         <h2 className={s.quotetext}>
           Книги - це кораблі думок, що мандрують хвилями часу і дбайливо несуть
           свій дорогоцінний вантаж від покоління до покоління.
         </h2>
+        <hr className={s.line}></hr>
         <p className={s.author}>Бекон Ф.</p>
-      </div>
+    </div>
     </div>
   );
 }

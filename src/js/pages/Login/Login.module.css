@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0 32px 0;
 }
 @media screen and (min-width: 768px){
     .form{
         width:320px;
         margin-left: auto;
         margin-right: auto;
-        background-color: #F5F7FA;
+        background-color: #FFFF;
         padding: 40px;
          }        
 }
@@ -18,14 +19,20 @@
     background:#F5F7FA;
     margin-top: 8px;
     padding: 3px;
-    box-shadow: inset 1px 1px 3px -1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.15) inset;
+    background: #f6f7fb;
+    border: none;
+    outline: none;
+}
+.input:focus{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .label{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
     width: 280px;
-    color: #FFFF;
+    color: #E5E5E5;
 }
 @media screen and (min-width: 768px) {
     .label {
@@ -35,9 +42,9 @@
 }
 
 .button {
-    justify-content: center;
-    margin-top: 20px;
+    display: block;
     margin-bottom: 16px;
+    padding: 20px 110px;
     width: 280px;
     height: 60px;
     background-color: #FF6B08;
@@ -49,6 +56,7 @@
     color: #FFFF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    border: none;
 }
 .button:hover,.button:focus {
     background-color: #D15807;
@@ -57,18 +65,14 @@
 @media screen and (min-width: 768px) {
     .button {
         width: 320px;
-        margin-top: 12px;
         margin-bottom: 20px;
     }
 }
 .google{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 28px;
+    display: block;
     width: 150px;
     height: 40px;
+    margin-bottom: 28px;
     background-color:#E5E5E5;
     font-family: "Roboto", sans-serif;
     font-style: normal;
@@ -78,21 +82,47 @@
     color: #707375;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    border: none;
+}
+.google:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.google_icon {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.linkGoogle {
+    color: #707375;
+    text-decoration: none;
 }
 .quote{
     width: 230px;
-    margin: 0 auto;
+    margin: auto;
 }
+
 @media screen and (min-width: 768px) {
     .quote {
+        display: flex;
+        flex-direction: column;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 40px;
+        text-align: center;
         width: 530px;
     }
 }
 @media screen and (min-width: 1280px) {
     .quote {
+        font-family: Montserrat;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
         width: 400px;
         height: 320px;
-        margin: 0;
+        padding: 0;
 }
 }
 .quotetext{
@@ -100,13 +130,25 @@
     font-size: 14px;
     font-weight: 500;
     color: #242A37;
+    text-align: center;
+    margin: 0;
+    width: 230px;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
     .quotetext {
-        width: 400px;
         font-family: 'Montserrat', sans-serif;
         font-size: 24px;
         line-height: 38px;
+        width: 530px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .quotetext {
+        width: 400px;
+        margin: 0;
     }
 }
 .author{
@@ -114,26 +156,37 @@
     font-weight: 500;
     color: #898F9F;
     text-align: center;
+    margin: 0;
+}
+@media screen and (min-width:768px) {
+    .author{
+        font-size:24px;
+    }
 }
 .wrapper{
     margin-left: auto;
     margin-right: auto;
+    max-width: 320px;
 }
 
+@media screen and (min-width: 768px) {
+    .wrapper {
+        max-width: 768px;
+    }
+}
 @media screen and (min-width: 1280px) {
     .wrapper {
+     max-width: 1280px;
      display: flex;
      margin: 0;
-     flex-wrap:wrap;
-     gap: 300px;
-     align-items: center;
+     align-items: baseline;
+     gap: 167px;
     }
 }
 .overlay{
     background-image:url(../../../images//mobile/overlay\ mobile.jpeg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom: 5px;
     box-shadow: 0px 6px 9px 0px rgb(0 0 0 / 29%);
 }
 @media screen and (min-width: 768px) {
@@ -141,8 +194,8 @@
         background-image: url(../../../images/tablet/overlay\ tablet.jpeg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: bottom;
-        padding: 65px 184px; 
+        background-position: bottom; 
+        margin: 0;
     }
 }
 @media screen and (min-width: 1280px) {
@@ -150,10 +203,57 @@
         background-image: url(../../../images/desktop/overlay\ desktop.jpeg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        padding: 180px 75px;
     }
 }
 .register {
     color:#FF6B08;
-    margin-bottom: 45px;
+    padding-bottom: 45px;
+}
+.background{
+    background-color: rgba(9, 30, 63, 0.8);
+    background-blend-mode: screen;
+}
+@media screen and (min-width: 768px) {
+    .background {
+      padding: 64px 0 64px 0;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .background {
+    padding: 185px 75px;
+    }
+}
+.symbol{
+    display: flex;
+    justify-content: center;
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 59px;
+    line-height: 93px;
+    height: 80px;
+    text-align: center;
+    color: #ff6b08;
+}
+@media screen and (min-width: 768px) {
+    .symbol {
+        font-size: 69px;
+    }
+}
+.line{
+    color: rgba(36, 42, 55, 0.5);
+    width: 100px;
+}
+@media screen and (min-width: 768px) {
+    .line {
+        width: 150px;
+    }
+}
+.linkRegister{
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #FF6B08;
+    text-decoration: underline;
 }
