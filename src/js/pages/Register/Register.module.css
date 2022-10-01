@@ -16,10 +16,9 @@
 }
 
 .input {
-    height: 40px;
     background: #F5F7FA;
     margin-top: 8px;
-    padding: 3px;
+    padding: 15px;
     box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.15) inset;
     background: #f6f7fb;
     border: none;
@@ -120,6 +119,7 @@
         display: flex;
         margin: 0;
         align-items: baseline;
+        gap: 130px;
     }
 }
 
@@ -167,12 +167,12 @@
 
 @media screen and (min-width: 1280px) {
     .background {
-        padding: 90px 75px;
+        padding: 50px 75px;
     }
 }
 
 .text {
-    font-family: Montserrat;
+    font-family: 'Montserrat' sans-serif;
     font-size: 13px;
     font-weight: 500;
     line-height: 16px;
@@ -181,12 +181,13 @@
 }
 
 .linkLogin {
-    font-family: Montserrat;
+    font-family: 'Montserrat' sans-serif;
     font-size: 13px;
     font-weight: 500;
     line-height: 16px;
     color: #FF6B08;
     text-decoration: underline;
+    margin-left: 10px;
 }
 
 .title {
@@ -202,7 +203,7 @@
 
 .titlesecond {
     margin-bottom: 14px;
-    font-family: "Montserrat";
+    font-family: "Montserrat" sans-serif;
     line-height: 38px;
     font-weight: 500;
     font-size: 20px;
@@ -212,7 +213,7 @@
 
 .text {
     margin-bottom: 12px;
-    font-family: "Montserrat";
+    font-family: "Montserrat" sans-serif;
     line-height: 17px;
     font-weight: 500;
     font-size: 14px;
@@ -228,7 +229,7 @@
 
 .vector {
     margin-right: 12px;
-    fill: var(--accent-text-and-background-color);
+    fill: #FF6B08;
     width: 4px;
     height: 8px;
 }
@@ -237,7 +238,7 @@
     .infoWrapper {
         display: flex;
         flex-direction: column;
-        font-family: Montserrat;
+        font-family: 'Montserrat' sans-serif;
         font-size: 24px;
         font-weight: 500;
         line-height: 40px;
@@ -249,6 +250,6 @@
 
 @media screen and (min-width: 1280px) {
     .infoWrapper {
-        width: 500px;
+       padding: 0;
     }
 }

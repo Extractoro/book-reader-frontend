@@ -89,7 +89,7 @@ export default function RegisterPage() {
           value={password}
           onChange={handleChange}
           required
-          placeholder="******"
+          placeholder="*********"
         />
       </label>
 
