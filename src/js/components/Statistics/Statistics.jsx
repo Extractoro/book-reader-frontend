@@ -86,24 +86,22 @@ const Statistics = () => {
         <Line options={options} data={data} />
       </div>
 
-      <Media queries={{ medium: "(max-width: 767px)"}}>
+      <Media queries={{ medium: '(max-width: 767px)' }}>
         {matches => (
           <>
-            {matches.medium &&<div className={s['thumbBtn']}>
-              <Link  className={s['btnAddMyTraining']}>+</Link>
-            </div> }
+            {matches.medium && <div className={s['thumbBtn']}>
+              <Link className={s['btnAddMyTraining']}>+</Link>
+            </div>}
           </>
 
         )}
       </Media>
-
     </div>
   );
-};
 
 
-  );
 };
+
 
 export default Statistics;
 
