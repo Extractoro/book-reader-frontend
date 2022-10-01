@@ -15,7 +15,9 @@ const Library = () => {
         {!isFetching && Loading.remove()}
 
         <LibraryForm />
-        {allBooks}
+        {allBooks.map(status => (
+          <h1>{status}</h1>
+        ))}
         <>
           <Media
             query="(min-width: 768px)"

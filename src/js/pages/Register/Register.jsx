@@ -4,6 +4,7 @@ import s from './Register.module.css';
 import { NavLink } from 'react-router-dom';
 import googleIcon from 'images/google/google icon.png';
 import sprite from '../../../sprites/mobileinfo-sprite.svg';
+import { Notify } from 'notiflix';
 
 export default function RegisterPage() {
   const [register] = useRegistrationUserMutation();
@@ -33,6 +34,17 @@ export default function RegisterPage() {
     }
   };
 
+  const onMessage = () => {
+    if (
+      name.length > 0 &&
+      email.length > 0 &&
+      password.length > 0 &&
+      repeatPassword.length > 0
+    ) {
+      Notify.success('Ви зареєструвалися. Теперь залогінтесь');
+    }
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
     register({ name, email, password, repeatPassword });
@@ -50,71 +62,80 @@ export default function RegisterPage() {
     <div className={s.wrapper}>
       <div className={s.overlay}>
         <div className={s.background}>
-        <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-      <button className={s.google}>
-              <img src={googleIcon} alt="google-icon" className={s.google_icon} />
-              <NavLink to='/#' className={s.linkGoogle}>Google</NavLink>
-          </button>
-      <label className={s.label}>
-        Ім’я
-        <input
-          className={s.input}
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleChange}
-          required
-          placeholder="Ім’я"
-        />
-      </label>
-      <label className={s.label}>
-        Електронна адреса
-        <input
-          className={s.input}
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          required
-          placeholder="email@email.com"
-        />
-      </label>
+          <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
+            <button className={s.google}>
+              <img
+                src={googleIcon}
+                alt="google-icon"
+                className={s.google_icon}
+              />
+              <NavLink to="/#" className={s.linkGoogle}>
+                Google
+              </NavLink>
+            </button>
+            <label className={s.label}>
+              Ім’я
+              <input
+                className={s.input}
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleChange}
+                required
+                placeholder="Ім’я"
+              />
+            </label>
+            <label className={s.label}>
+              Електронна адреса
+              <input
+                className={s.input}
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+                required
+                placeholder="email@email.com"
+              />
+            </label>
 
-      <label className={s.label}>
-        Пароль
-        <input
-          className={s.input}
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-          required
-          placeholder="*********"
-        />
-      </label>
+            <label className={s.label}>
+              Пароль
+              <input
+                className={s.input}
+                type="password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+                required
+                placeholder="*********"
+              />
+            </label>
 
-      <label className={s.label}>
-        Підтвердити пароль
-        <input
-          className={s.input}
-          type="password"
-          name="repeatPassword"
-          value={repeatPassword}
-          onChange={handleChange}
-          required
-          placeholder="******"
-        />
-      </label>
-            <button className={s.button}
-            type="submit"
+            <label className={s.label}>
+              Підтвердити пароль
+              <input
+                className={s.input}
+                type="password"
+                name="repeatPassword"
+                value={repeatPassword}
+                onChange={handleChange}
+                required
+                placeholder="*********"
+              />
+            </label>
+            <button
+              className={s.button}
+              type="submit"
+              onClick={() => onMessage()}
             >
               Зареєструватися
-              </button>
-              <p className={s.text}>Ви вже з нами?
-              <NavLink to="/login"
-               className={s.linkLogin}
-              >Увійти</NavLink>
-            </p>   
+            </button>
+            <p className={s.text}>
+              Ви вже з нами?
+              <NavLink to="/login" className={s.linkLogin}>
+                Увійти
+              </NavLink>
+            </p>
           </form>
         </div>
       </div>
@@ -162,7 +183,7 @@ export default function RegisterPage() {
             Стати цікавим співрозмовником
           </li>
         </ul>
-        </div>
-      </div> 
+      </div>
+    </div>
   );
 }

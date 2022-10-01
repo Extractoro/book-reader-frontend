@@ -1,5 +1,4 @@
 import s from './ModalLibrary.module.css';
-import '../../../sass/utils/_reset.scss';
 import { createPortal } from 'react-dom';
 import sprite from '../../../sprites/library-sprite.svg';
 
