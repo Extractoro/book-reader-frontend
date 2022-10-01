@@ -57,7 +57,7 @@ export default function LoginPage() {
               value={password}
               onChange={handleChange}
               required
-              placeholder="******"
+              placeholder="*********"
             />
           </label>
 
