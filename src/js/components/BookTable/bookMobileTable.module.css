@@ -45,11 +45,12 @@
   }
 }
 .section {
-  margin-left: auto;
-  margin-right: auto;
+  width: initial;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
 }
 .title {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat',sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 19px;
@@ -62,15 +63,47 @@
   width: 100%;
 }
 .subtitle {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat',sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.25;
   color: #242a37;
 }
+
+.subtitleNameBook{
+  display: flex;
+  margin-top:20px;
+  margin-bottom: 12px;
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #242a37;
+}
+
+.subtitleNameBook::before{
+  content: url("/src/images/mobile/bookTable.svg");
+  width: 22px;
+  height: 17px;
+  display: block;
+  margin-right: 12px;
+}
+
+.subtitleNameBook::after{
+content: url("/src/images/mobile/delete.svg");
+  width: 22px;
+  height: 17px;
+  display: block;
+  margin-left: auto;
+}
+
+
+
+
 .topic {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat',sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -79,7 +112,7 @@
   text-align: left;
 }
 .btn {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat',sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
