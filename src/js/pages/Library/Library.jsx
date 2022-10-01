@@ -1,18 +1,21 @@
 import LibraryForm from 'js/components/LibraryForm';
 import ModalLibrary from 'js/components/ModalLibrary';
-import { selectBooks } from 'js/redux/books/books-slice';
+import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import Media from 'react-media';
-import { useSelector } from 'react-redux';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './Library.module.css';
+import { Loading } from 'notiflix';
 
 const Library = () => {
-  const allBooks = useSelector(selectBooks);
+  const { data: allBooks, isFetching } = useFetchAllBooksQuery();
+  console.log(allBooks);
   return (
     <>
       <div>
-        <LibraryForm />
+        {!isFetching && Loading.remove()}
 
+        <LibraryForm />
+        {allBooks}
         <>
           <Media
             query="(min-width: 768px)"

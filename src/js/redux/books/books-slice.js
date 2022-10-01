@@ -112,6 +112,5 @@ const booksSlice = createSlice({
 export default booksSlice.reducer;
 
 // Selectors
-export const selectBooks = state => state.books;
 export const selectBooksIsError = state => state.books.isError;
 export const selectBooksIsPending = state => state.books.isPending;
