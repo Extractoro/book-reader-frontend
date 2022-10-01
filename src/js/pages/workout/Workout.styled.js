@@ -6,6 +6,7 @@ export const WorkoutContainer =styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 280px;
+
 @media(min-width: 768px){
   width:768px ;
 }
@@ -18,6 +19,7 @@ export const WorkoutContainer =styled.div`
 
 export const GoalWrapper=styled.div`
   @media(min-width: 1280px){
+    margin-right: 16px;
     margin-top: 16px;
     width: 288px;
   }

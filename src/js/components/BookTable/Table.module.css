@@ -1,11 +1,8 @@
 
-
-
 .body{
-
+    position: relative;
     width: 704px;
-    border-bottom: solid 1px #E0E5EB;
-    border-top: solid 1px #E0E5EB;
+
 }
 
 @media screen and (min-width: 1280px){
@@ -19,24 +16,48 @@
 .tHead{
     padding: 20px;
     text-align: start;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-
     color: #898F9F;
 }
 
+
+
+.tR{
+  margin-bottom: 10px;
+}
+
+
 .tD{
-    font-family: 'Montserrat';
+    padding: 20px;
+    font-family: 'Montserrat',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
 
+
     color: #242A37;
 }
+
+.tD:nth-child(1)::before{
+  position: absolute;
+  top: 81px;
+  left: 20px;
+  content: url("/src/images/mobile/bookTable.svg");
+  display: block;
+}
+
+.tD:nth-child(1){
+  padding-left: 50px;
+}
+
+
+
+
 
 
 

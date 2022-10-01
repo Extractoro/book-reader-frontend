@@ -148,7 +148,7 @@
 @media screen and (min-width: 320px) {
   .select {
     background: #FFFFFF;
-    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);;
+    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
     height: 42px;
     width: 100%;
     margin-top: 20px;
@@ -163,6 +163,13 @@
     width: 483px;
     margin-top: 0px;
     margin-right: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #A6ABB9;
+    background: #FFFFFF;
+    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
   }
 }
 
@@ -170,6 +177,14 @@
   .select {
     width: 715px;
     margin-right: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #A6ABB9;
+    background: #FFFFFF;
+    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
+
   }
 }
 
@@ -178,6 +193,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
+  color: #A6ABB9;
 }
 
 @media screen and (min-width: 320px) {

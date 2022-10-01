@@ -6,10 +6,10 @@ function Table(){
   const data = React.useMemo(
     () => [
       {
-        col1: 'Ветер и искраы',
-        col2: 'Алексей Пехов',
+        col1: 'Ветер и искры',
+        col2: 'Пехов',
         col3: '2006',
-        col4: '315'
+        col4: '310'
       }
     ],
     [],
@@ -46,12 +46,13 @@ function Table(){
     prepareRow,
   } = useTable({ columns, data });
 
-  return (
 
+
+  return (
       <table className={s['body']} {...getTableProps()} >
-        <thead >
+        <thead  className={s['tHeadThumb']}>
         {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
+          <tr {...headerGroup.getHeaderGroupProps()} className={s['tHeadThumb']}>
             {headerGroup.headers.map(column => (
               <th className={s['tHead']} {...column.getHeaderProps()} >
                 {column.render('Header')}
@@ -60,19 +61,15 @@ function Table(){
           </tr>
         ))}
         </thead>
-        <tbody {...getTableBodyProps()}>
+          <tbody {...getTableBodyProps()} className={s['row']}>
           {rows.map(row => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+
+              <tr {...row.getRowProps()} className={s['tR']}>
                 {row.cells.map(cell => {
                   return (
-                    <td className={s['tD']}
-                      {...cell.getCellProps()}
-                      style={{
-                        padding: '20px',
-                      }}
-                    >
+                    <td className={s['tD']} {...cell.getCellProps()}>
                       {cell.render('Cell')}
                     </td>
                   );
@@ -80,9 +77,8 @@ function Table(){
               </tr>
             );
           })}
-        </tbody>
+          </tbody>
       </table>
-
   );
 }
 

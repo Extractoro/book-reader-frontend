@@ -51,7 +51,7 @@ function MyTrainingPlaying(){
         </div>
         <div className={s.selectBtn}>
           <select className={s.select}>
-            <option className={s.option} selected value='default'>
+            <option className={s['option']} >
               Обрати книги з бібліотеки
             </option>
           </select>

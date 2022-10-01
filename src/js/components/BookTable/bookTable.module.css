@@ -7,13 +7,16 @@
 }
 @media screen and (min-width: 768px){
   .thumb{
+    border-bottom: solid 1px #E0E5EB;
+    border-top: solid 1px #E0E5EB;
     width: 704px;
   }
 }
 
-@media screen and (min-width: 1280px)
-{
+@media screen and (min-width: 1280px) {
   .thumb{
+    border-bottom: solid 1px #E0E5EB;
+    border-top: solid 1px #E0E5EB;
     /*margin: 0 auto 0 20px ;*/
     width: 928px;
   }
