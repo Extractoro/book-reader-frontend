@@ -1,12 +1,9 @@
 import s from './Statistics.module.css';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-
-
 import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line no-unused-vars
-
 import Chart from 'chart.js/auto';
 // eslint-disable-next-line no-unused-vars
 import AddBookRead from '../AddBookRead/AddBookRead';
@@ -89,20 +86,16 @@ const Statistics = () => {
       <Media queries={{ medium: '(max-width: 767px)' }}>
         {matches => (
           <>
-            {matches.medium && <div className={s['thumbBtn']}>
-              <Link className={s['btnAddMyTraining']}>+</Link>
-            </div>}
+            {matches.medium && (
+              <div className={s['thumbBtn']}>
+                <Link className={s['btnAddMyTraining']}>+</Link>
+              </div>
+            )}
           </>
-
         )}
       </Media>
     </div>
   );
-
-
 };
 
-
 export default Statistics;
-
-
