@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './bookMobileTable.module.css';
-import EllipsisText from "react-ellipsis-text";
+// import EllipsisText from "react-ellipsis-text";
 
 export default function BookTableMobile() {
   const title = 'Name book';
@@ -13,11 +13,7 @@ export default function BookTableMobile() {
       <section className={s['section']}>
         <ul className={s['table']}>
           <li>
-
-            <p className={s['subtitleNameBook']}>
-
-              {title}
-            </p>
+            <p className={s['subtitleNameBook']}>{title}</p>
             <p className={s['subtitle']}>
               <span className={s['topic']}>Author:</span> {author}
             </p>
