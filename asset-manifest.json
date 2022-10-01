@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/book-reader-frontend/static/css/main.90f2d82d.css",
-    "main.js": "/book-reader-frontend/static/js/main.e7e78bdc.js",
+    "main.js": "/book-reader-frontend/static/js/main.16c6b1f6.js",
     "static/css/618.63139c67.chunk.css": "/book-reader-frontend/static/css/618.63139c67.chunk.css",
     "static/js/618.64bae2c4.chunk.js": "/book-reader-frontend/static/js/618.64bae2c4.chunk.js",
-    "static/css/73.a97b389d.chunk.css": "/book-reader-frontend/static/css/73.a97b389d.chunk.css",
-    "static/js/73.3f3f24ea.chunk.js": "/book-reader-frontend/static/js/73.3f3f24ea.chunk.js",
+    "static/css/73.a48420b7.chunk.css": "/book-reader-frontend/static/css/73.a48420b7.chunk.css",
+    "static/js/73.8c0e11da.chunk.js": "/book-reader-frontend/static/js/73.8c0e11da.chunk.js",
     "static/css/2.09994c32.chunk.css": "/book-reader-frontend/static/css/2.09994c32.chunk.css",
     "static/js/2.7213bf93.chunk.js": "/book-reader-frontend/static/js/2.7213bf93.chunk.js",
-    "static/css/978.89ca86df.chunk.css": "/book-reader-frontend/static/css/978.89ca86df.chunk.css",
-    "static/js/978.e51afa1f.chunk.js": "/book-reader-frontend/static/js/978.e51afa1f.chunk.js",
+    "static/css/117.c0acaa02.chunk.css": "/book-reader-frontend/static/css/117.c0acaa02.chunk.css",
+    "static/js/117.15d6794d.chunk.js": "/book-reader-frontend/static/js/117.15d6794d.chunk.js",
     "static/css/330.782d0213.chunk.css": "/book-reader-frontend/static/css/330.782d0213.chunk.css",
     "static/js/330.eb41e480.chunk.js": "/book-reader-frontend/static/js/330.eb41e480.chunk.js",
-    "static/js/518.63238d22.chunk.js": "/book-reader-frontend/static/js/518.63238d22.chunk.js",
+    "static/js/562.999eb970.chunk.js": "/book-reader-frontend/static/js/562.999eb970.chunk.js",
     "static/media/overlay desktop.jpeg.jpg": "/book-reader-frontend/static/media/overlay desktop.jpeg.6889ffed0c9a9768d5bb.jpg",
     "static/media/overlay tablet.jpeg.jpg": "/book-reader-frontend/static/media/overlay tablet.jpeg.4a462c59ab44543f8c23.jpg",
     "static/media/overlay mobile.jpeg.jpg": "/book-reader-frontend/static/media/overlay mobile.jpeg.d94a36c42e94a8431678.jpg",
@@ -25,21 +25,21 @@
     "static/media/mobileinfo-sprite.svg": "/book-reader-frontend/static/media/mobileinfo-sprite.d1de0558ddb859dddd7fc6ed8067009c.svg",
     "static/media/delete.svg": "/book-reader-frontend/static/media/delete.c028471843e0be2d2f1b.svg",
     "main.90f2d82d.css.map": "/book-reader-frontend/static/css/main.90f2d82d.css.map",
-    "main.e7e78bdc.js.map": "/book-reader-frontend/static/js/main.e7e78bdc.js.map",
+    "main.16c6b1f6.js.map": "/book-reader-frontend/static/js/main.16c6b1f6.js.map",
     "618.63139c67.chunk.css.map": "/book-reader-frontend/static/css/618.63139c67.chunk.css.map",
     "618.64bae2c4.chunk.js.map": "/book-reader-frontend/static/js/618.64bae2c4.chunk.js.map",
-    "73.a97b389d.chunk.css.map": "/book-reader-frontend/static/css/73.a97b389d.chunk.css.map",
-    "73.3f3f24ea.chunk.js.map": "/book-reader-frontend/static/js/73.3f3f24ea.chunk.js.map",
+    "73.a48420b7.chunk.css.map": "/book-reader-frontend/static/css/73.a48420b7.chunk.css.map",
+    "73.8c0e11da.chunk.js.map": "/book-reader-frontend/static/js/73.8c0e11da.chunk.js.map",
     "2.09994c32.chunk.css.map": "/book-reader-frontend/static/css/2.09994c32.chunk.css.map",
     "2.7213bf93.chunk.js.map": "/book-reader-frontend/static/js/2.7213bf93.chunk.js.map",
-    "978.89ca86df.chunk.css.map": "/book-reader-frontend/static/css/978.89ca86df.chunk.css.map",
-    "978.e51afa1f.chunk.js.map": "/book-reader-frontend/static/js/978.e51afa1f.chunk.js.map",
+    "117.c0acaa02.chunk.css.map": "/book-reader-frontend/static/css/117.c0acaa02.chunk.css.map",
+    "117.15d6794d.chunk.js.map": "/book-reader-frontend/static/js/117.15d6794d.chunk.js.map",
     "330.782d0213.chunk.css.map": "/book-reader-frontend/static/css/330.782d0213.chunk.css.map",
     "330.eb41e480.chunk.js.map": "/book-reader-frontend/static/js/330.eb41e480.chunk.js.map",
-    "518.63238d22.chunk.js.map": "/book-reader-frontend/static/js/518.63238d22.chunk.js.map"
+    "562.999eb970.chunk.js.map": "/book-reader-frontend/static/js/562.999eb970.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90f2d82d.css",
-    "static/js/main.e7e78bdc.js"
+    "static/js/main.16c6b1f6.js"
   ]
 }
