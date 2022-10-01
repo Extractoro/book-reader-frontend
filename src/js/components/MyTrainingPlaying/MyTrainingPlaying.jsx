@@ -20,29 +20,34 @@ function MyTrainingPlaying(){
         </svg>
         <h2 className={s.title}>Моє тренування</h2>
         <div className={s.datePicker}>
-          <DatePicker
-            dateFormat='dd.MM.yyyy'
-            selected={selectedDate}
-            onChange={date => setSelectedDate(date)}
-            className={s.datePickerInput}
-            disabledKeyboardNavigation
-            customInput={
-              <input type='text' placeholder='Початок'  className={s['customInput']}/>
-            }
-            placeholderText='Початок'
-            minDate={new Date()}
-          />
-          <DatePicker
-            dateFormat='dd.MM.yyyy'
-            selected={endDate}
-            onChange={endDate => setEndDate(endDate)}
-            className={s['datePickerInput']}
-            customInput={
-              <input type='text'  placeholder='Завершення'  className={s['customInput']}/>
-            }
-            placeholderText='Завершення'
-            minDate={new Date()}
-          />
+          <div className={s['datePickerWrapper']}>
+            <DatePicker
+              dateFormat='dd.MM.yyyy'
+              selected={selectedDate}
+              onChange={date => setSelectedDate(date)}
+              className={s['datePickerInput']}
+              disabledKeyboardNavigation
+              customInput={
+                <input type='text' placeholder='Початок'  className={s['customInput']}/>
+              }
+              placeholderText='Початок'
+              minDate={new Date()}
+            />
+          </div>
+         <div className={s['datePickerWrapper']}>
+           <DatePicker
+             dateFormat='dd.MM.yyyy'
+             selected={endDate}
+             onChange={endDate => setEndDate(endDate)}
+             className={s['datePickerInput']}
+             customInput={
+               <input type='text'  placeholder='Завершення'  className={s['customInput']}/>
+             }
+             placeholderText='Завершення'
+             minDate={new Date()}
+           />
+         </div>
+
         </div>
         <div className={s.selectBtn}>
           <select className={s.select}>

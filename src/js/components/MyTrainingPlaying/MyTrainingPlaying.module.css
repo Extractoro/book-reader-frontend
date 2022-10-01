@@ -61,6 +61,10 @@
   }
 }
 
+.datePicker{
+  position: relative;
+}
+
 @media screen and (min-width: 768px) {
   .title {
     margin-top: 40px;
@@ -75,8 +79,9 @@
 
 @media screen and (min-width: 1280px) {
   .datePicker {
-
-    justify-content: center;
+    display: flex;
+    width: 682px;
+    justify-content: flex-end;
   }
 }
 
@@ -94,13 +99,16 @@
 }
 
 
-.customInput::after {
-  content: ' ';
-  border: 2px solid tomato;
+.datePickerWrapper::after {
+  position: absolute;
+  content: url("/src/images/mobile/calendar.svg");
+  top: 33px;
+  margin-left: 12px;
+  /*border: 2px solid tomato;*/
   display: block;
-  width:10px;
-  height: 10px;
-  /*margin-left: -30px;*/
+  width:15px;
+  height: 15px;
+
 
 }
 
@@ -120,10 +128,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .dataPickerInput:nth-last-child(2) {
+  .datePickerInput:nth-last-child(2) {
     margin-left: 40px;
   }
 }
+
+
+
 
 @media screen and (min-width: 768px) {
   .selectBtn {
