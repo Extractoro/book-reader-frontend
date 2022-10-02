@@ -5,24 +5,20 @@ import Media from 'react-media';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './Library.module.css';
 import { Loading } from 'notiflix';
+import AlreadyReadList from 'js/components/AlreadyReadList'
+
 
 const Library = () => {
   const { data: allBooks, isFetching } = useFetchAllBooksQuery();
+// console.log(allBooks);
   return (
     <div>
       <>
         {!isFetching && Loading.remove()}
         <LibraryForm />
 
-        {allBooks && (
-          <ul>
-            {allBooks.map(({ title, _id }) => (
-              <li key={_id} id={_id}>
-                {title}
-              </li>
-            ))}
-          </ul>
-        )}
+        {allBooks?.length > 0 ? <AlreadyReadList library={allBooks} /> : null}
+
         <Media
           query="(min-width: 768px)"
           render={() => (
