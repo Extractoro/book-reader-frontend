@@ -4,6 +4,7 @@ export const WorkoutContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 320px;
+  background-color:#F6F7FB;
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -28,11 +29,9 @@ export const GoalWrapper = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  //position: relative;
+
   @media (min-width: 1280px) {
-    //border: 2px solid tomato;
-    //display: flex;
-    //flex-direction: row-reverse;
+
     width: 928px;
     margin: 0 auto 0 20px;
   }
