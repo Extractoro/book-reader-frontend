@@ -112,3 +112,8 @@ button {
 .nav-bar {
   display: flex;
 }
+
+.name-box {
+  display: flex;
+  align-items: center;
+}
