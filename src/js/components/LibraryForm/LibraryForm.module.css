@@ -73,6 +73,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .form {
+    margin-bottom: 50px;
+  }
+
   .input-1 {
     width: 704px;
   }
