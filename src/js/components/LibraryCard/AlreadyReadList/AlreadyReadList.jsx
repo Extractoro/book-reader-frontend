@@ -1,7 +1,7 @@
 import s from './AlreadyReadList.module.scss';
 
 import MediaQuery from 'react-responsive';
-import AlreadyReadCard from './AlreadyReadCard/AlreadyReadCard';
+import AlreadyReadCard from '../AlreadyReadCard/AlreadyReadCard';
 
 const AlreadyReadList = ({ library }) => {
   return (

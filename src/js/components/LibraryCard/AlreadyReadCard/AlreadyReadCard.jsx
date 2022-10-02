@@ -23,10 +23,10 @@ const AlreadyReadCard = book => {
   };
 
   const updatedBookTitle =
-    book.title.length <= 30 ? book.title : book.title.slice(0, 29) + '...';
+    book.title.length <= 15 ? book.title : book.title.slice(0, 14) + '...';
 
   const updatedBookAuthor =
-    book.author.length <= 30 ? book.author : book.author.slice(0, 17) + '...';
+    book.author.length <= 15 ? book.author : book.author.slice(0, 14) + '...';
 
   return (
     <li className={s.card}>
