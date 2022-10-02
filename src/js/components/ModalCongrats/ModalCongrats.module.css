@@ -1,0 +1,78 @@
+:root {
+    --first-text-and-background-color: #ffffff;
+    --accent-text-and-background-color: #ff6b08;
+    --background-and-text-color: #ffb8ca;
+    --second-text-color: #242a37;
+    --third-text-color: #898f9f;
+    --fourth-text-color: #091e3f;
+    --first-background-color: #6d7a8d;
+    --hover-buttons: #d15807;
+  }
+  .backdrop {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+  .modal {
+    position: absolute;
+    max-width: 280px;
+    min-height: 256px;
+    padding: 42px 26px 40px 27px;
+    box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media screen and (min-width: 768px) {
+    .modal {
+      max-width: 394px;
+      min-height: 256px;
+      padding: 40px 83px 40px 84px;
+    }
+  }
+  .icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    fill: (var --accent-text-and-background-color);
+  }
+  .text {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: var(--second-text-color);
+    /* min-height: 88px; */
+    margin-bottom: 24px;
+  }
+  .modalBtn {
+    display: block;
+    width: 130px;
+    height: 40px;
+    background-color: var(--first-text-and-background-color);
+    padding: 0px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    color: var(--second-text-color);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modalBtn:focus {
+    background-color: var(--accent-text-and-background-color);
+    color: var(--first-text-and-background-color);
+  }
+  .modalBtn:hover {
+    position: relative;
+    color: var(--first-text-and-background-color);
+    background-color: var(--accent-text-and-background-color);
+  }
