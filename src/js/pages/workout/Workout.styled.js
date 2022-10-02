@@ -4,7 +4,7 @@ export const WorkoutContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 320px;
-  background-color:#F6F7FB;
+  //background-color:#F6F7FB;
   padding-top: 20px;
   padding-bottom: 20px;
 
