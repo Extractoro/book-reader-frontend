@@ -14,7 +14,7 @@ const Navigation = () => {
           <use href={sprite + '#header-vector'}></use>
         </svg>
       </NavLink>
-      <NavLink to="/myWorkout" className={s['link']} activeclassname={s['activeLink']}>
+      <NavLink to="/workout" className={s['link']} activeclassname={s['activeLink']}>
         <svg className={s['home']} width="20" height="18">
           <use href={sprite + '#header-home'}></use>
         </svg>
