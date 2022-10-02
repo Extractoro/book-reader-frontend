@@ -9,6 +9,7 @@ import MyTrainingPlaying from '../../components/MyTrainingPlaying/MyTrainingPlay
 import Media from 'react-media';
 
 const Workout = () => {
+
   return (
     <WorkoutContainer>
       <GlobalCSS />
@@ -21,7 +22,9 @@ const Workout = () => {
           <MyTrainingPlaying/>
         )}/>
         <BookList />
-        <AddBookRead to='/addBook'></AddBookRead>
+        <AddBookRead>
+
+        </AddBookRead>
         <Statistics />
       </Wrapper>
     </WorkoutContainer>
