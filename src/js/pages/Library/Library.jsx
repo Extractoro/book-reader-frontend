@@ -8,6 +8,7 @@ import { Loading } from 'notiflix';
 
 const Library = () => {
   const { data: allBooks, isFetching } = useFetchAllBooksQuery();
+  console.log(allBooks);
   return (
     <>
       <div>
@@ -17,8 +18,9 @@ const Library = () => {
           <>
             {Loading.remove()}
             <LibraryForm />
-            {(allBooks > 0 &&
-              allBooks.map(({ title }) => <h1>{title}</h1>)) || (
+            {allBooks.length > 0 ? (
+              allBooks.map(({ title }) => <h1>{title}</h1>)
+            ) : (
               <>
                 <Media
                   query="(min-width: 768px)"
