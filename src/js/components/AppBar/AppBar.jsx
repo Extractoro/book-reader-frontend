@@ -3,11 +3,14 @@ import UserMenu from './UserMenu/UserMenu';
 import s from './AppBar.module.css';
 import { useMatchMedia } from '../../../hooks';
 import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from 'js/redux/auth/auth-slice';
+import { selectIsLoggedIn, selectCurrentUser } from 'js/redux/auth/auth-slice';
 
 export default function AppBar() {
+  const user = useSelector(selectCurrentUser);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { isTablet, isDesktop } = useMatchMedia();
+
+  // const userName = () => name.map(name => name);
 
   return (
     <>
@@ -17,8 +20,18 @@ export default function AppBar() {
         ) : (
           <>
             <h1 className={s['header-label']}>BR</h1>
-            {isTablet && <h3 className={s['user-name']}>M</h3>}
-            {isDesktop && <h3 className={s['user-name']}>M</h3>}
+            {isTablet && (
+              <div className={s['name-box']}>
+                <h3 className={s['user-name']}>{user.name}</h3>
+                <span className={s['name-title']}>{user.name}</span>
+              </div>
+            )}
+            {isDesktop && (
+              <div className={s['name-box']}>
+                <h3 className={s['user-name']}>{user.name}</h3>
+                <span className="name-title">{user.name}</span>
+              </div>
+            )}
             <div className={s['nav-bar']}>
               <Navigation />
               <UserMenu />

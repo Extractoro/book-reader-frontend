@@ -21,7 +21,7 @@ import storage from 'redux-persist/lib/storage';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'isLoggedIn'],
+  whitelist: ['token', 'isLoggedIn', 'user'],
 };
 
 export const store = configureStore({
@@ -39,6 +39,7 @@ export const store = configureStore({
       },
     }),
     authApi.middleware,
+    booksApi.middleware,
   ],
   // devTools: process.env.NODE_ENV === 'development',
 });

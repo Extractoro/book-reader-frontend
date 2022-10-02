@@ -15,14 +15,18 @@ export const authApi = createApi({
   tagTypes: ['auth'],
   endpoints: builder => ({
     registrationUser: builder.mutation({
-      query: body => ({ url: '/api/users/signup', method: 'POST', body }),
+      query: credentials => ({
+        url: '/api/users/signup',
+        method: 'POST',
+        body: credentials,
+      }),
       invalidatesTags: ['auth'],
     }),
     loginUser: builder.mutation({
-      query: body => ({
+      query: credentials => ({
         url: '/api/users/login',
         method: 'POST',
-        body,
+        body: credentials,
       }),
       invalidatesTags: ['auth'],
     }),
