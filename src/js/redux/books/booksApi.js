@@ -12,15 +12,15 @@ export const booksApi = createApi({
       return headers;
     },
   }),
-  tagTypes: ['books'],
+  tagTypes: ['Books'],
   endpoints: builder => ({
     fetchAllBooks: builder.query({
       query: () => ({ url: '/api/books' }),
-      providesTags: ['books'],
+      providesTags: ['Books'],
     }),
     fetchOneBooks: builder.query({
       query: bookId => ({ url: `/api/books/${bookId}` }),
-      providesTags: ['books'],
+      providesTags: ['Books'],
     }),
     addBook: builder.mutation({
       query: body => ({
@@ -28,7 +28,7 @@ export const booksApi = createApi({
         method: 'POST',
         body,
       }),
-      invalidatesTags: ['books'],
+      invalidatesTags: ['Books'],
     }),
     updateBook: builder.mutation({
       query: data => {
@@ -39,14 +39,14 @@ export const booksApi = createApi({
           body,
         };
       },
-      invalidatesTags: ['books'],
+      invalidatesTags: ['Books'],
     }),
     deleteBook: builder.mutation({
       query: bookId => ({
         url: `/api/books/${bookId}`,
         method: 'DELETE',
       }),
-      invalidatesTags: ['books'],
+      invalidatesTags: ['Books'],
     }),
   }),
 });

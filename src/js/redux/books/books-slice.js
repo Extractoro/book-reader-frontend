@@ -30,6 +30,7 @@ const booksSlice = createSlice({
       .addMatcher(
         booksApi.endpoints.fetchAllBooks.matchRejected,
         (state, _action) => {
+          state.isPending = false;
           state.isError = true;
         }
       )
@@ -49,6 +50,7 @@ const booksSlice = createSlice({
       .addMatcher(
         booksApi.endpoints.fetchOneBooks.matchRejected,
         (state, _action) => {
+          state.isPending = false;
           state.isError = true;
         }
       )
@@ -65,6 +67,7 @@ const booksSlice = createSlice({
       .addMatcher(
         booksApi.endpoints.addBook.matchRejected,
         (state, _action) => {
+          state.isPending = false;
           state.isError = true;
         }
       )
@@ -84,6 +87,7 @@ const booksSlice = createSlice({
       .addMatcher(
         booksApi.endpoints.updateBook.matchRejected,
         (state, _action) => {
+          state.isPending = false;
           state.isError = true;
         }
       )
@@ -103,6 +107,7 @@ const booksSlice = createSlice({
       .addMatcher(
         booksApi.endpoints.deleteBook.matchRejected,
         (state, _action) => {
+          state.isPending = false;
           state.isError = true;
         }
       );
