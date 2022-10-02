@@ -3,7 +3,8 @@ import { authApi } from './authApi';
 const { createSlice } = require('@reduxjs/toolkit');
 
 const initialState = {
-  user: null,
+  name: null,
+  email: null,
   token: null,
   isLoggedIn: false,
   isPending: false,
@@ -26,7 +27,8 @@ const authSlice = createSlice({
         authApi.endpoints.registrationUser.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.user = payload.user;
+          state.name = payload.name;
+          state.email = payload.email;
         }
       )
       .addMatcher(
@@ -46,7 +48,8 @@ const authSlice = createSlice({
         authApi.endpoints.loginUser.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.user = payload.user;
+          state.name = payload.name;
+          state.email = payload.email;
           state.token = payload.token;
           state.isLoggedIn = true;
         }
