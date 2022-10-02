@@ -40,7 +40,7 @@ export const store = configureStore({
     }),
     authApi.middleware,
   ],
-  devTools: process.env.NODE_ENV === 'development',
+  // devTools: process.env.NODE_ENV === 'development',
 });
 
 setupListeners(store.dispatch);
