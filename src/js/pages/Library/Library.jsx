@@ -17,7 +17,8 @@ const Library = () => {
           <>
             {Loading.remove()}
             <LibraryForm />
-            {(allBooks && allBooks.map(({ title }) => <h1>{title}</h1>)) || (
+            {(allBooks > 0 &&
+              allBooks.map(({ title }) => <h1>{title}</h1>)) || (
               <>
                 <Media
                   query="(min-width: 768px)"
