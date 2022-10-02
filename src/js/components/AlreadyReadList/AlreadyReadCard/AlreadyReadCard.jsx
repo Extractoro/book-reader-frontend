@@ -7,6 +7,7 @@ import s from '../AlreadyReadCard/AlreadyReadCard.module.scss';
 import Modal from '../Modal/Modal';
 import Stars from '../Stars/Stars';
 import { AlreadyReadIcon } from './AlreadyReadIcon';
+import BooksInfo from '../BooksInfo/BooksInfo';
 
 const AlreadyReadCard = book => {
   const [modal, setModal] = useState(false);
@@ -37,6 +38,7 @@ const AlreadyReadCard = book => {
       </div>
       <MediaQuery maxWidth={767}>
         <div className={s.bookInfoWrapper}>
+          <BooksInfo status={'done'} />
           <MediaQuery maxWidth={767}>
             <div className={s.bookMoreInfo}>
               <p
@@ -87,14 +89,12 @@ const AlreadyReadCard = book => {
         )}
       </MediaQuery>
       <button className={s.button} onClick={() => openModal()}>
-        <span className={s.buttonText}>Resume</span>
+        <span className={s.buttonText}>Резюме</span>
       </button>
       {modal.open && (
         <Modal type="exit" closeModal={closeModal}>
           <div>
-            id={book.id}
-            backRate={book.rating}
-            comment={book.resume}
+          форма відгуку
           </div>
         </Modal>
       )}

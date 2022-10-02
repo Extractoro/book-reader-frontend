@@ -5,7 +5,7 @@ import { ArrowLeft } from "./ArrowLeft";
 
 import s from "./Modal.module.scss";
 
-const modalRoot = document.getElementById("modalRoot");
+const modalRoot = document.getElementById("modal-root");
 
 const Modal = ({ closeModal, children, type }) => {
   const close = useCallback(
