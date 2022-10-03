@@ -24,11 +24,51 @@ const workoutSlice = createSlice({
         workoutApi.endpoints.fetchAllWorkouts.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.books = payload;
+          state.workouts = payload;
         }
       )
       .addMatcher(
         workoutApi.endpoints.fetchAllWorkouts.matchRejected,
+        (state, _action) => {
+          state.isPending = false;
+          state.isError = true;
+        }
+      )
+      .addMatcher(
+        workoutApi.endpoints.createWorkout.matchPending,
+        (state, _action) => {
+          state.isPending = true;
+        }
+      )
+      .addMatcher(
+        workoutApi.endpoints.createWorkout.matchFulfilled,
+        (state, { payload }) => {
+          state.isPending = false;
+          state.workouts = payload;
+        }
+      )
+      .addMatcher(
+        workoutApi.endpoints.createWorkout.matchRejected,
+        (state, _action) => {
+          state.isPending = false;
+          state.isError = true;
+        }
+      )
+      .addMatcher(
+        workoutApi.endpoints.updateWorkout.matchPending,
+        (state, _action) => {
+          state.isPending = true;
+        }
+      )
+      .addMatcher(
+        workoutApi.endpoints.updateWorkout.matchFulfilled,
+        (state, { payload }) => {
+          state.isPending = false;
+          state.workouts = payload;
+        }
+      )
+      .addMatcher(
+        workoutApi.endpoints.updateWorkout.matchRejected,
         (state, _action) => {
           state.isPending = false;
           state.isError = true;
@@ -40,4 +80,4 @@ const workoutSlice = createSlice({
 export default workoutSlice.reducer;
 
 // Selectors
-// export const selectBooks = state => state.books.books;
+export const selectWorkout = state => state.workouts.workouts;

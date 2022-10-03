@@ -62,20 +62,6 @@ const authSlice = createSlice({
         }
       )
       .addMatcher(
-        authApi.endpoints.fetchGoogleAccount.matchFulfilled,
-        (state, { payload }) => {
-          state.user = payload.user;
-          state.isLoggedIn = true;
-        }
-      )
-      .addMatcher(
-        authApi.endpoints.fetchGoogleAccount.matchRejected,
-        (state, _action) => {
-          state.user = null;
-          state.isLoggedIn = false;
-        }
-      )
-      .addMatcher(
         authApi.endpoints.logoutUser.matchFulfilled,
         (state, _action) => {
           state.user = null;
@@ -100,6 +86,20 @@ const authSlice = createSlice({
         authApi.endpoints.currentUser.matchRejected,
         (state, _action) => {
           state.isError = true;
+          state.isLoggedIn = false;
+        }
+      )
+      .addMatcher(
+        authApi.endpoints.fetchGoogleAccount.matchFulfilled,
+        (state, { payload }) => {
+          state.user = payload.user;
+          state.isLoggedIn = true;
+        }
+      )
+      .addMatcher(
+        authApi.endpoints.fetchGoogleAccount.matchRejected,
+        (state, _action) => {
+          state.user = null;
           state.isLoggedIn = false;
         }
       );
