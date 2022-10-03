@@ -5,10 +5,12 @@ import Media from 'react-media';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './Library.module.css';
 import { Loading } from 'notiflix';
+
 import PlanToReadList from 'js/components/LibraryCard/PlanToReadList';
 import { useSelector } from 'react-redux';
 import { selectBooks } from 'js/redux/books/books-slice';
 import AlreadyReadList from 'js/components/LibraryCard/AlreadyReadList';
+
 import { useState } from 'react';
 
 const Library = () => {
@@ -24,6 +26,7 @@ const Library = () => {
       <>
         {!isFetching && Loading.remove()}
         <LibraryForm />
+
         {books?.length > 0 ? (
           <AlreadyReadList library={books} status={'done'} />
         ) : null}
@@ -106,6 +109,7 @@ const Library = () => {
                     </div>
                   </div>
                 </div>
+
               )}
             />
             {showModal && (

@@ -1,0 +1,136 @@
+.stepsTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: #242a37;
+  margin-bottom: 20px;
+  line-height: 22px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.thumb {
+  position: relative;
+  margin: 33px auto 50px;
+  width: 280px;
+  padding: 20px;
+  height: 290px;
+  background: #ffffff;
+  box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.25);
+}
+
+.stat-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-input {
+  position: relative;
+  width: 110px;
+  height: 42px;
+  background: #f6f7fb;
+  border: 1px solid #a6abb9;
+  margin-bottom: 28px;
+  padding-left: 13px;
+}
+
+.date-input::after {
+  /* z-index: 0; */
+  content: url('../../../sprites/polygon.svg');
+  display: block;
+  /* top: 0;
+  bottom: 0;
+  right: 0; */
+  /* margin: auto 0; */
+  width: 25px;
+  height: 25px;
+  /* background-image: url('../../../sprites/polygon.svg'); */
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+
+  color: #898f9f;
+}
+
+.add-result {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  width: 240px;
+  height: 40px;
+  border-radius: 1px;
+  line-height: 17px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background: #ff6b08;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  margin-bottom: 24px;
+}
+
+.statTitle {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.date {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hour {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-transform: uppercase;
+
+  color: #898f9f;
+}
+
+.page {
+  font-style: normal;
+  text-align: right;
+  font-size: 12px;
+  line-height: 17px;
+  color: #898f9f;
+}
+
+.stat-info {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.dateTitle {
+  display: flex;
+}

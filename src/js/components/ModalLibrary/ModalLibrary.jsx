@@ -90,8 +90,8 @@ function ModalLibrary({ onClose }) {
   );
 }
 
-ModalLibrary.propTypes = {
-  onClose: PropTypes.func,
-};
+// ModalLibrary.propTypes = {
+//   onClose: PropTypes.func,
+// };
 
 export default ModalLibrary;
