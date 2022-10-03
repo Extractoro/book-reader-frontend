@@ -56,6 +56,7 @@
   }
 
   .title {
+    margin-left: 20px;
     margin-right: 156px;
     color: #898f9f;
     font-weight: 500;
@@ -64,6 +65,7 @@
 
     @media screen and (min-width: 1280px) {
       margin-right: 26%;
+      margin-left: 20px;
     }
   }
 
@@ -107,7 +109,7 @@
 .sectionTitle {
   width: 134px;
   height: 38px;
-
+margin-left: 20px;
   margin-bottom: 5px;
 
   font-weight: 600;
