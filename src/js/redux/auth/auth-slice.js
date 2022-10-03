@@ -109,7 +109,6 @@ const authSlice = createSlice({
 export default authSlice.reducer;
 
 // Selectors
-export const selectUserName = state => state.auth.user.name;
 export const selectCurrentUser = state => state.auth.user;
 export const selectCurrentToken = state => state.auth.token;
 export const selectIsLoggedIn = state => state.auth.isLoggedIn;

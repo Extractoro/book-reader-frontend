@@ -90,8 +90,7 @@ button {
 }
 
 .user-name {
-  margin-left: 14px;
-  margin-right: 14px;
+  margin-right: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
