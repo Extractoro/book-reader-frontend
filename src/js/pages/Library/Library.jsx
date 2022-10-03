@@ -13,7 +13,10 @@ import { selectBooks } from 'js/redux/books/books-slice';
 const Library = () => {
   const { isFetching } = useFetchAllBooksQuery();
   const books = useSelector(selectBooks);
-
+  const [showModal, setShowModal] = useState(true);
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <div>
@@ -102,7 +105,7 @@ const Library = () => {
                 </div>
               )}
             />
-            <Media query="(max-width: 767px)" render={() => <ModalLibrary />} />
+            {showModal && (<Media query="(max-width: 767px)" render={() => <ModalLibrary onClose={toggleModal} />} />)}
           </>
         )}
       </>
