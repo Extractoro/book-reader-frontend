@@ -20,15 +20,15 @@ function AddResultStat() {
     }
   };
 
-  const handleSubmit = async event => {
-    event.preventDefault();
-    reset();
-  };
+  //   const handleSubmit = async event => {
+  //     event.preventDefault();
+  //     reset();
+  //   };
 
-  const reset = () => {
-    setSelectedDate('');
-    setPage('');
-  };
+  //   const reset = () => {
+  //     setSelectedDate('');
+  //     setPage('');
+  //   };
 
   return (
     <div className={s['thumb']}>
