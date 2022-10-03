@@ -22,13 +22,13 @@ export default function AppBar() {
             <h1 className={s['header-label']}>BR</h1>
             {isTablet && (
               <div className={s['name-box']}>
-                <h3 className={s['user-name']}>{user.name}</h3>
+                <h3 className={s['user-name']}>{user.name.split('')[0]}</h3>
                 <span className={s['name-title']}>{user.name}</span>
               </div>
             )}
             {isDesktop && (
               <div className={s['name-box']}>
-                <h3 className={s['user-name']}>{user.name}</h3>
+                <h3 className={s['user-name']}>{user.name.split('')[0]}</h3>
                 <span className="name-title">{user.name}</span>
               </div>
             )}

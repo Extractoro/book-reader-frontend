@@ -1,12 +1,25 @@
-import { useRegistrationUserMutation } from 'js/redux/auth/authApi';
+import {
+  useRegistrationUserMutation,
+  useFetchGoogleAccountMutation,
+} from 'js/redux/auth/authApi';
 import { useState } from 'react';
 import s from './Register.module.css';
 import { NavLink } from 'react-router-dom';
 import googleIcon from 'images/google/google icon.png';
 import sprite from '../../../sprites/mobileinfo-sprite.svg';
 import { Notify } from 'notiflix';
+import { selectCurrentUser } from 'js/redux/auth/auth-slice';
+import { useSelector } from 'react-redux';
 
 export default function RegisterPage() {
+  const user = useSelector(selectCurrentUser);
+  const [google] = useFetchGoogleAccountMutation(
+    { user, undefined },
+    {
+      skip: true,
+      selectFromResult: null,
+    }
+  );
   const [register] = useRegistrationUserMutation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -51,6 +64,10 @@ export default function RegisterPage() {
     formFieldsReset();
   };
 
+  const registerWithGoogle = async () => {
+    await google();
+  };
+
   const formFieldsReset = () => {
     setName('');
     setEmail('');
@@ -63,7 +80,7 @@ export default function RegisterPage() {
       <div className={s.overlay}>
         <div className={s.background}>
           <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-            <button className={s.google}>
+            <button className={s.google} onClick={registerWithGoogle}>
               <img
                 src={googleIcon}
                 alt="google-icon"

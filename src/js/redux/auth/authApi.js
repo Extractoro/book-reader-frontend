@@ -15,31 +15,32 @@ export const authApi = createApi({
   tagTypes: ['auth'],
   endpoints: builder => ({
     registrationUser: builder.mutation({
-      query: credentials => ({
+      query: body => ({
         url: '/api/users/signup',
         method: 'POST',
-        body: credentials,
+        body,
       }),
       invalidatesTags: ['auth'],
     }),
     loginUser: builder.mutation({
-      query: credentials => ({
+      query: body => ({
         url: '/api/users/login',
         method: 'POST',
-        body: credentials,
+        body,
       }),
       invalidatesTags: ['auth'],
     }),
-    logoutUser: builder.query({
+    logoutUser: builder.mutation({
       query: () => ({
         url: '/api/users/logout',
         method: 'GET',
       }),
-      providesTags: ['auth'],
+      invalidatesTags: ['Auth'],
     }),
-    fetchGoogleAccount: builder.query({
+    fetchGoogleAccount: builder.mutation({
       query: () => ({
         url: '/api/users/google',
+        method: 'GET',
       }),
       providesTags: ['auth'],
     }),
@@ -55,7 +56,7 @@ export const authApi = createApi({
 export const {
   useRegistrationUserMutation,
   useLoginUserMutation,
-  useLogoutUserQuery,
-  useFetchGoogleAccountQuery,
+  useLogoutUserMutation,
+  useFetchGoogleAccountMutation,
   useCurrentUserQuery,
 } = authApi;
