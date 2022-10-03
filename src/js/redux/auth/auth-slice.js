@@ -8,6 +8,7 @@ const initialState = {
     email: null,
   },
   token: null,
+  // googleToken: null,
   isLoggedIn: false,
   isPending: false,
   isError: false,
@@ -62,20 +63,6 @@ const authSlice = createSlice({
         }
       )
       .addMatcher(
-        authApi.endpoints.fetchGoogleAccount.matchFulfilled,
-        (state, { payload }) => {
-          state.user = payload.user;
-          state.isLoggedIn = true;
-        }
-      )
-      .addMatcher(
-        authApi.endpoints.fetchGoogleAccount.matchRejected,
-        (state, _action) => {
-          state.user = null;
-          state.isLoggedIn = false;
-        }
-      )
-      .addMatcher(
         authApi.endpoints.logoutUser.matchFulfilled,
         (state, _action) => {
           state.user = null;
@@ -103,6 +90,22 @@ const authSlice = createSlice({
           state.isLoggedIn = false;
         }
       );
+    // .addMatcher(
+    //   authApi.endpoints.fetchGoogleAccount.matchFulfilled,
+    //   (state, { payload }) => {
+    //     state.user.email = payload.email;
+    //     state.user.name = payload.name;
+    //     state.isLoggedIn = true;
+    //     state.googleToken = payload.googleId;
+    //   }
+    // )
+    // .addMatcher(
+    //   authApi.endpoints.fetchGoogleAccount.matchRejected,
+    //   (state, _action) => {
+    //     state.user = null;
+    //     state.isLoggedIn = false;
+    //   }
+    // );
   },
 });
 

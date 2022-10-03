@@ -11,7 +11,6 @@
 
 .thumb {
   width: 280px;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -24,10 +23,8 @@
 @media screen and (min-width: 1280px) {
   .thumb {
     width: 928px;
-
   }
 }
-
 
 .form {
   padding-left: 20px;
@@ -61,7 +58,7 @@
   }
 }
 
-.datePicker{
+.datePicker {
   position: relative;
 }
 
@@ -86,7 +83,6 @@
 }
 
 .customInput {
-
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -95,21 +91,18 @@
   margin-right: 10px;
   padding-left: 41px;
   /* identical to box height */
-  color: #A6ABB9;
+  color: #a6abb9;
 }
-
 
 .datePickerWrapper::after {
   position: absolute;
-  content: url("/src/images/mobile/calendar.svg");
+  content: url('/src/images/mobile/calendar.svg');
   top: 33px;
   margin-left: 12px;
   /*border: 2px solid tomato;*/
   display: block;
-  width:15px;
+  width: 15px;
   height: 15px;
-
-
 }
 
 @media screen and (min-width: 320px) {
@@ -133,9 +126,6 @@
   }
 }
 
-
-
-
 @media screen and (min-width: 768px) {
   .selectBtn {
     display: flex;
@@ -147,14 +137,15 @@
 
 @media screen and (min-width: 320px) {
   .select {
-    background: #FFFFFF;
-    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);;
+    background: #ffffff;
+    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
     height: 42px;
     width: 100%;
     margin-top: 20px;
     margin-right: 20px;
     margin-bottom: 40px;
     cursor: pointer;
+    padding-left: 10px;
   }
 }
 
@@ -189,7 +180,7 @@
     border: 1px solid #242a37;
     cursor: pointer;
     color: #000000;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;

@@ -2,6 +2,8 @@ import s from './ModalLibrary.module.css';
 import { createPortal } from 'react-dom';
 import sprite from '../../../sprites/library-sprite.svg';
 import { useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
 
