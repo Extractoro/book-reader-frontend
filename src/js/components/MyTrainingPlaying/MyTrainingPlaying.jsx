@@ -7,28 +7,17 @@ import { useSelector } from 'react-redux';
 import { selectBooks } from 'js/redux/books/books-slice';
 import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import { Loading } from 'notiflix';
-import MyTrainingPlayingComponent from './MyTrainingPlayingComponent/MyTrainingPlayingComponent';
 
 function MyTrainingPlaying() {
   const [selectedDate, setSelectedDate] = useState();
   const [endDate, setEndDate] = useState();
   const books = useSelector(selectBooks);
+  // const [plannedBooks, setPlannedBooks] = useState([]);
+  const [selectedBook, setSelectedBook] = useState('');
   const { isFetching } = useFetchAllBooksQuery();
-  const renderedBooks = [];
 
-  const filteredBooks = books.filter(book => book.status === 'plan');
-
-  const handleSubmit = e => {
-    e.preventDefault();
-  };
-
-  const handleClick = id => {
-    const findBook = filteredBooks.filter(book => {
-      console.log(book._id);
-      return book._id === id;
-    });
-    renderedBooks.push(findBook);
-  };
+  const findSelectedBook = books.find(book => book._id === selectedBook);
+  console.log(findSelectedBook);
 
   // console.log(filteredBooks);
   // console.log(renderedBooks);
@@ -60,9 +49,8 @@ function MyTrainingPlaying() {
     <>
       <>
         {!isFetching && Loading.remove()}
-
         <div className={s['thumb']}>
-          <form className={s.form} onSubmit={handleSubmit}>
+          <form className={s.form}>
             <svg className={s.iconBack} width="24" height="12">
               <use href={sprite + '#icon-back'}></use>
             </svg>
@@ -71,7 +59,6 @@ function MyTrainingPlaying() {
               <div className={s['datePickerWrapper']}>
                 <DatePicker
                   dateFormat="dd.MM.yyyy"
-                  id="startDate"
                   selected={selectedDate}
                   onChange={date => setSelectedDate(date)}
                   className={s['datePickerInput']}
@@ -101,27 +88,33 @@ function MyTrainingPlaying() {
                     />
                   }
                   placeholderText="Завершення"
-                  minDate={selectedDate}
+                  minDate={new Date()}
                 />
               </div>
             </div>
             <div className={s.selectBtn}>
-              <select className={s.select}>
-                {filteredBooks?.length > 0 ? (
-                  <MyTrainingPlayingComponent library={filteredBooks} />
-                ) : (
-                  <option className={s.option} value="default">
-                    Обрати книги з бібліотеки
-                  </option>
-                )}
-              </select>
-              <button
-                className={s.submitBtn}
-                type="submit"
-                onClick={() => handleClick()}
-              >
-                Додати
-              </button>
+              {books?.length > 0 && (
+                <>
+                  <select
+                    className={s.select}
+                    onChange={e => setSelectedBook(e.target.value)}
+                  >
+                    {books.map(({ title, _id }) => (
+                      <option
+                        className={s.option}
+                        key={_id}
+                        id={_id}
+                        value={_id}
+                      >
+                        {title}
+                      </option>
+                    ))}
+                  </select>
+                  <button className={s.submitBtn} type="submit">
+                    Додати
+                  </button>
+                </>
+              )}
             </div>
           </form>
         </div>
