@@ -1,18 +1,17 @@
 {
   "files": {
     "main.css": "/book-reader-frontend/static/css/main.90f2d82d.css",
-    "main.js": "/book-reader-frontend/static/js/main.9e9d1a87.js",
+    "main.js": "/book-reader-frontend/static/js/main.8b898edc.js",
     "static/css/618.63139c67.chunk.css": "/book-reader-frontend/static/css/618.63139c67.chunk.css",
     "static/js/618.64bae2c4.chunk.js": "/book-reader-frontend/static/js/618.64bae2c4.chunk.js",
     "static/css/73.a48420b7.chunk.css": "/book-reader-frontend/static/css/73.a48420b7.chunk.css",
-    "static/js/73.d36d5737.chunk.js": "/book-reader-frontend/static/js/73.d36d5737.chunk.js",
+    "static/js/73.8c0e11da.chunk.js": "/book-reader-frontend/static/js/73.8c0e11da.chunk.js",
     "static/css/2.0939fed7.chunk.css": "/book-reader-frontend/static/css/2.0939fed7.chunk.css",
     "static/js/2.2be85ae2.chunk.js": "/book-reader-frontend/static/js/2.2be85ae2.chunk.js",
     "static/css/296.84b004e2.chunk.css": "/book-reader-frontend/static/css/296.84b004e2.chunk.css",
     "static/js/296.e315475d.chunk.js": "/book-reader-frontend/static/js/296.e315475d.chunk.js",
-    "static/css/148.1b4b0ff7.chunk.css": "/book-reader-frontend/static/css/148.1b4b0ff7.chunk.css",
-    "static/js/148.597136f0.chunk.js": "/book-reader-frontend/static/js/148.597136f0.chunk.js",
-    "static/js/562.999eb970.chunk.js": "/book-reader-frontend/static/js/562.999eb970.chunk.js",
+    "static/css/373.b7656981.chunk.css": "/book-reader-frontend/static/css/373.b7656981.chunk.css",
+    "static/js/373.d8881805.chunk.js": "/book-reader-frontend/static/js/373.d8881805.chunk.js",
     "static/js/97.bdaede4b.chunk.js": "/book-reader-frontend/static/js/97.bdaede4b.chunk.js",
     "static/js/655.93039865.chunk.js": "/book-reader-frontend/static/js/655.93039865.chunk.js",
     "static/media/overlay desktop.jpeg.jpg": "/book-reader-frontend/static/media/overlay desktop.jpeg.6889ffed0c9a9768d5bb.jpg",
@@ -27,23 +26,22 @@
     "static/media/mobileinfo-sprite.svg": "/book-reader-frontend/static/media/mobileinfo-sprite.d1de0558ddb859dddd7fc6ed8067009c.svg",
     "static/media/delete.svg": "/book-reader-frontend/static/media/delete.c028471843e0be2d2f1b.svg",
     "main.90f2d82d.css.map": "/book-reader-frontend/static/css/main.90f2d82d.css.map",
-    "main.9e9d1a87.js.map": "/book-reader-frontend/static/js/main.9e9d1a87.js.map",
+    "main.8b898edc.js.map": "/book-reader-frontend/static/js/main.8b898edc.js.map",
     "618.63139c67.chunk.css.map": "/book-reader-frontend/static/css/618.63139c67.chunk.css.map",
     "618.64bae2c4.chunk.js.map": "/book-reader-frontend/static/js/618.64bae2c4.chunk.js.map",
     "73.a48420b7.chunk.css.map": "/book-reader-frontend/static/css/73.a48420b7.chunk.css.map",
-    "73.d36d5737.chunk.js.map": "/book-reader-frontend/static/js/73.d36d5737.chunk.js.map",
+    "73.8c0e11da.chunk.js.map": "/book-reader-frontend/static/js/73.8c0e11da.chunk.js.map",
     "2.0939fed7.chunk.css.map": "/book-reader-frontend/static/css/2.0939fed7.chunk.css.map",
     "2.2be85ae2.chunk.js.map": "/book-reader-frontend/static/js/2.2be85ae2.chunk.js.map",
     "296.84b004e2.chunk.css.map": "/book-reader-frontend/static/css/296.84b004e2.chunk.css.map",
     "296.e315475d.chunk.js.map": "/book-reader-frontend/static/js/296.e315475d.chunk.js.map",
-    "148.1b4b0ff7.chunk.css.map": "/book-reader-frontend/static/css/148.1b4b0ff7.chunk.css.map",
-    "148.597136f0.chunk.js.map": "/book-reader-frontend/static/js/148.597136f0.chunk.js.map",
-    "562.999eb970.chunk.js.map": "/book-reader-frontend/static/js/562.999eb970.chunk.js.map",
+    "373.b7656981.chunk.css.map": "/book-reader-frontend/static/css/373.b7656981.chunk.css.map",
+    "373.d8881805.chunk.js.map": "/book-reader-frontend/static/js/373.d8881805.chunk.js.map",
     "97.bdaede4b.chunk.js.map": "/book-reader-frontend/static/js/97.bdaede4b.chunk.js.map",
     "655.93039865.chunk.js.map": "/book-reader-frontend/static/js/655.93039865.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90f2d82d.css",
-    "static/js/main.9e9d1a87.js"
+    "static/js/main.8b898edc.js"
   ]
 }
