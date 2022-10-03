@@ -5,10 +5,11 @@ import Media from 'react-media';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './Library.module.css';
 import { Loading } from 'notiflix';
-import AlreadyReadList from 'js/components/AlreadyReadList';
+import AlreadyReadList from 'js/components/LibraryCard/AlreadyReadList/AlreadyReadList';
 import PlanToReadList from 'js/components/LibraryCard/PlanToReadList';
 import { useSelector } from 'react-redux';
 import { selectBooks } from 'js/redux/books/books-slice';
+import { useState } from 'react';
 
 const Library = () => {
   const { isFetching } = useFetchAllBooksQuery();
@@ -24,15 +25,14 @@ const Library = () => {
         {!isFetching && Loading.remove()}
         <LibraryForm />
 
-
-        {allBooks?.length > 0 ? (
-          <AlreadyReadList library={allBooks} status={'done'} />
+        {books?.length > 0 ? (
+          <AlreadyReadList library={books} status={'done'} />
         ) : null}
-        {allBooks?.length > 0 ? (
-          <PlanToReadList library={allBooks} status={'read'} />
+        {books?.length > 0 ? (
+          <PlanToReadList library={books} status={'read'} />
         ) : null}
-        {allBooks?.length > 0 ? (
-          <PlanToReadList library={allBooks} status={'plan'} />
+        {books?.length > 0 ? (
+          <PlanToReadList library={books} status={'plan'} />
         ) : null}
 
         <Media
@@ -103,10 +103,15 @@ const Library = () => {
                     </div>
                   </div>
                 </div>
-              )}
-            />
-            {showModal && (<Media query="(max-width: 767px)" render={() => <ModalLibrary onClose={toggleModal} />} />)}
-          </>
+              </div>
+            </div>
+          )}
+        />
+        {showModal && (
+          <Media
+            query="(max-width: 767px)"
+            render={() => <ModalLibrary onClose={toggleModal} />}
+          />
         )}
       </>
       {isFetching && Loading.circle()}
