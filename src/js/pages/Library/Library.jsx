@@ -13,6 +13,8 @@ import AlreadyReadList from 'js/components/LibraryCard/AlreadyReadList';
 
 import { useState } from 'react';
 
+import bookSelectors from 'js/redux/books/bookSelectors'
+
 const Library = () => {
   const { isFetching } = useFetchAllBooksQuery();
   const books = useSelector(selectBooks);
@@ -21,6 +23,10 @@ const Library = () => {
     setShowModal(!showModal);
   };
 
+  const booksPlan = useSelector(bookSelectors.getPlan);
+  const booksRead = useSelector(bookSelectors.getRead);
+  const booksDone = useSelector(bookSelectors.getDone);
+  
   return (
     <div>
       <>
@@ -28,13 +34,13 @@ const Library = () => {
         <LibraryForm />
 
         {books?.length > 0 ? (
-          <AlreadyReadList library={books} status={'done'} />
+          <AlreadyReadList library={booksDone} status={'done'} />
         ) : null}
         {books?.length > 0 ? (
-          <PlanToReadList library={books} status={'read'} />
+          <PlanToReadList library={booksRead} status={'read'} />
         ) : null}
         {books?.length > 0 ? (
-          <PlanToReadList library={books} status={'plan'} />
+          <PlanToReadList library={booksPlan} status={'plan'} />
         ) : null}
 
         {books?.length === 0 ? (
@@ -109,7 +115,6 @@ const Library = () => {
                     </div>
                   </div>
                 </div>
-
               )}
             />
             {showModal && (
