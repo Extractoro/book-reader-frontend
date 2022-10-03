@@ -9,14 +9,15 @@ function Table(){
         col1: 'Ветер и искраы',
         col2: 'Алексей Пехов',
         col3: '2006',
-        col4: '315'
-      }
+        col4: '315',
+      },
     ],
     [],
   );
 
   const columns = React.useMemo(
     () => [
+
       {
         Header: 'Назва книги',
         accessor: 'col1',
@@ -33,7 +34,15 @@ function Table(){
         Header: 'Стор.',
         accessor: 'col4',
       },
-
+      {
+        width: 300,
+        Header: " ",
+        Cell: ({ cell }) => (
+          <button value={cell.row.values.name}>
+            Button
+          </button>
+        )
+      }
     ],
     [],
   );
@@ -48,40 +57,40 @@ function Table(){
 
   return (
 
-      <table className={s['body']} {...getTableProps()} >
-        <thead >
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th className={s['tHead']} {...column.getHeaderProps()} >
-                {column.render('Header')}
-              </th>
-            ))}
+    <table className={s['body']} {...getTableProps()} >
+      <thead>
+      {headerGroups.map(headerGroup => (
+        <tr {...headerGroup.getHeaderGroupProps()}>
+          {headerGroup.headers.map(column => (
+            <th className={s['tHead']} {...column.getHeaderProps()} >
+              {column.render('Header')}
+            </th>
+          ))}
+        </tr>
+      ))}
+      </thead>
+      <tbody {...getTableBodyProps()}>
+      {rows.map(row => {
+        prepareRow(row);
+        return (
+          <tr {...row.getRowProps()}>
+            {row.cells.map(cell => {
+              return (
+                <td className={s['tD']}
+                    {...cell.getCellProps()}
+                    style={{
+                      padding: '20px',
+                    }}
+                >
+                  {cell.render('Cell')}
+                </td>
+              );
+            })}
           </tr>
-        ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return (
-                    <td className={s['tD']}
-                      {...cell.getCellProps()}
-                      style={{
-                        padding: '20px',
-                      }}
-                    >
-                      {cell.render('Cell')}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+        );
+      })}
+      </tbody>
+    </table>
 
   );
 }
