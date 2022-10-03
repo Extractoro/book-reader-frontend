@@ -3,8 +3,10 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 
 import authSlice from './auth/auth-slice';
 import { authApi } from './auth/authApi';
-// import booksSlice from './books/books-slice';
+import booksSlice from './books/books-slice';
 import { booksApi } from './books/booksApi';
+import workoutSlice from './workout/workout-slice';
+import { workoutApi } from './workout/workoutApi';
 
 import {
   persistStore,
@@ -21,14 +23,15 @@ import storage from 'redux-persist/lib/storage';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'isLoggedIn'],
+  whitelist: ['token', 'isLoggedIn', 'user'],
 };
 
 export const store = configureStore({
   reducer: {
-    // books: booksSlice,
-    // trainings: trainingsSlice.reducer,
+    books: booksSlice,
     [booksApi.reducerPath]: booksApi.reducer,
+    workout: workoutSlice,
+    [workoutApi.reducerPath]: workoutApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
     auth: persistReducer(authPersistConfig, authSlice),
   },
@@ -39,8 +42,9 @@ export const store = configureStore({
       },
     }),
     authApi.middleware,
+    booksApi.middleware,
   ],
-  // devTools: process.env.NODE_ENV === 'development',
+  devTools: process.env.NODE_ENV === 'development',
 });
 
 setupListeners(store.dispatch);

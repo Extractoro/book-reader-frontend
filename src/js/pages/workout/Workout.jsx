@@ -8,6 +8,10 @@ import AddBookRead from '../../components/AddBookRead/AddBookRead';
 import MyTrainingPlaying from '../../components/MyTrainingPlaying/MyTrainingPlaying';
 import Media from 'react-media';
 
+
+
+
+
 const Workout = () => {
 
   return (

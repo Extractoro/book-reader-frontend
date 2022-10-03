@@ -24,7 +24,7 @@ const booksSlice = createSlice({
         booksApi.endpoints.fetchAllBooks.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.books = payload.books;
+          state.books = payload;
         }
       )
       .addMatcher(
@@ -44,7 +44,7 @@ const booksSlice = createSlice({
         booksApi.endpoints.fetchOneBooks.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.books = payload.books;
+          state.books = payload;
         }
       )
       .addMatcher(
@@ -61,7 +61,7 @@ const booksSlice = createSlice({
         booksApi.endpoints.addBook.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.books = [...state.books, payload.books];
+          state.books = [...state.books, payload];
         }
       )
       .addMatcher(
@@ -81,7 +81,7 @@ const booksSlice = createSlice({
         booksApi.endpoints.updateBook.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.books = payload.books;
+          state.books = payload;
         }
       )
       .addMatcher(
@@ -101,7 +101,7 @@ const booksSlice = createSlice({
         booksApi.endpoints.deleteBook.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.books = payload.books;
+          state.books = payload;
         }
       )
       .addMatcher(
@@ -117,5 +117,6 @@ const booksSlice = createSlice({
 export default booksSlice.reducer;
 
 // Selectors
+export const selectBooks = state => state.books.books;
 export const selectBooksIsError = state => state.books.isError;
 export const selectBooksIsPending = state => state.books.isPending;

@@ -1,6 +1,7 @@
 import Media from 'react-media';
 import s from './bookTable.module.css';
 import Table from './Table';
+
 import React from 'react';
 import BookTableMobile from './bookMobileTable';
 
@@ -14,7 +15,7 @@ const BookTable = () => {
         {matches => (
           <>
             {matches.small && <BookTableMobile />}
-            {matches.medium && <Table />}
+            {matches.medium && <Table/>}
 
           </>
         )}

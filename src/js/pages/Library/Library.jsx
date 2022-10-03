@@ -5,18 +5,22 @@ import Media from 'react-media';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './Library.module.css';
 import { Loading } from 'notiflix';
-import AlreadyReadList from 'js/components/LibraryCard/AlreadyReadList';
+import AlreadyReadList from 'js/components/AlreadyReadList';
 import PlanToReadList from 'js/components/LibraryCard/PlanToReadList';
+import { useSelector } from 'react-redux';
+import { selectBooks } from 'js/redux/books/books-slice';
 
 const Library = () => {
-  const { data: allBooks, isFetching } = useFetchAllBooksQuery();
-  // console.log(allBooks);
+  const { isFetching } = useFetchAllBooksQuery();
+  const books = useSelector(selectBooks);
+
 
   return (
     <div>
       <>
         {!isFetching && Loading.remove()}
         <LibraryForm />
+
 
         {allBooks?.length > 0 ? (
           <AlreadyReadList library={allBooks} status={'done'} />
@@ -96,11 +100,11 @@ const Library = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          )}
-        />
-        <Media query="(max-width: 767px)" render={() => <ModalLibrary />} />
+              )}
+            />
+            <Media query="(max-width: 767px)" render={() => <ModalLibrary />} />
+          </>
+        )}
       </>
       {isFetching && Loading.circle()}
     </div>
