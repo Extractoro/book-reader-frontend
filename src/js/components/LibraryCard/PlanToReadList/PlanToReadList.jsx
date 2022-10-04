@@ -36,7 +36,7 @@ const PlanToReadList = ({ library, status }) => {
                   status={status}
                 />
               ))
-            : 'null'}
+            : null}
         </ul>
       </div>
     </>
