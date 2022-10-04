@@ -17,8 +17,8 @@ function MyTrainingPlaying() {
   const { isFetching } = useFetchAllBooksQuery();
 
 
-  const findSelectedBook = books.find(book => book._id === selectedBook);
-  console.log(findSelectedBook);
+  // const findSelectedBook = books.find(book => book._id === selectedBook);
+  // console.log(findSelectedBook);
 
   // console.log(filteredBooks);
   // console.log(renderedBooks);

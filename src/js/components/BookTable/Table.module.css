@@ -38,6 +38,15 @@
     color: #242A37;
 }
 
+.tableIconDelete{
+  width: 14px;
+  height: 18px;
+  display: block;
+  margin-left: auto;
+  background: url("../../../images/mobile/delete.svg") no-repeat center;
+  background-size: cover;
+}
+
 
 
 

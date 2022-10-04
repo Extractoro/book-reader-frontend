@@ -12,10 +12,18 @@ import Media from 'react-media';
 const Workout = () => {
   return (
     <>
+
       <WorkoutContainer>
         <GlobalCSS />
+
         <GoalWrapper>
           <GoalReading />
+          <Media
+            query={'(min-width:1280px)'}
+            render={()=><AddResultStat/>}/>
+          {/*<Media*/}
+          {/*  query={'(min-width:1280px)'}*/}
+          {/*  render={()=><AddResultStat/>}/>*/}
         </GoalWrapper>
 
         <Wrapper>
@@ -26,8 +34,14 @@ const Workout = () => {
           <BookList />
           <AddBookRead></AddBookRead>
           <Statistics />
+          <Media
+          query={'(min-width:768px) and (max-width:1280px)'}
+          render={()=><AddResultStat/>}/>
+          <Media
+            query={'(max-width:767px)'}
+            render={()=><AddResultStat/>}/>
         </Wrapper>
-        <AddResultStat />
+
       </WorkoutContainer>
     </>
   );

@@ -92,7 +92,7 @@
 }
 
 .subtitleNameBook::after{
-content: url("/src/images/mobile/delete.svg");
+  content: url("/src/images/mobile/delete.svg");
   width: 22px;
   height: 17px;
   display: block;

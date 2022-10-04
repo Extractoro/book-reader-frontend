@@ -38,8 +38,7 @@ function Table(){
         width: 300,
         Header: " ",
         Cell: ({ cell }) => (
-          <button value={cell.row.values.name}>
-            Button
+          <button value={cell.row.values.name} className={s['tableIconDelete']}>
           </button>
         )
       }

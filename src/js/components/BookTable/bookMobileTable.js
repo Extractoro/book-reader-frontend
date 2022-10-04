@@ -3,10 +3,10 @@ import s from './bookMobileTable.module.css';
 // import EllipsisText from "react-ellipsis-text";
 
 export default function BookTableMobile() {
-  const title = 'Name book';
-  const pages = 'test';
-  const author = 'test';
-  const year = 'test';
+  const title = '  ';
+  const pages = '  ';
+  const author = '  ';
+  const year = '  ';
 
   return (
     <>
