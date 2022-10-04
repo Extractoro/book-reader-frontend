@@ -1,45 +1,135 @@
-
-
-
-.body{
-
-    width: 704px;
-    border-bottom: solid 1px #E0E5EB;
-    border-top: solid 1px #E0E5EB;
+.infoListContainer {
+  width: 270px;
+  margin: 0 auto;
 }
-
-@media screen and (min-width: 1280px){
-  .body{
-    width: 928px;
+@media screen and (min-width: 768px) {
+  .infoListContainer {
+    width: 678px;
   }
 }
-
-
-
-.tHead{
-    padding: 20px;
-    text-align: start;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-
-    color: #898F9F;
+@media screen and (min-width: 1280px) {
+  .infoListContainer {
+    width: 1200px;
+  }
 }
-
-.tD{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-
-    color: #242A37;
+.bookColumns {
+  display: flex;
 }
-
-
-
-
-
-
+@media screen and (max-width: 767px) {
+  .list {
+    margin: 0 auto;
+    width: 270px;
+  }
+}
+.title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2.71;
+  color: #242a37;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 2.71;
+  }
+}
+@media screen and (min-width: 767px) {
+  .title {
+    width: 349px;
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .title {
+    width: 252px;
+    margin-right: 423px;
+  }
+}
+.author {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2.71;
+  color: #242a37;
+}
+@media screen and (min-width: 768px) {
+  .author {
+    font-size: 14px;
+    line-height: 2.71;
+  }
+}
+@media screen and (min-width: 767px) {
+  .author {
+    width: 160px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .author {
+    width: 130px;
+    margin-right: 200px;
+  }
+}
+.year {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2.71;
+  color: #242a37;
+}
+@media screen and (min-width: 768px) {
+  .year {
+    font-size: 14px;
+    line-height: 2.71;
+  }
+}
+@media screen and (min-width: 768px) {
+  .year {
+    width: 80px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .year {
+    width: 60px;
+    margin-right: 68px;
+  }
+}
+.page {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2.71;
+  color: #242a37;
+  margin-right: 21px;
+}
+@media screen and (min-width: 768px) {
+  .page {
+    font-size: 14px;
+    line-height: 2.71;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .page {
+    margin-right: 6%;
+  }
+}
+.sectionTitle {
+  white-space: nowrap;
+  width: 134px;
+  height: 38px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 38px;
+  color: #242a37;
+}
+@media screen and (min-width: 768px) {
+  .sectionTitle {
+    margin-top: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .sectionTitle {
+    margin-top: 30px;
+  }
+}

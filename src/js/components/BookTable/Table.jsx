@@ -1,101 +1,44 @@
 import React from 'react';
-import { useTable } from 'react-table';
+import Media from 'react-media';
 import s from './Table.module.css';
+import TableItem from './TableItem';
 
-function Table(){
-  const data = React.useMemo(
-    () => [
-      {
-        col1: 'Ветер и искраы',
-        col2: 'Алексей Пехов',
-        col3: '2006',
-        col4: '315',
-      },
-    ],
-    [],
-  );
-
-  const columns = React.useMemo(
-    () => [
-
-      {
-        Header: 'Назва книги',
-        accessor: 'col1',
-      },
-      {
-        Header: 'Автор',
-        accessor: 'col2',
-      },
-      {
-        Header: 'Рік',
-        accessor: 'col3',
-      },
-      {
-        Header: 'Стор.',
-        accessor: 'col4',
-      },
-      {
-        width: 300,
-        Header: " ",
-        Cell: ({ cell }) => (
-          <button value={cell.row.values.name}>
-            Button
-          </button>
-        )
-      }
-    ],
-    [],
-  );
-
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data });
+function Table({ library }) {
+  let filteredLibrary = library.filter(book => book !== undefined);
 
   return (
+    <>
+      {filteredLibrary.length > 0 && (
+        <Media
+          query="(min-width: 768px)"
+          render={() => (
+            <div className={s.bookColumns}>
+              <p className={s.title}>Назва</p>
+              <p className={s.author}>Автор</p>
+              <p className={s.year}>Рік</p>
+              <p className={s.page}>Стор.</p>
+            </div>
+          )}
+        />
+      )}
 
-    <table className={s['body']} {...getTableProps()} >
-      <thead>
-      {headerGroups.map(headerGroup => (
-        <tr {...headerGroup.getHeaderGroupProps()}>
-          {headerGroup.headers.map(column => (
-            <th className={s['tHead']} {...column.getHeaderProps()} >
-              {column.render('Header')}
-            </th>
-          ))}
-        </tr>
-      ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-      {rows.map(row => {
-        prepareRow(row);
-        return (
-          <tr {...row.getRowProps()}>
-            {row.cells.map(cell => {
-              return (
-                <td className={s['tD']}
-                    {...cell.getCellProps()}
-                    style={{
-                      padding: '20px',
-                    }}
-                >
-                  {cell.render('Cell')}
-                </td>
-              );
-            })}
-          </tr>
-        );
-      })}
-      </tbody>
-    </table>
-
+      <ul className={s.list}>
+        {filteredLibrary.length > 0 &&
+          filteredLibrary.map(
+            ({ _id: id, title, author, year, totalPages }) => (
+              <TableItem
+                key={id}
+                id={id}
+                title={title}
+                author={author}
+                year={year}
+                pages={totalPages}
+              />
+            )
+          )}
+      </ul>
+    </>
   );
 }
 
-
 export default Table;
-
-
