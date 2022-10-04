@@ -9,7 +9,7 @@ import Stars from '../Stars/Stars';
 import { AlreadyReadIcon } from './AlreadyReadIcon';
 import BooksInfo from '../BooksInfo/BooksInfo';
 
-import ModalResume from '../../ModalResume/ModalResume'
+// import ModalResume from '../../ModalResume/ModalResume'
 
 const AlreadyReadCard = book => {
   const [modal, setModal] = useState(false);
@@ -93,7 +93,7 @@ const AlreadyReadCard = book => {
       <button className={s.button} onClick={() => openModal()}>
         <span className={s.buttonText}>Резюме</span>
       </button>
-      {modal.open && <ModalResume type="exit" closeModal={closeModal} />}
+     
     </li>
   );
 };
