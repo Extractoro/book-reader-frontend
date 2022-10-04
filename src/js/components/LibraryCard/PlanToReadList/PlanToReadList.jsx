@@ -12,7 +12,7 @@ const PlanToReadList = ({ library, status }) => {
       <div className={s.infoListContainer}>
         {status === 'plan' ? (
           <p className={s.sectionTitle}>Маю намір прочитати</p>
-        ) : (
+        ) : status === 'read' ? (
           <p className={s.sectionTitle}>Читаю</p>
         )}
         <MediaQuery minWidth={768}>
