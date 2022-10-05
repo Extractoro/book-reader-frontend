@@ -10,14 +10,21 @@ const Workout = () => {
     <>
       <WorkoutContainer>
         <GlobalCSS />
+
         <GoalWrapper>
           <GoalReading />
+          <Media
+            query={'(min-width:1280px)'}
+            render={() => <AddResultStat />}
+          />
+          {/*<Media*/}
+          {/*  query={'(min-width:1280px)'}*/}
+          {/*  render={()=><AddResultStat/>}/>*/}
         </GoalWrapper>
 
         <Wrapper>
           <MyTrainingPlaying />
         </Wrapper>
-        <AddResultStat />
       </WorkoutContainer>
     </>
   );

@@ -1,34 +1,39 @@
 import s from './AddResultStat.module.css';
 import DatePicker from 'react-datepicker';
 import React, { useState } from 'react';
+import { TextField } from '@mui/material';
 
 function AddResultStat() {
-  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDate, setSelectedDate] = useState('');
   const [page, setPage] = useState('');
 
-  const handleInputChanged = event => {
-    const { selectedDate, value } = event.currentTarget;
-    switch (selectedDate) {
-      case 'date':
-        setSelectedDate(value);
-        break;
-      case 'page':
-        setPage(value);
-        break;
-      default:
-        return;
-    }
+  // const handleInputChanged = event => {
+  //   const { selected, value } = event.currentTarget;
+  //   switch (selected) {
+  //     case 'date':
+  //       setSelectedDate(value);
+  //       break;
+  //     case 'page':
+  //       setPage(value);
+  //       break;
+  //     default:
+  //       return;
+  //   }
+  // };
+  const handleChange = e => {
+    const { name, value } = e.target;
+    name === 'name' ? setSelectedDate(value) : setPage(value);
   };
 
-  //   const handleSubmit = async event => {
-  //     event.preventDefault();
-  //     reset();
-  //   };
+    const handleSubmit = async event => {
+      event.preventDefault();
+      reset();
+    };
 
-  //   const reset = () => {
-  //     setSelectedDate('');
-  //     setPage('');
-  //   };
+    const reset = () => {
+      setSelectedDate('');
+      setPage('');
+    };
 
   return (
     <div className={s['thumb']}>
@@ -48,7 +53,7 @@ function AddResultStat() {
                 name="date"
                 value={selectedDate}
                 className={s['date-input']}
-                onChange={handleInputChanged}
+                onChange={handleChange}
               />
             }
             minDate={new Date()}
@@ -56,19 +61,16 @@ function AddResultStat() {
         </label>
         <label className={s['label']}>
           <p className={s['dateTitle']}> Кількість сторінок</p>
-
           <input
             className={s['date-input']}
             type="number"
             name="number"
             value={page}
-            onChange={handleInputChanged}
+            onChange={handleChange}
           />
         </label>
       </form>
-      <button className={s['add-result']} type="button">
-        {' '}
-        {/* onClick={handleSubmit} */}
+      <button className={s['add-result']} type="button" onClick={handleSubmit}>
         Додати результат
       </button>
       <div>
@@ -77,9 +79,7 @@ function AddResultStat() {
           <li className={s['stat-info']}>
             <p className={s['date']}>10.10.2019</p>
             <p className={s['hour']}>08.10.23</p>
-            <p className={s['date']}>
-              {' '}
-              32
+            <p className={s['date']}>32
               <span className={s['page']}>стор.</span>
             </p>
           </li>
@@ -90,3 +90,8 @@ function AddResultStat() {
 }
 
 export default AddResultStat;
+
+
+
+
+

@@ -2,11 +2,13 @@
 import s from './AddBookRead.module.css';
 import Media from 'react-media';
 const AddBookRead = () => {
+      const bookForReading=true
   return (
     <div className={s['thumbBtn']}>
       <Media
         queries={{
           medium: '(min-width: 768px) and (max-width: 2100px)',
+
         }}
       >
         {matches => (
