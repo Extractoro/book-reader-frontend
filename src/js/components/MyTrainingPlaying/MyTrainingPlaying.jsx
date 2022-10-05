@@ -10,6 +10,8 @@ import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import { Loading } from 'notiflix';
 
 function MyTrainingPlaying() {
+  const [selectedDate, setSelectedDate] = useState();
+  const [endDate, setEndDate] = useState();
   const books = useSelector(selectBooks);
   const [plannedBooks, setPlannedBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState();
@@ -17,7 +19,11 @@ function MyTrainingPlaying() {
   const { isFetching } = useFetchAllBooksQuery();
 
   useEffect(() => {
-    setFilteredBooks(books);
+    setFilteredBooks(
+      books.filter(book => {
+        return book.status === 'plan';
+      })
+    );
   }, [books]);
 
   const findSelectedBookById = books.find(book => book._id === selectedBook);
@@ -41,7 +47,7 @@ function MyTrainingPlaying() {
         backBook = book._id === bookId;
       }
 
-      console.log('backBook', backBook);
+      // console.log('backBook', backBook);
       return backBook;
     });
 
@@ -58,31 +64,34 @@ function MyTrainingPlaying() {
     );
   };
 
-  console.log('plannedBooks', plannedBooks);
-  console.log('filteredBooks', filteredBooks);
+  // console.log('plannedBooks', plannedBooks);
+  // console.log('filteredBooks', filteredBooks);
 
-  // let startDateUnformatted = null;
-  // let endDateUnformatted = null;
+  let startDateUnformatted = null;
+  let endDateUnformatted = null;
 
-  // if (selectedDate !== undefined && endDate !== undefined) {
-  //   startDateUnformatted = JSON.stringify(selectedDate).slice(1, 11);
-  //   endDateUnformatted = JSON.stringify(endDate).slice(1, 11);
-  // }
+  if (selectedDate !== undefined && endDate !== undefined) {
+    startDateUnformatted = JSON.stringify(selectedDate).slice(1, 11);
+    endDateUnformatted = JSON.stringify(endDate).slice(1, 11);
+  }
 
-  // function formatDate(date) {
-  //   var d = new Date(date),
-  //     month = '' + (d.getMonth() + 1),
-  //     day = '' + (d.getDate() + 1),
-  //     year = d.getFullYear();
+  function formatDate(date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + (d.getDate() + 1),
+      year = d.getFullYear();
 
-  //   if (month.length < 2) month = '0' + month;
-  //   if (day.length < 2) day = '0' + day;
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
 
-  //   return [year, month, day].join('.');
-  // }
+    return [year, month, day].join('.');
+  }
 
-  // const startDateReady = formatDate(startDateUnformatted);
-  // const endDateReady = formatDate(endDateUnformatted);
+  const startDateReady = formatDate(startDateUnformatted);
+  const endDateReady = formatDate(endDateUnformatted);
+
+  console.log('startDateReady', startDateReady);
+  console.log('endDateReady', endDateReady);
 
   return (
     <>
@@ -91,10 +100,21 @@ function MyTrainingPlaying() {
         setSelectedBook={setSelectedBook}
         handleClick={handleClick}
         filteredBooks={filteredBooks}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        endDate={endDate}
+        setEndDate={setEndDate}
       />
 
       <BookTable library={plannedBooks} onDelete={onDelete} />
-      <AddBookRead />
+      <AddBookRead
+        setEndDate={setEndDate}
+        setSelectedDate={setSelectedDate}
+        setPlannedBooks={setPlannedBooks}
+        library={plannedBooks}
+        startDateReady={startDateReady}
+        endDateReady={endDateReady}
+      />
       <Statistics />
       {isFetching && Loading.circle()}
     </>

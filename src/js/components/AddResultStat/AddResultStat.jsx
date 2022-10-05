@@ -1,7 +1,7 @@
 import s from './AddResultStat.module.css';
 import DatePicker from 'react-datepicker';
 import React, { useState } from 'react';
-import { TextField } from '@mui/material';
+// import { TextField } from '@mui/material';
 
 function AddResultStat() {
   const [selectedDate, setSelectedDate] = useState('');
@@ -25,15 +25,15 @@ function AddResultStat() {
     name === 'name' ? setSelectedDate(value) : setPage(value);
   };
 
-    const handleSubmit = async event => {
-      event.preventDefault();
-      reset();
-    };
+  const handleSubmit = async event => {
+    event.preventDefault();
+    reset();
+  };
 
-    const reset = () => {
-      setSelectedDate('');
-      setPage('');
-    };
+  const reset = () => {
+    setSelectedDate('');
+    setPage('');
+  };
 
   return (
     <div className={s['thumb']}>
@@ -79,7 +79,8 @@ function AddResultStat() {
           <li className={s['stat-info']}>
             <p className={s['date']}>10.10.2019</p>
             <p className={s['hour']}>08.10.23</p>
-            <p className={s['date']}>32
+            <p className={s['date']}>
+              32
               <span className={s['page']}>стор.</span>
             </p>
           </li>
@@ -90,8 +91,3 @@ function AddResultStat() {
 }
 
 export default AddResultStat;
-
-
-
-
-
