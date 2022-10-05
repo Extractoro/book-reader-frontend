@@ -45,21 +45,9 @@ const AddBookRead = ({
         startDateReady !== '1970.01.02' &&
         endDateReady !== '1970.01.02' && (
           <div className={s['thumbBtn']}>
-            <Media
-              queries={{
-                medium: '(min-width: 768px) and (max-width: 2100px)',
-              }}
-            >
-              {matches => (
-                <>
-                  {matches.medium && (
-                    <button className={s['thumb']} onClick={handleClick}>
-                      <p>Почати тренування</p>
-                    </button>
-                  )}
-                </>
-              )}
-            </Media>
+            <button className={s['thumb']} onClick={handleClick}>
+              <p>Почати тренування</p>
+            </button>
           </div>
         )}
     </>
