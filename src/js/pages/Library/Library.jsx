@@ -33,13 +33,13 @@ const Library = () => {
         {!isFetching && Loading.remove()}
         <LibraryForm />
 
-        {books?.length > 0 ? (
+        {booksDone?.length > 0 ? (
           <AlreadyReadList library={booksDone} status={'done'} />
         ) : null}
-        {books?.length > 0 ? (
+        {booksRead?.length > 0 ? (
           <PlanToReadList library={booksRead} status={'read'} />
         ) : null}
-        {books?.length > 0 ? (
+        {booksPlan?.length > 0 ? (
           <PlanToReadList library={booksPlan} status={'plan'} />
         ) : null}
 

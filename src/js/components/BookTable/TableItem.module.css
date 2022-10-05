@@ -60,7 +60,7 @@
 @media screen and (min-width: 768px) {
   .bookTitle {
     width: 190px;
-    margin-right: 75px;
+    margin-right: 20px;
     font-size: 14px;
     line-height: 1.5;
     display: -webkit-box;
@@ -71,8 +71,8 @@
 }
 @media screen and (min-width: 1280px) {
   .bookTitle {
-    width: 480px;
-    margin-right: 56px;
+    width: 240px;
+    margin-right: 47px;
     font-size: 14px;
     line-height: 2.71;
   }
@@ -138,12 +138,13 @@
     font-size: 14px;
     height: auto;
     line-height: 1.5;
+    margin-right: 25px;
   }
 }
 @media screen and (min-width: 1280px) {
   .authorText {
     width: 190px;
-    margin-right: 129px;
+    margin-right: 65px;
     font-size: 14px;
     height: auto;
     line-height: 1.5;
@@ -165,7 +166,7 @@
 }
 @media screen and (min-width: 1280px) {
   .bookMoreInfoYear {
-    margin-right: 80px;
+    margin-right: 91px;
     font-size: 14px;
     line-height: 2.71;
   }
@@ -180,16 +181,22 @@
   .bookMoreInfoPage {
     font-size: 14px;
     line-height: 0.8;
+    margin-right: 55px;
   }
 }
 @media screen and (min-width: 1280px) {
   .bookMoreInfoPage {
     font-size: 14px;
     line-height: 2.71;
+    margin-right: 70px;
   }
 }
 @media screen and (min-width: 768px) {
   .bookInfoWrapper {
     display: flex;
   }
+}
+
+.btn-book-delete {
+  background: transparent;
 }

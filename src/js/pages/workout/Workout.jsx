@@ -5,23 +5,28 @@ import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
 import MyTrainingPlaying from '../../components/MyTrainingPlaying/MyTrainingPlaying';
 import Media from 'react-media';
+
 const Workout = () => {
   return (
     <>
       <WorkoutContainer>
         <GlobalCSS />
+
         <GoalWrapper>
           <GoalReading />
+
 
           <Media query='(min-width:1280px)' render={()=>(
             <AddResultStat />
           )}/>
+
         </GoalWrapper>
 
         <Wrapper>
           <MyTrainingPlaying />
 
         </Wrapper>
+
         <Media query='(min-width:768px) and (max-width:1279px)' render={()=>(
           <AddResultStat />
         )}/>
@@ -30,6 +35,7 @@ const Workout = () => {
         )}/>
 
         {/*<AddResultStat />*/}
+
       </WorkoutContainer>
     </>
   );

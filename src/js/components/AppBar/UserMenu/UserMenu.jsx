@@ -13,7 +13,9 @@ export default function UserMenu() {
   return (
     <div className={s['menu-container']}>
       <div className={s['user-box']}>
+
         {isMobile && (<h3 className={s['user-name']}>{user.name}</h3>)}
+
       </div>
       <button
         onClick={() => setIsOpen(true)}
