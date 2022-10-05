@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import s from '../TimerYear/TimerYear.module.css';
+import s from '../TimerCountdown/TimerCountdown.module.css';
 
-const TimerYear = () => {
+const TimerCountdown = () => {
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
@@ -41,7 +41,7 @@ const TimerYear = () => {
   return (
     <section className={s.timerSection}>
       <div>
-        <p className={s.title}>До закінчення року залишилось</p>
+        <p className={s.title}>До досягнення мети залишилось</p>
       </div>
       <div className={s.timer}>
         <div className={s.data}>
@@ -67,4 +67,4 @@ const TimerYear = () => {
     </section>
   );
 };
-export default TimerYear;
+export default TimerCountdown;
