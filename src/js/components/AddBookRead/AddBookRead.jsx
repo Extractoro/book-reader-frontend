@@ -14,7 +14,6 @@ const AddBookRead = () => {
         {matches => (
           <>
             {matches.medium && (
-
               <button className={s['thumb']}>
                 <p>Почати тренування</p>
               </button>
