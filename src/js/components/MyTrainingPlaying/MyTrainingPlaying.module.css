@@ -9,9 +9,9 @@
   --hover-buttons: #d15807;
 }
 
-.thumb {
-  width: 280px;
-}
+/*.thumb {*/
+/*  width: 280px;*/
+/*}*/
 
 @media screen and (min-width: 768px) {
   .thumb {
