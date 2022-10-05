@@ -1,26 +1,27 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import MediaQuery from 'react-responsive';
 
 import s from '../AlreadyReadCard/AlreadyReadCard.module.scss';
 
-
-import Modal from '../Modal/Modal';
+// import Modal from '../Modal/Modal';
 import Stars from '../Stars/Stars';
 import { AlreadyReadIcon } from './AlreadyReadIcon';
 import BooksInfo from '../BooksInfo/BooksInfo';
 
+// import ModalResume from '../../ModalResume/ModalResume'
+
 const AlreadyReadCard = book => {
-  const [modal, setModal] = useState(false);
-  const openModal = () => {
-    setModal({
-      open: true,
-    });
-  };
-  const closeModal = () => {
-    setModal({
-      open: false,
-    });
-  };
+  // const [modal, setModal] = useState(false);
+  // const openModal = () => {
+  //   setModal({
+  //     open: true,
+  //   });
+  // };
+  // const closeModal = () => {
+  //   setModal({
+  //     open: false,
+  //   });
+  // };
 
   const updatedBookTitle =
     book.title.length <= 15 ? book.title : book.title.slice(0, 14) + '...';
@@ -88,16 +89,9 @@ const AlreadyReadCard = book => {
           </div>
         )}
       </MediaQuery>
-      <button className={s.button} onClick={() => openModal()}>
+      {/* <button className={s.button} onClick={() => openModal()}>
         <span className={s.buttonText}>Резюме</span>
-      </button>
-      {modal.open && (
-        <Modal type="exit" closeModal={closeModal}>
-          <div>
-          форма відгуку
-          </div>
-        </Modal>
-      )}
+      </button> */}
     </li>
   );
 };

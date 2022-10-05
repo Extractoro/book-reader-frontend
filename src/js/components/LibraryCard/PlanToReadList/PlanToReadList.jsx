@@ -1,16 +1,20 @@
 import s from './PlanToReadList.module.scss';
 
 import MediaQuery from 'react-responsive';
-import PlanToReadCard from '../PlanToReadCard/PlanToReadCard'
+import PlanToReadCard from '../PlanToReadCard/PlanToReadCard';
 
 const PlanToReadList = ({ library, status }) => {
+
+  
+
   return (
     <>
-      <div className={s.infoListContainer}>     {status === 'plan' ? (
-        <p className={s.sectionTitle}>Маю намір прочитати</p>
-      ) : (
-        <p className={s.sectionTitle}>Читаю</p>
-      )}
+      <div className={s.infoListContainer}>
+        {status === 'plan' ? (
+          <p className={s.sectionTitle}>Маю намір прочитати</p>
+        ) : (
+          <p className={s.sectionTitle}>Читаю</p>
+        )}
         <MediaQuery minWidth={768}>
           <div className={s.bookColumns}>
             <p className={s.title}>Назва</p>
@@ -35,7 +39,6 @@ const PlanToReadList = ({ library, status }) => {
             : null}
         </ul>
       </div>
- 
     </>
   );
 };

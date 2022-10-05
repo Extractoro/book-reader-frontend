@@ -1,27 +1,65 @@
-import DatePicker from 'react-datepicker';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
-import s from '../MyTrainingPlaying/MyTrainingPlaying.module.css';
-import sprite from '../../../sprites/myTrainingPlaying.svg';
+import Statistics from '../Statistics';
+import BookTable from '../../components/BookTable';
+import TrainingForm from '../TrainingForm/TrainingForm';
+import AddBookRead from '../AddBookRead/AddBookRead';
 import { useSelector } from 'react-redux';
 import { selectBooks } from 'js/redux/books/books-slice';
 import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import { Loading } from 'notiflix';
 
 function MyTrainingPlaying() {
-  const [selectedDate, setSelectedDate] = useState();
-  const [endDate, setEndDate] = useState();
   const books = useSelector(selectBooks);
-  // const [plannedBooks, setPlannedBooks] = useState([]);
+  const [plannedBooks, setPlannedBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState();
   const [selectedBook, setSelectedBook] = useState('');
   const { isFetching } = useFetchAllBooksQuery();
 
+  useEffect(() => {
+    setFilteredBooks(books);
+  }, [books]);
 
-  // const findSelectedBook = books.find(book => book._id === selectedBook);
-  // console.log(findSelectedBook);
+  const findSelectedBookById = books.find(book => book._id === selectedBook);
 
-  // console.log(filteredBooks);
-  // console.log(renderedBooks);
+  const handleClick = () => {
+    setPlannedBooks([...plannedBooks, findSelectedBookById]);
+
+    setFilteredBooks(
+      filteredBooks.filter(book => {
+        return book._id !== selectedBook;
+      })
+    );
+
+    setSelectedBook('');
+  };
+
+  const onDelete = bookId => {
+    const backedBook = plannedBooks.filter(book => {
+      let backBook = null;
+      if (book !== undefined && bookId !== undefined) {
+        backBook = book._id === bookId;
+      }
+
+      console.log('backBook', backBook);
+      return backBook;
+    });
+
+    setFilteredBooks([...filteredBooks, ...backedBook]);
+
+    setPlannedBooks(plannedBooks =>
+      plannedBooks.filter(book => {
+        let removeBook = null;
+        if (book !== undefined) {
+          removeBook = book._id !== bookId;
+        }
+        return removeBook;
+      })
+    );
+  };
+
+  console.log('plannedBooks', plannedBooks);
+  console.log('filteredBooks', filteredBooks);
 
   // let startDateUnformatted = null;
   // let endDateUnformatted = null;
@@ -48,78 +86,16 @@ function MyTrainingPlaying() {
 
   return (
     <>
-      <>
-        {!isFetching && Loading.remove()}
-        <div className={s['thumb']}>
-          <form className={s.form}>
-            <svg className={s.iconBack} width="24" height="12">
-              <use href={sprite + '#icon-back'}></use>
-            </svg>
-            <h2 className={s.title}>Моє тренування</h2>
-            <div className={s.datePicker}>
-              <div className={s['datePickerWrapper']}>
-                <DatePicker
-                  dateFormat="dd.MM.yyyy"
-                  selected={selectedDate}
-                  onChange={date => setSelectedDate(date)}
-                  className={s['datePickerInput']}
-                  disabledKeyboardNavigation
-                  customInput={
-                    <input
-                      type="text"
-                      placeholder="Початок"
-                      className={s['customInput']}
-                    />
-                  }
-                  placeholderText="Початок"
-                  minDate={new Date()}
-                />
-              </div>
-              <div className={s['datePickerWrapper']}>
-                <DatePicker
-                  dateFormat="dd.MM.yyyy"
-                  selected={endDate}
-                  onChange={endDate => setEndDate(endDate)}
-                  className={s['datePickerInput']}
-                  customInput={
-                    <input
-                      type="text"
-                      placeholder="Завершення"
-                      className={s['customInput']}
-                    />
-                  }
-                  placeholderText="Завершення"
-                  minDate={new Date()}
-                />
-              </div>
-            </div>
-            <div className={s.selectBtn}>
-              {books?.length > 0 && (
-                <>
-                  <select
-                    className={s.select}
-                    onChange={e => setSelectedBook(e.target.value)}
-                  >
-                    {books.map(({ title, _id }) => (
-                      <option
-                        className={s.option}
-                        key={_id}
-                        id={_id}
-                        value={_id}
-                      >
-                        {title}
-                      </option>
-                    ))}
-                  </select>
-                  <button className={s.submitBtn} type="submit">
-                    Додати
-                  </button>
-                </>
-              )}
-            </div>
-          </form>
-        </div>
-      </>
+      {!isFetching && Loading.remove()}
+      <TrainingForm
+        setSelectedBook={setSelectedBook}
+        handleClick={handleClick}
+        filteredBooks={filteredBooks}
+      />
+
+      <BookTable library={plannedBooks} onDelete={onDelete} />
+      <AddBookRead />
+      <Statistics />
       {isFetching && Loading.circle()}
     </>
   );

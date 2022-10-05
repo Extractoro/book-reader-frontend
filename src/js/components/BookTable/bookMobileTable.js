@@ -1,32 +1,51 @@
 import React from 'react';
 import s from './bookMobileTable.module.css';
+import sprite from '../../../sprites/delete-icon.svg';
 // import EllipsisText from "react-ellipsis-text";
 
-export default function BookTableMobile() {
-  const title = '  ';
-  const pages = '  ';
-  const author = '  ';
-  const year = '  ';
+export default function BookTableMobile({ library, onDelete }) {
+  let filteredLibrary = library.filter(book => book !== undefined);
 
   return (
     <>
       <section className={s['section']}>
-        <ul className={s['table']}>
-          <li>
-            <p className={s['subtitleNameBook']}>{title}</p>
-            <p className={s['subtitle']}>
-              <span className={s['topic']}>Author:</span> {author}
-            </p>
-            <p className={s['subtitle']}>
-              <span className={s['topic']}>Year:</span>
-              {year}
-            </p>
-            <p className={s['subtitle']}>
-              <span className={s['topic']}>Pages:</span>
-              {pages}
-            </p>
-          </li>
-        </ul>
+        {filteredLibrary?.length > 0 && (
+          <ul className={s['table']}>
+            {filteredLibrary.map(({ _id, title, author, year, totalPages }) => (
+              <li key={_id} id={_id}>
+                <div className={s['flex-book-container']}>
+                  <div>
+                    <p className={s['subtitleNameBook']}>{title}</p>
+                    <p className={s['subtitle']}>
+                      <span className={s['topic']}>Author:</span> {author}
+                    </p>
+                    <p className={s['subtitle']}>
+                      <span className={s['topic']}>Year:</span>
+                      {year}
+                    </p>
+                    <p className={s['subtitle']}>
+                      <span className={s['topic']}>Pages:</span>
+                      {totalPages}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    className={s['btn-book-delete']}
+                    onClick={() => onDelete(_id)}
+                  >
+                    <svg
+                      className={s['book-delete-icon']}
+                      width="22"
+                      height="17"
+                    >
+                      <use href={sprite + '#delete'} />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </>
   );

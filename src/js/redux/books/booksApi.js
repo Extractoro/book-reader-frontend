@@ -17,6 +17,7 @@ export const booksApi = createApi({
     fetchAllBooks: builder.query({
       query: () => ({ url: '/api/books' }),
       providesTags: ['Books'],
+      keepUnusedDataFor: 3,
     }),
     fetchOneBooks: builder.query({
       query: bookId => ({ url: `/api/books/${bookId}` }),

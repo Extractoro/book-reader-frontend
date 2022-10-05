@@ -1,0 +1,7 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="delete" viewBox="0 0 25 32">
+<path fill="#a6abb9" style="fill: var(--color1, #a6abb9)" d="M19.556 10.667v17.778h-14.222v-17.778h14.222zM16.889 0h-8.889l-1.778 1.778h-6.222v3.556h24.889v-3.556h-6.222l-1.778-1.778zM23.111 7.111h-21.333v21.333c0 1.956 1.6 3.556 3.556 3.556h14.222c1.956 0 3.556-1.6 3.556-3.556v-21.333z"></path>
+</symbol>
+</defs>
+</svg>
