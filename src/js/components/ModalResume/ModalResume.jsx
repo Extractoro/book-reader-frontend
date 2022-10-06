@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { FaStar } from 'react-icons/fa';
 import s from '../ModalResume/ModalResume.module.css';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.getElementById('modal-root');
 
 const colors = {
   orange: '#FFBA5A',
   grey: '#a9a9a9',
 };
 
-function ModalResume() {
+
+const ModalResume = ({ closeModal }) =>{
   const stars = Array(5).fill(0);
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
@@ -23,9 +24,26 @@ function ModalResume() {
   const handleMouseLeave = () => {
     setHoverValue(undefined);
   };
+  const close = useCallback(
+    e => {
+      if (e.code === 'Escape') {
+        return closeModal();
+      }
+      if (e.target === e.currentTarget) {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', close);
+    return () => document.removeEventListener('keydown', close);
+  }, [close]);
+
   return createPortal(
     <>
-      <div className={s.backdrop}>
+      <div onClick={close} className={s.backdrop}>
         <div className={s.modal}>
           <p className={s.name}>Обрати рейтинг книги</p>
           <div className={s.star}>
@@ -60,7 +78,10 @@ function ModalResume() {
             />
           </div>
           <div className={s.sectionBtn}>
-            <button className={s.modalBtn} type="submit">
+            <button
+              className={s.modalBtn}
+              onClick={() => closeModal()}
+            >
               Назад
             </button>
             <button className={s.modalBtn} type="submit">
