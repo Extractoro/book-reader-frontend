@@ -1,6 +1,7 @@
 import s from './UserMenu.module.css';
 import { useMatchMedia } from '../../../../hooks/use-match-media';
 import { useState } from 'react';
+import Media from 'react-media';
 import ModalLogout from '../../ModalLogout/ModalLogout';
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from 'js/redux/auth/auth-slice';
@@ -13,9 +14,13 @@ export default function UserMenu() {
   return (
     <div className={s['menu-container']}>
       <div className={s['user-box']}>
-
-        {isMobile && (<h3 className={s['user-name']}>{user.name}</h3>)}
-
+        <Media
+          query="(max-width:767px)"
+          render={() => (
+            <h3 className={s['user-name']}>{user.name.split('')[0]}</h3>
+          )}
+        />
+        {/* {isMobile && <h3 className={s['user-name']}>{user.name}</h3>} */}
       </div>
       <button
         onClick={() => setIsOpen(true)}

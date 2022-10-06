@@ -43,6 +43,7 @@ export const store = configureStore({
     }),
     authApi.middleware,
     booksApi.middleware,
+    workoutApi.middleware,
   ],
   devTools: process.env.NODE_ENV === 'development',
 });
