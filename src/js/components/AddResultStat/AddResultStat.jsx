@@ -22,7 +22,10 @@ function AddResultStat() {
     setResult(workout);
   }, [workout]);
 
-  // console.log(result);
+  if (result) {
+    console.log(result[0]._id);
+    var workoutId = result[0]._id;
+  }
 
   const handleChange = e => {
     const { selected, value } = e.target;
@@ -31,7 +34,11 @@ function AddResultStat() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    await updateResult({ selectedDate, page }).then(data => console.log(data));
+    await updateResult({
+      id: workoutId,
+      factDate: selectedDate,
+      pages: page,
+    }).unwrap();
     reset();
   };
 
