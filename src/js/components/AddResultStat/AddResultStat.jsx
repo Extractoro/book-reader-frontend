@@ -7,20 +7,6 @@ function AddResultStat(){
   const [selectedDate, setSelectedDate] = useState();
   const [page, setPage] = useState('');
 
-  // const handleInputChanged = event => {
-  //   const { selectedDate, value } = event.currentTarget;
-  //   switch (selectedDate) {
-  //     case 'date':
-  //       setSelectedDate(value);
-  //       break;
-  //     case 'page':
-  //       setPage(value);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
-
   const handleChange = e => {
     const { selected, value } = e.target;
     selected === 'name' ? setSelectedDate(value) : setPage(value);
@@ -83,9 +69,9 @@ function AddResultStat(){
 
           Додати результат
         </button>
-
       </div>
-      <div className={s['stat-wrapper']}>
+
+      < div className={s['stat-wrapper']}>
         <div className={s['line-container']}>
           <div className={s['line-right']}></div>
           <h3 className={s['statTitle']}>Статистика</h3>
@@ -101,7 +87,6 @@ function AddResultStat(){
           </li>
         </ul>
       </div>
-
     </div>
   );
 }
