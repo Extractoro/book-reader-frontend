@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 32px 0;
+  padding: 20px 20px 32px;
 }
 
 @media screen and (min-width: 768px) {
@@ -16,9 +16,11 @@
 }
 
 .input {
+  width: 260px;
+  height: 42px;
   background: #f5f7fa;
-  margin-top: 8px;
-  padding: 15px;
+  margin-bottom: 20px;
+  padding: 0 10px;
   box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.15) inset;
   background: #f6f7fb;
   border: none;
@@ -29,19 +31,27 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+@media screen and (min-width: 768px) {
+  .input {
+    width: 300px;
+  }
+}
+
 .label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   width: 280px;
-  color: #e5e5e5;
+  color: #898F9F;
 }
 
 @media screen and (min-width: 768px) {
   .label {
     width: 320px;
-    color: rgba(166, 171, 185, 1);
   }
+}
+
+.label::after {
+  content: ' *';
+  color: #f25137;
 }
 
 .button {
@@ -100,6 +110,12 @@
 .linkGoogle {
   color: #707375;
   text-decoration: none;
+}
+
+.requiredField {
+  display: inline-block;
+  margin-left: 5px;
+  color: #F25137;
 }
 
 .wrapper {
@@ -189,4 +205,31 @@
   color: #ff6b08;
   text-decoration: underline;
   margin-left: 10px;
+}
+.errName,
+.errEmail,
+.errPassword,
+.errRepeatPassword {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  top: 30%;
+}
+
+.errEmail {
+  top: 45%;
+}
+
+.errPassword {
+  top: 60%;
+}
+
+.errRepeatPassword {
+  top: 75%;
+}
+
+.errText {
+  font-size: 12px;
+  color: red;
 }

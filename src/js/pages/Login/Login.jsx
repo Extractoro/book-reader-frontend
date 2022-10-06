@@ -3,6 +3,8 @@ import { useLoginUserMutation } from 'js/redux/auth/authApi';
 import s from './Login.module.css';
 import { NavLink } from 'react-router-dom';
 import googleIcon from 'images/google/google icon.png';
+import { Formik } from 'formik';
+import validationSchema from 'helpers/ValidationSchema';
 
 export default function LoginPage() {
   const [login] = useLoginUserMutation();
@@ -26,10 +28,25 @@ export default function LoginPage() {
     setEmail('');
     setPassword('');
   };
+  const initialValues = {
+  email: '',
+  password: '',
+};
   return (
     <div className={s.wrapper}>
       <div className={s.overlay}>
         <div className={s.background}>
+          <Formik
+          initialValues = {{
+                name: '',
+                email: '',
+                password: '',
+                repeatPassword: '',
+            }}
+            validationSchema={validationSchema}
+           >
+            {({ values, errors, touched, handleBlur, handleChange, isValid, dirty }) => (
+          
           <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
             <button className={s.google}>
               <img
@@ -41,37 +58,39 @@ export default function LoginPage() {
                 Google
               </NavLink>
             </button>
-            <label className={s.label}>
-              Email
+              <label className={s.label} htmlFor="email">Електронна адреса</label>
               <input
                 className={s.input}
                 type="email"
                 name="email"
-                value={email}
+                value={values.email}
                 onChange={handleChange}
-                required
-                placeholder="email@email.com"
-              />
-            </label>
-
-            <label className={s.label}>
-              Password
+                onBlur={handleBlur}
+                placeholder="your@email.com"
+                />
+                {touched.email && errors.email && <div className={s.errEmail}><p className={s.errText}>{errors.email}</p></div>}
+            <label className={s.label} htmlFor="password">Пароль</label>
               <input
                 className={s.input}
                 type="password"
                 name="password"
-                value={password}
+                value={values.password}
                 onChange={handleChange}
-                required
+                onBlur={handleBlur}
                 placeholder="*********"
-              />
-            </label>
+                />
+                {touched.password && errors.password && <div className={s.errPassword }><p className={s.errText}>{errors.password}</p></div>}
 
-            <button className={s.button}>Увійти</button>
+                <button className={s.button}
+                    disabled={!isValid && !dirty}
+                    onClick={handleSubmit}
+                     >Увійти</button>
             <NavLink to="/register" className={s.linkRegister}>
               Реєстрація
             </NavLink>
-          </form>
+              </form>
+               )}
+            </Formik>
         </div>
       </div>
       <div className={s.quote}>
