@@ -32,6 +32,13 @@
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .thumb {
+    margin: 0;
+    margin-top: 70px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .stat-form {
     display: flex;

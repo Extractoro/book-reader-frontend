@@ -4,9 +4,7 @@ import s from './Table.module.css';
 // import sprite from '../../../sprites/delete-icon.svg';
 import st from './TableItem.module.css';
 
-function Table({ library 
-  // onDelete 
-}) {
+function Table({ library, setIsChecked }) {
   let filteredLibrary = library.filter(book => book !== undefined);
 
   return (
@@ -31,8 +29,12 @@ function Table({ library
             ({ _id: id, title, author, year, totalPages }) => (
               <li className={st.card} key={id} id={id}>
                 <div className={st.iconTitle}>
-                  <input className={st.navIcon} type='checkbox'></input>
-                  {/* <div className={st.navIcon}>{<FirstBook />}</div> */}
+                  <input
+                    className={st.navIcon}
+                    type="checkbox"
+                    value={id}
+                    onChange={e => setIsChecked(e.target.value)}
+                  ></input>
                   <p className={st.bookTitle}>{title}</p>
                 </div>
                 <div className={st.bookInfoWrapper}>
@@ -48,19 +50,6 @@ function Table({ library
                     </p>
                     <p className={st.bookMoreInfoYear}>{year}</p>
                     <p className={st.bookMoreInfoPage}>{totalPages}</p>
-                    {/* <button
-                      type="button"
-                      className={st['btn-book-delete']}
-                      onClick={() => onDelete(id)}
-                    >
-                      <svg
-                        className={st['book-delete-icon']}
-                        width="22"
-                        height="17"
-                      >
-                        <use href={sprite + '#delete'} />
-                      </svg>
-                    </button> */}
                   </div>
                 </div>
               </li>

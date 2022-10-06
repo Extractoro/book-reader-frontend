@@ -80,4 +80,4 @@ const workoutSlice = createSlice({
 export default workoutSlice.reducer;
 
 // Selectors
-export const selectWorkout = state => state.workouts;
+export const selectWorkout = state => state.workout.workouts;

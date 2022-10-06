@@ -29,10 +29,8 @@ export const GoalWrapper = styled.div`
 `;
 
 export const Wrapper = styled.div`
-
   @media (min-width: 1280px) {
-
-    width: 928px;
-    margin: 0 auto 0 20px;
+    margin: 0 auto 0 auto;
+    width: 1280px;
   }
 `;

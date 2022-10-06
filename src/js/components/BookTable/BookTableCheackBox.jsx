@@ -1,11 +1,11 @@
 import Media from 'react-media';
 import s from './bookTable.module.css';
-import TableCheackBox from './TableCheackBox'
+import TableCheckBox from './TableCheckBox';
 
 import React from 'react';
-import BookTableMobileCheakBox from './bookMobileTableCheakBox';
+import BookTableMobileCheckBox from './bookMobileTableCheckBox';
 
-const BookTable = ({ library, onDelete }) => {
+const BookTable = ({ library, setIsChecked }) => {
   return (
     <div className={s['thumb']}>
       <Media
@@ -17,9 +17,14 @@ const BookTable = ({ library, onDelete }) => {
         {matches => (
           <>
             {matches.small && (
-              <BookTableMobileCheakBox library={library} onDelete={onDelete} />
+              <BookTableMobileCheckBox
+                setIsChecked={setIsChecked}
+                library={library}
+              />
             )}
-            {matches.medium && <TableCheackBox library={library} onDelete={onDelete} />}
+            {matches.medium && (
+              <TableCheckBox setIsChecked={setIsChecked} library={library} />
+            )}
           </>
         )}
       </Media>

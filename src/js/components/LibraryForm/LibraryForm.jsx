@@ -42,23 +42,23 @@ const LibraryForm = () => {
 
     switch (name) {
       case 'book':
-        setNameOfBook(value);
+        setNameOfBook(value.trim());
         break;
 
       case 'author':
-        setNameOfAuthor(value);
+        setNameOfAuthor(value.trim());
         break;
 
       case 'year':
         if (value <= date) {
-          setYearOfBook(value);
+          setYearOfBook(value.trim());
         } else {
           console.log('Notify');
         }
         break;
 
       case 'pages':
-        setAmountOfPages(value);
+        setAmountOfPages(value.trim());
         break;
 
       default:

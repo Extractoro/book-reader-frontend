@@ -1,81 +1,48 @@
 import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
-import Statistics from '../Statistics';
-import BookTableCheackBox from '../BookTable/BookTableCheackBox';
-import TrainingForm from '../TrainingForm/TrainingForm';
-import AddBookRead from '../AddBookRead/AddBookRead';
+import BookTableCheckBox from '../BookTable/BookTableCheackBox';
 import { useSelector } from 'react-redux';
 import { selectBooks } from 'js/redux/books/books-slice';
 import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import { Loading } from 'notiflix';
+import { useFetchAllWorkoutsQuery } from 'js/redux/workout/workoutApi';
+import { selectWorkout } from 'js/redux/workout/workout-slice';
+import TimerCountdown from 'js/components/TimerCountdown/TimerCountdown';
+import TimerYear from 'js/components/TimerYear/TimerYear';
+import s from '../../pages/Statistics/Statistics.module.css';
+import StatisticsGraph from 'js/components/Statistics';
+import AddResultStat from 'js/components/AddResultStat';
+import { ChronoUnit, LocalDate } from 'js-joda';
+import GoalReadingStatistics from '../GoalReadingStatistics';
 
-function MyTrainingPlayingCheakBox() {
-  const [selectedDate, setSelectedDate] = useState();
-  const [endDate, setEndDate] = useState();
+function MyTrainingPlayingCheckBox() {
   const books = useSelector(selectBooks);
-  const [plannedBooks, setPlannedBooks] = useState([]);
-  const [filteredBooks, setFilteredBooks] = useState();
-  const [selectedBook, setSelectedBook] = useState('');
+  const workout = useSelector(selectWorkout);
+  const [allBooks, setAllBooks] = useState();
+  const [workoutInfo, setWorkoutInfo] = useState();
+  const [isChecked, setIsChecked] = useState();
   const { isFetching } = useFetchAllBooksQuery();
+  const { isLoading } = useFetchAllWorkoutsQuery();
+  const booksFind = [];
 
   useEffect(() => {
-    setFilteredBooks(
-      books.filter(book => {
-        return book.status === 'plan';
-      })
-    );
-  }, [books]);
+    setAllBooks(books);
+    setWorkoutInfo(workout);
+  }, [books, workout]);
 
-  const findSelectedBookById = books.find(book => book._id === selectedBook);
-
-  const handleClick = () => {
-    setPlannedBooks([...plannedBooks, findSelectedBookById]);
-
-    setFilteredBooks(
-      filteredBooks.filter(book => {
-        return book._id !== selectedBook;
-      })
-    );
-
-    setSelectedBook('');
-  };
-
-  const onDelete = bookId => {
-    const backedBook = plannedBooks.filter(book => {
-      let backBook = null;
-      if (book !== undefined && bookId !== undefined) {
-        backBook = book._id === bookId;
-      }
-
-      // console.log('backBook', backBook);
-      return backBook;
-    });
-
-    setFilteredBooks([...filteredBooks, ...backedBook]);
-
-    setPlannedBooks(plannedBooks =>
-      plannedBooks.filter(book => {
-        let removeBook = null;
-        if (book !== undefined) {
-          removeBook = book._id !== bookId;
-        }
-        return removeBook;
-      })
-    );
-  };
-
-  // console.log('plannedBooks', plannedBooks);
-  // console.log('filteredBooks', filteredBooks);
-
-  let startDateUnformatted = null;
-  let endDateUnformatted = null;
-
-  if (selectedDate !== undefined && endDate !== undefined) {
-    startDateUnformatted = JSON.stringify(selectedDate).slice(1, 11);
-    endDateUnformatted = JSON.stringify(endDate).slice(1, 11);
+  if (workoutInfo !== undefined) {
+    let workoutDate = workoutInfo[0].finishDate;
+    if (workoutDate !== undefined) {
+      var endYear = workoutDate.slice(0, 4);
+      var endMonth = workoutDate.slice(4, 6);
+      var endDay = workoutDate.slice(6, 8);
+    }
   }
 
-  function formatDate(date) {
+  let startDateUnformatted = new Date();
+  startDateUnformatted = JSON.stringify(startDateUnformatted).slice(1, 11);
+
+  function formatDateStat(date) {
     var d = new Date(date),
       month = '' + (d.getMonth() + 1),
       day = '' + (d.getDate() + 1),
@@ -84,41 +51,65 @@ function MyTrainingPlayingCheakBox() {
     if (month.length < 2) month = '0' + month;
     if (day.length < 2) day = '0' + day;
 
-    return [year, month, day].join('.');
+    return [year, month, day].join('-');
   }
 
-  const startDateReady = formatDate(startDateUnformatted);
-  const endDateReady = formatDate(endDateUnformatted);
+  const startDateStat = formatDateStat(startDateUnformatted);
+  const endDateStat = formatDateStat(`${endYear}-${endMonth}-${endDay}`);
 
-  console.log('startDateReady', startDateReady);
-  console.log('endDateReady', endDateReady);
+  function getNumberOfDays(start, end) {
+    const start_date = new LocalDate.parse(start);
+    const end_date = new LocalDate.parse(end);
+
+    return ChronoUnit.DAYS.between(start_date, end_date);
+  }
+
+  if (endDateStat !== 'NaN-NaN-NaN') {
+    var daysStats = getNumberOfDays(startDateStat, endDateStat);
+  }
+
+  if (allBooks !== undefined || workoutInfo !== undefined) {
+    for (let i = 0; i < allBooks.length; i++) {
+      const el = allBooks[i]._id;
+      for (let j = 0; j < workoutInfo[0].books.length; j++) {
+        const element = workoutInfo[0].books[j];
+
+        if (el === element) {
+          booksFind.push(allBooks[i]);
+        }
+      }
+    }
+  }
+
+  // const checkedBook = booksFind.find(book => book._id === isChecked);
+  // console.log(checkedBook);
 
   return (
     <>
       {!isFetching && Loading.remove()}
-      <TrainingForm
-        setSelectedBook={setSelectedBook}
-        handleClick={handleClick}
-        filteredBooks={filteredBooks}
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        endDate={endDate}
-        setEndDate={setEndDate}
-      />
+      {!isLoading && Loading.remove()}
 
-      <BookTableCheackBox library={plannedBooks} onDelete={onDelete} />
-      <AddBookRead
-        setEndDate={setEndDate}
-        setSelectedDate={setSelectedDate}
-        setPlannedBooks={setPlannedBooks}
-        library={plannedBooks}
-        startDateReady={startDateReady}
-        endDateReady={endDateReady}
-      />
-      <Statistics />
+      <div className={s.statContainer}>
+        <div className={s.timerContainer}>
+          <TimerYear />
+          <TimerCountdown />
+        </div>
+        <GoalReadingStatistics
+          books={booksFind}
+          dayQuantity={daysStats}
+          // leftBooks={leftBooks}
+        />
+      </div>
+      <BookTableCheckBox library={booksFind} setIsChecked={setIsChecked} />
+      <div className={s.statFlexContainer}>
+        <StatisticsGraph />
+        <AddResultStat />
+      </div>
+
+      {isLoading && Loading.circle()}
       {isFetching && Loading.circle()}
     </>
   );
 }
 
-export default MyTrainingPlayingCheakBox;
+export default MyTrainingPlayingCheckBox;

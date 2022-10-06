@@ -11,7 +11,6 @@ const TrainingForm = ({
   handleClick,
   filteredBooks,
 }) => {
-  console.log(selectedDate);
   return (
     <div className={s['thumb']}>
       <form className={s.form}>

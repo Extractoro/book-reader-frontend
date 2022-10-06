@@ -19,6 +19,7 @@
     "dayjs": "^1.11.5",
     "font-awesome": "^4.7.0",
     "formik": "^2.2.9",
+    "js-joda": "^1.11.0",
     "nanoid": "^4.0.0",
     "notiflix": "^3.2.5",
     "postcss-scss": "^4.0.5",

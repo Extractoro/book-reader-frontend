@@ -1,20 +1,19 @@
-.thumb{
+.thumb {
   margin-top: 32px;
   width: 280px;
   margin-left: auto;
   margin-right: auto;
-
 }
-@media screen and (min-width: 768px){
-  .thumb{
+@media screen and (min-width: 768px) {
+  .thumb {
     width: 704px;
   }
 }
 
-@media screen and (min-width: 1280px)
-{
-  .thumb{
+@media screen and (min-width: 1280px) {
+  .thumb {
     /*margin: 0 auto 0 20px ;*/
     width: 928px;
+    margin: 0;
   }
 }

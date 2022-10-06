@@ -1,6 +1,16 @@
 @media screen and (min-width: 768px) {
-    .statContainer {
-        display: flex;
-      justify-content: center;
-    }
+  .statContainer {
+    display: flex;
+    justify-content: center;
   }
+
+  .statFlexContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .timerContainer {
+    display: flex;
+    margin: 0 auto;
+  }
+}

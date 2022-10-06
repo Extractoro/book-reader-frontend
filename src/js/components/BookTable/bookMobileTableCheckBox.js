@@ -3,7 +3,7 @@ import s from './bookMobileTable.module.css';
 import sprite from '../../../sprites/delete-icon.svg';
 // import EllipsisText from "react-ellipsis-text";
 
-export default function BookTableMobile({ library, onDelete }) {
+export default function BookTableMobile({ library }) {
   let filteredLibrary = library.filter(book => book !== undefined);
 
   return (
@@ -15,7 +15,7 @@ export default function BookTableMobile({ library, onDelete }) {
               <li key={_id} id={_id}>
                 <div className={s['flex-book-container']}>
                   <div>
-                  <input className={s['navIcon']} type='checkbox'></input>
+                    <input className={s['navIcon']} type="checkbox"></input>
                     <p className={s['subtitleNameBook']}>{title}</p>
                     <p className={s['subtitle']}>
                       <span className={s['topic']}>Author:</span> {author}
@@ -29,19 +29,6 @@ export default function BookTableMobile({ library, onDelete }) {
                       {totalPages}
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    className={s['btn-book-delete']}
-                    onClick={() => onDelete(_id)}
-                  >
-                    <svg
-                      className={s['book-delete-icon']}
-                      width="22"
-                      height="17"
-                    >
-                      <use href={sprite + '#delete'} />
-                    </svg>
-                  </button>
                 </div>
               </li>
             ))}

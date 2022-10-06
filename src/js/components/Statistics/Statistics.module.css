@@ -16,7 +16,9 @@
 
 @media screen and (min-width: 1280px) {
   .thumb {
-    width: 928px;
+    width: 700px;
+    margin-right: 80px;
+    margin: 70px 0 20px 0;
   }
 }
 

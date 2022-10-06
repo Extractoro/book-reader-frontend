@@ -1,22 +1,16 @@
-import GoalReading from '../../components/GoalReading';
-import AddResultStat from '../../components/AddResultStat';
-import { WorkoutContainer, Wrapper, GoalWrapper } from './Workout.styled';
+import { WorkoutContainer, Wrapper } from './Workout.styled';
 import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
 import MyTrainingPlaying from '../../components/MyTrainingPlaying/MyTrainingPlaying';
-import Media from 'react-media';
 import { useSelector } from 'react-redux';
-import { useFetchAllBooksQuery } from '../../redux/books/booksApi';
 import { selectWorkout } from '../../redux/workout/workout-slice';
-import bookSelectors from '../../redux/books/bookSelectors';
 import { Loading } from 'notiflix';
+import { useFetchAllWorkoutsQuery } from 'js/redux/workout/workoutApi';
+import Statistics from '../Statistics';
 
 const Workout = () => {
-  // const books = useSelector(bookSelectors.getAllBooks);
-  const { isFetching } = useFetchAllBooksQuery();
+  const { isFetching } = useFetchAllWorkoutsQuery();
   const isWorkout = useSelector(selectWorkout);
-  // const isFetching = useSelector(bookSelectors.getAllBooks);
-
   return (
     <>
       <>
@@ -24,25 +18,10 @@ const Workout = () => {
         <WorkoutContainer>
           <GlobalCSS />
 
-          <GoalWrapper>
-            <GoalReading />
-
-            <Media
-              query="(min-width:1280px)"
-              render={() => <>{isWorkout && <AddResultStat />}</>}
-            />
-          </GoalWrapper>
-
-          <Wrapper>{isWorkout && <MyTrainingPlaying />}</Wrapper>
-
-          <Media
-            query="(min-width:768px) and (max-width:1279px)"
-            render={() => <>{isWorkout && <AddResultStat />}</>}
-          />
-          <Media
-            query="(max-width:767px)"
-            render={() => <>{isWorkout && <AddResultStat />}</>}
-          />
+          <Wrapper>
+            {isWorkout.length === 0 && <MyTrainingPlaying />}
+            {isWorkout.length === 1 && <Statistics />}
+          </Wrapper>
 
           {/* <AddResultStat /> */}
         </WorkoutContainer>

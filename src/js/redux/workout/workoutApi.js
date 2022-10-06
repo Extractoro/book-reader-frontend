@@ -17,6 +17,7 @@ export const workoutApi = createApi({
     fetchAllWorkouts: builder.query({
       query: () => ({ url: '/api/training' }),
       providesTags: ['workout'],
+      keepUnusedDataFor: 1,
     }),
     createWorkout: builder.mutation({
       query: body => ({

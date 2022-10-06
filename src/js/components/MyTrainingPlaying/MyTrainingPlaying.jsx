@@ -5,9 +5,12 @@ import BookTable from '../../components/BookTable';
 import TrainingForm from '../TrainingForm/TrainingForm';
 import AddBookRead from '../AddBookRead/AddBookRead';
 import { useSelector } from 'react-redux';
+import s from './MyTrainingPlaying.module.css';
 import { selectBooks } from 'js/redux/books/books-slice';
 import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import { Loading } from 'notiflix';
+import GoalReading from '../GoalReading';
+import { ChronoUnit, LocalDate } from 'js-joda';
 
 function MyTrainingPlaying() {
   const [selectedDate, setSelectedDate] = useState();
@@ -47,7 +50,6 @@ function MyTrainingPlaying() {
         backBook = book._id === bookId;
       }
 
-      // console.log('backBook', backBook);
       return backBook;
     });
 
@@ -63,9 +65,6 @@ function MyTrainingPlaying() {
       })
     );
   };
-
-  // console.log('plannedBooks', plannedBooks);
-  // console.log('filteredBooks', filteredBooks);
 
   let startDateUnformatted = null;
   let endDateUnformatted = null;
@@ -87,35 +86,64 @@ function MyTrainingPlaying() {
     return [year, month, day].join('.');
   }
 
+  function formatDateStat(date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + (d.getDate() + 1),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+  }
+
   const startDateReady = formatDate(startDateUnformatted);
   const endDateReady = formatDate(endDateUnformatted);
 
-  console.log('startDateReady', startDateReady);
-  console.log('endDateReady', endDateReady);
+  const startDateStat = formatDateStat(startDateUnformatted);
+  const endDateStat = formatDateStat(endDateUnformatted);
+
+  function getNumberOfDays(start, end) {
+    const start_date = new LocalDate.parse(start);
+    const end_date = new LocalDate.parse(end);
+
+    return ChronoUnit.DAYS.between(start_date, end_date);
+  }
+
+  const daysStats = getNumberOfDays(startDateStat, endDateStat);
 
   return (
     <>
       {!isFetching && Loading.remove()}
-      <TrainingForm
-        setSelectedBook={setSelectedBook}
-        handleClick={handleClick}
-        filteredBooks={filteredBooks}
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        endDate={endDate}
-        setEndDate={setEndDate}
-      />
+      <div className={s['trainings-container']}>
+        <div className={s['flex-training-container']}>
+          <GoalReading books={plannedBooks} dayQuantity={daysStats} />
+          <TrainingForm
+            setSelectedBook={setSelectedBook}
+            handleClick={handleClick}
+            filteredBooks={filteredBooks}
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+            endDate={endDate}
+            setEndDate={setEndDate}
+          />
+        </div>
 
-      <BookTable library={plannedBooks} onDelete={onDelete} />
-      <AddBookRead
-        setEndDate={setEndDate}
-        setSelectedDate={setSelectedDate}
-        setPlannedBooks={setPlannedBooks}
-        library={plannedBooks}
-        startDateReady={startDateReady}
-        endDateReady={endDateReady}
-      />
-      <Statistics />
+        <div className={s['training-container']}>
+          <BookTable library={plannedBooks} onDelete={onDelete} />
+          <AddBookRead
+            setEndDate={setEndDate}
+            setSelectedDate={setSelectedDate}
+            setPlannedBooks={setPlannedBooks}
+            library={plannedBooks}
+            startDateReady={startDateReady}
+            endDateReady={endDateReady}
+          />
+          <Statistics />
+        </div>
+      </div>
+
       {isFetching && Loading.circle()}
     </>
   );

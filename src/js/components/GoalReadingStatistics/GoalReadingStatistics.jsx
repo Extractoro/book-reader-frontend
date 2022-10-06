@@ -1,7 +1,7 @@
 import Title from '../Title';
 
-import s from './GoalReading.module.css';
-const GoalReading = ({ books, dayQuantity }) => {
+import s from './GoalReadingStatistics.module.css';
+const GoalReading = ({ books, dayQuantity, leftBooks }) => {
   return (
     <div className={s['thumb']}>
       <Title />
@@ -15,6 +15,10 @@ const GoalReading = ({ books, dayQuantity }) => {
         <div className={s['wrapper']}>
           <p className={s['number']}>{dayQuantity}</p>
           <p className={s['text']}>Кількість днів</p>
+        </div>
+        <div className={s['wrapper']}>
+          <p className={s['number-book']}>{leftBooks}</p>
+          <p className={s['text']}>Залишилось книжок</p>
         </div>
       </div>
     </div>
