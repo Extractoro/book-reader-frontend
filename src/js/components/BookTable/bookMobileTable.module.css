@@ -81,12 +81,15 @@
   color: #242a37;
 }
 
-.subtitleNameBook::before {
+/* .subtitleNameBook::before {
   content: url('/src/images/mobile/bookTable.svg');
   width: 22px;
   height: 17px;
   display: block;
   margin-right: 12px;
+} */
+.navIcon{
+  width: 40px;
 }
 
 .btn-book-delete {
