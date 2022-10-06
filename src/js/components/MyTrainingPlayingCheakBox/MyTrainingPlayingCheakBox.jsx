@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import Statistics from '../Statistics';
-import BookTable from '../../components/BookTable';
+import BookTableCheackBox from '../BookTable/BookTableCheackBox';
 import TrainingForm from '../TrainingForm/TrainingForm';
 import AddBookRead from '../AddBookRead/AddBookRead';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { selectBooks } from 'js/redux/books/books-slice';
 import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import { Loading } from 'notiflix';
 
-function MyTrainingPlaying() {
+function MyTrainingPlayingCheakBox() {
   const [selectedDate, setSelectedDate] = useState();
   const [endDate, setEndDate] = useState();
   const books = useSelector(selectBooks);
@@ -106,7 +106,7 @@ function MyTrainingPlaying() {
         setEndDate={setEndDate}
       />
 
-      <BookTable library={plannedBooks} onDelete={onDelete} />
+      <BookTableCheackBox library={plannedBooks} onDelete={onDelete} />
       <AddBookRead
         setEndDate={setEndDate}
         setSelectedDate={setSelectedDate}
@@ -121,4 +121,4 @@ function MyTrainingPlaying() {
   );
 }
 
-export default MyTrainingPlaying;
+export default MyTrainingPlayingCheakBox;

@@ -1,12 +1,17 @@
-import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import sprite from '../../../sprites/myTrainingPlaying.svg';
 import s from '../MyTrainingPlaying/MyTrainingPlaying.module.css';
 
-const TrainingForm = ({ setSelectedBook, handleClick, filteredBooks }) => {
-  const [selectedDate, setSelectedDate] = useState();
-  const [endDate, setEndDate] = useState();
-
+const TrainingForm = ({
+  selectedDate,
+  setSelectedDate,
+  endDate,
+  setEndDate,
+  setSelectedBook,
+  handleClick,
+  filteredBooks,
+}) => {
+  console.log(selectedDate);
   return (
     <div className={s['thumb']}>
       <form className={s.form}>
@@ -47,7 +52,7 @@ const TrainingForm = ({ setSelectedBook, handleClick, filteredBooks }) => {
                 />
               }
               placeholderText="Завершення"
-              minDate={new Date()}
+              minDate={selectedDate === undefined ? new Date() : selectedDate}
             />
           </div>
         </div>

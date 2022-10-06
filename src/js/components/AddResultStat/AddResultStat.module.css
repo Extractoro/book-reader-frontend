@@ -13,7 +13,7 @@
 
 .thumb {
   position: relative;
-  margin: 33px auto 50px;
+  margin: 40px auto 50px;
   width: 280px;
   padding: 20px;
   height: 290px;
@@ -21,19 +21,15 @@
   box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.25);
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 1280px){
+@media screen and (min-width: 768px) and (max-width: 1280px) {
   .thumb {
     width: 704px;
-
   }
 
   .stat-form {
     display: flex;
-
     align-items: center;
   }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -52,7 +48,6 @@
   }
 }
 
-
 .date-input {
   position: relative;
   width: 110px;
@@ -63,16 +58,21 @@
   padding-left: 13px;
 }
 
-.date-input::after {
-  content: url('../../../sprites/polygon.svg');
-  display: block;
-  width: 25px;
-  height: 25px;
-
+.date-input-svg {
+  position: relative;
+  width: 110px;
+  height: 42px;
+  background: #f6f7fb;
+  border: 1px solid #a6abb9;
+  background-image: url('../../../sprites/polygon.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 15px;
+  margin-bottom: 28px;
+  padding-left: 13px;
 }
 
 .label {
-
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
@@ -104,14 +104,14 @@
   margin-bottom: 24px;
 }
 
-@media screen and (min-width: 768px){
-  .add-result{
-    margin-top:  9px;
+@media screen and (min-width: 768px) {
+  .add-result {
+    margin-top: 9px;
   }
 }
 
 .statTitle {
-  font-family: 'Montserrat',sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -121,9 +121,8 @@
 
   /* deep blue */
 
-  color: #242A37;
+  color: #242a37;
 }
-
 
 .date {
   font-style: normal;
@@ -131,7 +130,6 @@
   font-size: 14px;
   line-height: 17px;
   /* identical to box height */
-
 
   text-transform: uppercase;
 }
@@ -156,71 +154,64 @@
   color: #898f9f;
 }
 
-
-@media screen and (min-width: 320px) and (max-width: 767px){
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .stat-info {
     display: flex;
     align-content: center;
     justify-content: space-between;
   }
 
-  .statTitle{
+  .statTitle {
     text-align: center;
   }
-  .date{
+  .date {
     text-align: center;
   }
 
-  .line-left{
+  .line-left {
     width: 71px;
-    border-bottom: 1px solid #E0E5EB;
+    border-bottom: 1px solid #e0e5eb;
   }
 
-  .line-right{
+  .line-right {
     width: 71px;
-    border-bottom: 1px solid #E0E5EB;
+    border-bottom: 1px solid #e0e5eb;
   }
-
-
-
-
 }
-@media screen and (min-width:1280px ){
+@media screen and (min-width: 1280px) {
   .stat-info {
     display: flex;
     align-content: center;
     justify-content: space-between;
   }
 
-  .statTitle{
+  .statTitle {
     text-align: center;
   }
-  .date{
+  .date {
     text-align: center;
   }
 
-  .line-left{
+  .line-left {
     margin-right: 8px;
     width: 71px;
-    border-bottom: 1px solid #E0E5EB;
+    border-bottom: 1px solid #e0e5eb;
   }
 
-  .line-right{
+  .line-right {
     margin-left: 8px;
     width: 71px;
-    border-bottom: 1px solid #E0E5EB;
+    border-bottom: 1px solid #e0e5eb;
   }
-
 }
 
 .dateTitle {
   display: flex;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1280px){
-  .stat-info{
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .stat-info {
     display: flex;
-
   }
   .result-wrapper {
     display: flex;
@@ -228,33 +219,27 @@
     align-items: center;
   }
 
-  .stat-wrapper{
+  .stat-wrapper {
     width: fit-content;
     margin-left: 66px;
     margin-top: 21px;
   }
-  .date{
+  .date {
     margin-right: 32px;
   }
-  .hour{
+  .hour {
     margin-right: 32px;
   }
 
-
-
-  .line-left{
-    border-bottom: 1px solid #E0E5EB;
+  .line-left {
+    border-bottom: 1px solid #e0e5eb;
     width: 177px;
     margin-left: 8px;
   }
-
 }
 
-.line-container{
+.line-container {
   /*width: 285px;*/
   display: flex;
-  justify-content: start;
   align-items: center;
 }
-
-

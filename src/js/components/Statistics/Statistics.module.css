@@ -1,13 +1,11 @@
-
 .thumb {
   position: relative;
-  margin: 33px auto 50px;
+  margin: 90px auto 29px;
   width: 280px;
 
   height: 290px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.25);
-
 }
 
 @media screen and (min-width: 768px) {
@@ -18,11 +16,9 @@
 
 @media screen and (min-width: 1280px) {
   .thumb {
-
     width: 928px;
   }
 }
-
 
 .value {
   font-family: 'Montserrat';
@@ -30,7 +26,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  color: #242A37;
+  color: #242a37;
 }
 
 @media (max-width: 767px) {
@@ -51,7 +47,6 @@
   margin: 21px auto 0 auto;
   width: 236px;
   height: 190px;
-
 }
 
 @media (min-width: 768px) {
@@ -60,29 +55,21 @@
   }
 }
 
-
 .btnAddMyTraining {
   position: absolute;
   width: 52px;
   height: 52px;
   cursor: pointer;
-  background: #FF6B08;
+  background: #ff6b08;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
-
-.thumbBtn{
+.thumbBtn {
   margin: 13px auto 0 auto;
   width: 52px;
   height: 52px;
 }
-
-
-
-
-

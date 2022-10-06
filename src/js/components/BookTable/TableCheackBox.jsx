@@ -1,11 +1,12 @@
 import React from 'react';
 import Media from 'react-media';
 import s from './Table.module.css';
-import sprite from '../../../sprites/delete-icon.svg';
-import { FirstBook } from '../LibraryCard/PlanToReadCard/FirstBook';
+// import sprite from '../../../sprites/delete-icon.svg';
 import st from './TableItem.module.css';
 
-function Table({ library, onDelete }) {
+function Table({ library 
+  // onDelete 
+}) {
   let filteredLibrary = library.filter(book => book !== undefined);
 
   return (
@@ -30,7 +31,8 @@ function Table({ library, onDelete }) {
             ({ _id: id, title, author, year, totalPages }) => (
               <li className={st.card} key={id} id={id}>
                 <div className={st.iconTitle}>
-                  <div className={st.navIcon}>{<FirstBook />}</div>
+                  <input className={st.navIcon} type='checkbox'></input>
+                  {/* <div className={st.navIcon}>{<FirstBook />}</div> */}
                   <p className={st.bookTitle}>{title}</p>
                 </div>
                 <div className={st.bookInfoWrapper}>
@@ -46,7 +48,7 @@ function Table({ library, onDelete }) {
                     </p>
                     <p className={st.bookMoreInfoYear}>{year}</p>
                     <p className={st.bookMoreInfoPage}>{totalPages}</p>
-                    <button
+                    {/* <button
                       type="button"
                       className={st['btn-book-delete']}
                       onClick={() => onDelete(id)}
@@ -58,7 +60,7 @@ function Table({ library, onDelete }) {
                       >
                         <use href={sprite + '#delete'} />
                       </svg>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </li>
