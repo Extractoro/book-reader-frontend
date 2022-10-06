@@ -1,0 +1,226 @@
+:root {
+  --first-text-and-background-color: #ffffff;
+  --accent-text-and-background-color: #ff6b08;
+  --background-and-text-color: #ffb8ca;
+  --second-text-color: #242a37;
+  --third-text-color: #898f9f;
+  --fourth-text-color: #091e3f;
+  --first-background-color: #6d7a8d;
+  --hover-buttons: #d15807;
+}
+
+/*.thumb {*/
+/*  width: 280px;*/
+/*}*/
+.backdrop {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.modal{
+  position: absolute;
+  min-width: 80%;
+  min-height: 80%;
+  padding: 20px 24px 0px 24px;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.29);
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  .thumb {
+    width: 704px;
+    margin: 0 auto 0 auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .thumb {
+    width: 928px;
+  }
+}
+
+.form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.iconBack {
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .iconBack {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .title {
+    display: flex;
+    background-color: #b1b5c2;
+    color: #ffffff;
+    height: 60px;
+    margin-top: 32px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.datePicker {
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .datePicker {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .datePicker {
+    display: flex;
+    width: 682px;
+    justify-content: flex-end;
+  }
+}
+
+.customInput {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  margin-right: 10px;
+  padding-left: 41px;
+  /* identical to box height */
+  color: #a6abb9;
+}
+
+.datePickerWrapper::after {
+  position: absolute;
+  content: url('/src/images/mobile/calendar.svg');
+  top: 33px;
+  margin-left: 12px;
+  /*border: 2px solid tomato;*/
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+@media screen and (min-width: 320px) {
+  .datePickerInput {
+    height: 42px;
+    width: 100%;
+    border: 2px solid #a6abb9;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .datePickerInput {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .datePickerInput:nth-last-child(2) {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .selectBtn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 24px;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .select {
+    background: #ffffff;
+    box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
+    height: 42px;
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .select {
+    width: 483px;
+    margin-top: 0px;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .select {
+    width: 715px;
+    margin-right: 32px;
+  }
+}
+
+.option {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (min-width: 320px) {
+  .submitBtn {
+    width: 171px;
+    height: 42px;
+    background-color: var(--first-text-and-background-color);
+    padding: 0px;
+    border: 1px solid #242a37;
+    cursor: pointer;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .submitBtn {
+    width: 181px;
+  }
+}
+
+.submitBtn:focus {
+  background-color: var(--accent-text-and-background-color);
+  color: var(--first-text-and-background-color);
+}
+
+.submitBtn:hover {
+  position: relative;
+  color: var(--first-text-and-background-color);
+  background-color: var(--accent-text-and-background-color);
+}
