@@ -1,32 +1,27 @@
-.thumb{
-
+.thumb {
   width: 200px;
   height: 40px;
   cursor: pointer;
-  background: #FF6B08;
+  background: #ff6b08;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  color:#FFFFFF;
+  color: #ffffff;
 }
 
-
-@media screen and (max-width: 767px){
-     .thumb{
-
-       margin: 0 auto 0 auto;
-       border-radius: 50%;
-       width: 52px;
-       height: 52px;
-     }
+@media screen and (max-width: 767px) {
+  .thumb {
+    width: 200px;
+    height: 40px;
+    margin: 0 auto 0 auto;
+  }
 }
-.thumbBtn{
-
+.thumbBtn {
 }
 
-@media screen and (min-width: 768px){
-  .thumbBtn{
+@media screen and (min-width: 768px) {
+  .thumbBtn {
     width: fit-content;
     /*margin-right: auto;*/
     /*margin-left: auto;*/
@@ -34,8 +29,7 @@
   }
 }
 
-
-.text{
+.text {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
@@ -45,10 +39,5 @@
 
   text-align: center;
 
-  color: #FFFFFF;
+  color: #ffffff;
 }
-
-
-
-
-

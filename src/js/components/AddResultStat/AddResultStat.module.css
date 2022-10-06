@@ -28,7 +28,6 @@
 
   .stat-form {
     display: flex;
-
     align-items: center;
   }
 }
@@ -242,6 +241,5 @@
 .line-container {
   /*width: 285px;*/
   display: flex;
-  justify-content: start;
   align-items: center;
 }
