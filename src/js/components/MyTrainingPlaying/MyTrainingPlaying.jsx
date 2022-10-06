@@ -19,7 +19,9 @@ function MyTrainingPlaying() {
   const [plannedBooks, setPlannedBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState();
   const [selectedBook, setSelectedBook] = useState('');
-  const { isFetching } = useFetchAllBooksQuery();
+  const { isFetching } = useFetchAllBooksQuery(books, {
+    skip: true,
+  });
 
   useEffect(() => {
     setFilteredBooks(
