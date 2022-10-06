@@ -78,17 +78,6 @@ function AddResultStat() {
                   value={page}
                   onChange={handleChange}
                 />
-                minDate={new Date()}
-              </label>
-              <label className={s['label']}>
-                <p className={s['dateTitle']}> Кількість сторінок</p>
-                <input
-                  className={s['date-input']}
-                  type="number"
-                  name="number"
-                  value={page}
-                  onChange={handleChange}
-                />
               </label>
             </form>
             <button
@@ -96,7 +85,6 @@ function AddResultStat() {
               type="button"
               onClick={handleSubmit}
             >
-              {' '}
               Додати результат
             </button>
           </div>
