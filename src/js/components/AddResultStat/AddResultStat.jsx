@@ -22,7 +22,6 @@ function AddResultStat() {
     setResult(workout);
   }, [workout]);
 
-  console.log(result);
 
   const handleChange = e => {
     const { selected, value } = e.target;
@@ -79,39 +78,49 @@ function AddResultStat() {
                   value={page}
                   onChange={handleChange}
                 />
-              </label>
-            </form>
-            <button
-              className={s['add-result']}
-              type="button"
-              onClick={handleSubmit}
-            >
-              {' '}
-              Додати результат
-            </button>
-          </div>
-          <div className={s['stat-wrapper']}>
-            <div className={s['line-container']}>
-              <div className={s['line-right']}></div>
-              <h3 className={s['statTitle']}>Статистика</h3>
-              <div className={s['line-left']}></div>
-            </div>
+              }
+              minDate={new Date()}
+            />
+          </label>
+          <label className={s['label']}>
+            <p className={s['dateTitle']}> Кількість сторінок</p>
+            <input
 
-            <ul className={s['stat-list']}>
-              <li className={s['stat-info']}>
-                <p className={s['date']}>10.10.2019 </p>
-                <p className={s['hour']}>08.10.23</p>
+              className={s['date-input']}
+              type='number'
+              name='number'
+              value={page}
+              onChange={handleChange}
+            />
+          </label>
+        </form>
+        <button className={s['add-result']}
+                type='button'
+                onClick={handleSubmit}>
+          {' '}
 
-                <p className={s['date']}>
-                  32<span className={s['page']}>стор.</span>
-                </p>
-              </li>
-            </ul>
-          </div>
+          Додати результат
+        </button>
+      </div>
+
+      < div className={s['stat-wrapper']}>
+        <div className={s['line-container']}>
+          <div className={s['line-right']}></div>
+          <h3 className={s['statTitle']}>Статистика</h3>
+          <div className={s['line-left']}></div>
         </div>
-      </>
-      {/* {isFetching && Loading.remove()} */}
-    </>
+
+        <ul className={s['stat-list']}>
+          <li className={s['stat-info']}>
+            <p className={s['date']}>10.10.2019  </p>
+            <p className={s['hour']}>08.10.23</p>
+            <p className={s['date']}>32<span className={s['page']}>стор.</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   );
 }
 
