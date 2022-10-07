@@ -24,7 +24,15 @@ const AlreadyReadList = ({ library }) => {
       <ul className={s.list}>
         {library.length > 0
           ? library.map(
-              ({ _id: id, title, author, year, totalPages, rating }) => (
+              ({
+                _id: id,
+                title,
+                author,
+                year,
+                totalPages,
+                rating,
+                resume,
+              }) => (
                 <AlreadyReadCard
                   key={id}
                   id={id}
@@ -33,6 +41,7 @@ const AlreadyReadList = ({ library }) => {
                   year={year}
                   pages={totalPages}
                   rating={rating}
+                  resume={resume}
                 />
               )
             )
