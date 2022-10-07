@@ -41,8 +41,7 @@ export default function LoginPage() {
                 Google
               </NavLink>
             </button>
-            <label className={s.label}>
-              Email
+            <label className={s.label}>Електронна адреса</label>
               <input
                 className={s.input}
                 type="email"
@@ -50,12 +49,11 @@ export default function LoginPage() {
                 value={email}
                 onChange={handleChange}
                 required
-                placeholder="email@email.com"
+              placeholder="your@email.com"
+              minLength={6}
+              maxLength={40}
               />
-            </label>
-
-            <label className={s.label}>
-              Password
+            <label className={s.label}>Пароль</label>
               <input
                 className={s.input}
                 type="password"
@@ -63,9 +61,10 @@ export default function LoginPage() {
                 value={password}
                 onChange={handleChange}
                 required
-                placeholder="*********"
+              placeholder="*********"
+              minLength={6}
+              maxLength={30}
               />
-            </label>
 
             <button className={s.button}>Увійти</button>
             <NavLink to="/register" className={s.linkRegister}>

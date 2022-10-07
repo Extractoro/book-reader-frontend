@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0 32px 0;
+    padding: 20px 20px 32px;
+    position: relative;
 }
 
 @media screen and (min-width: 768px) {
@@ -16,9 +17,11 @@
 }
 
 .input {
-    background: #F5F7FA;
-    margin-top: 8px;
-    padding: 15px;
+    width: 260px;
+    height: 42px;
+    background: #f5f7fa;
+    margin-bottom: 20px;
+    padding: 0 10px;
     box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.15) inset;
     background: #f6f7fb;
     border: none;
@@ -29,25 +32,34 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+@media screen and (min-width: 768px) {
+    .input {
+        width: 300px;
+    }
+}
+
 .label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     width: 280px;
-    color: #E5E5E5;
+    color: #898F9F;
 }
 
 @media screen and (min-width: 768px) {
     .label {
         width: 320px;
-        color: rgba(166, 171, 185, 1);
     }
+}
+
+.label::after {
+    content: ' *';
+    color: #f25137;
 }
 
 .button {
     display: block;
+    margin: auto;
     margin-bottom: 16px;
-    padding: 20px 110px;
+    padding: 8px 20px 10px;
     width: 280px;
     height: 60px;
     background-color: #FF6B08;
@@ -225,11 +237,6 @@
     }
 }
 
-.register {
-    color: #FF6B08;
-    padding-bottom: 45px;
-}
-
 .background {
     background-color: rgba(9, 30, 63, 0.8);
     background-blend-mode: screen;
@@ -267,8 +274,9 @@
 }
 
 .line {
-    color: rgba(36, 42, 55, 0.5);
     width: 100px;
+    border-bottom: solid 1px #898f9f;
+    margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -284,4 +292,28 @@
     line-height: 16px;
     color: #FF6B08;
     text-decoration: underline;
+}
+
+.errName,
+.errEmail,
+.errPassword,
+.errRepeatPassword {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: 20%;
+}
+
+.errEmail {
+    top: 32%;
+}
+
+.errPassword {
+    top: 48%;
+}
+
+.errText {
+    font-size: 12px;
+    color: red;
 }
