@@ -21,7 +21,13 @@
 
 .flex-training-container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1280px) {
+  .flex-training-container {
+    flex-direction: row-reverse;
+  }
 }
 
 .training-container {
