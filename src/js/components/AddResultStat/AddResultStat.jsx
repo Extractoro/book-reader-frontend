@@ -21,7 +21,6 @@ function AddResultStat() {
   }, [workout]);
 
   if (result) {
-    console.log(result);
     var workoutId = result[0]._id;
     var dateNow = result[0].dateNow;
   }

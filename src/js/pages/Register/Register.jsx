@@ -155,10 +155,7 @@ export default function RegisterPage() {
           </form>
         </div>
       </div>
-      <Media
-          query="(min-width: 768px)"
-          render={() => <InfoText />}
-        />
+      <Media query="(min-width: 768px)" render={() => <InfoText />} />
     </div>
   );
 }

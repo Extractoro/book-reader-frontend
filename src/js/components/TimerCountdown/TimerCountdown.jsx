@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import s from '../TimerCountdown/TimerCountdown.module.css';
 
-const TimerCountdown = () => {
+const TimerCountdown = ({ endDateStat }) => {
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
   const [timerMinutes, setTimerMinutes] = useState('00');
@@ -9,8 +9,8 @@ const TimerCountdown = () => {
 
   let interval = useRef();
 
-  const startTimer = () => {
-    const countdownDate = new Date('December 31, 2022 00:00:00').getTime();
+  const startTimer = endDate => {
+    const countdownDate = new Date(endDate).getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -33,7 +33,7 @@ const TimerCountdown = () => {
   };
 
   useEffect(() => {
-    startTimer();
+    startTimer(endDateStat);
     return () => {
       clearInterval(interval);
     };

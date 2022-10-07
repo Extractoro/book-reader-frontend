@@ -5,15 +5,12 @@ import Media from 'react-media';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './Library.module.css';
 import { Loading } from 'notiflix';
-
 import PlanToReadList from 'js/components/LibraryCard/PlanToReadList';
 import { useSelector } from 'react-redux';
 import { selectBooks } from 'js/redux/books/books-slice';
 import AlreadyReadList from 'js/components/LibraryCard/AlreadyReadList';
-
 import { useState } from 'react';
-
-import bookSelectors from 'js/redux/books/bookSelectors'
+import bookSelectors from 'js/redux/books/bookSelectors';
 
 const Library = () => {
   const { isFetching } = useFetchAllBooksQuery();
@@ -26,7 +23,7 @@ const Library = () => {
   const booksPlan = useSelector(bookSelectors.getPlan);
   const booksRead = useSelector(bookSelectors.getRead);
   const booksDone = useSelector(bookSelectors.getDone);
-  
+
   return (
     <div>
       <>
