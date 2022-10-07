@@ -8,15 +8,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import MediaQuery from 'react-responsive';
 import { useState } from 'react';
 
-
 import { useUpdateBookMutation } from 'js/redux/books/booksApi';
 
-export default function FormReview({ closeModal, id, rating, resume }) {
-   const [add] = useUpdateBookMutation();
-   const [ratingBook, setRatingBook] = useState('');
-   const [resumeBook, setResumeBook] = useState('');
-   
-  
+const FormReview = ({ closeModal, id, rating, resume }) => {
+  const [updateResume] = useUpdateBookMutation();
+  const [ratingBook, setRatingBook] = useState('');
+  const [resumeBook, setResumeBook] = useState('');
+
   const reset = () => {
     setRatingBook('');
     setResumeBook('');
@@ -24,15 +22,16 @@ export default function FormReview({ closeModal, id, rating, resume }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    add({
-      rating: ratingBook,
-      resume: resumeBook,
+    updateResume({
+      ratingBook: rating,
+      resumeBook: resume,
+      id,
     });
     reset();
   };
 
   const validationReviewForm = Yup.object().shape({
-    comment: Yup.string().min(1, 'Write something').required('Write something'),
+    resume: Yup.string().min(1, 'Write something').required('Write something'),
   });
 
   return (
@@ -45,16 +44,17 @@ export default function FormReview({ closeModal, id, rating, resume }) {
         }}
         validationSchema={validationReviewForm}
         onSubmit={(values, { resetForm }) => {
-            add({
-              rating: ratingBook,
-              resume: resumeBook,
-            });
+          updateResume({
+            rating: ratingBook,
+            resume: resumeBook,
+            id: id,
+          });
           resetForm();
           closeModal();
           Notify.success('Твій відгук збережено');
         }}
       >
-        {({ values, handleChange, handleBlur }) => (
+        {({ values, handleChange, handleBlur, handleSubmit }) => (
           <form onSubmit={handleSubmit} className={s.form}>
             <div className={s.form__container}>
               <h2 className={s.modalTitle}>Обрати рейтинг книги</h2>
@@ -116,4 +116,5 @@ export default function FormReview({ closeModal, id, rating, resume }) {
       </Formik>
     </>
   );
-}
+};
+export default FormReview;
