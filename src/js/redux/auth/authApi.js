@@ -37,12 +37,12 @@ export const authApi = createApi({
       }),
       invalidatesTags: ['auth'],
     }),
-    // fetchGoogleAccount: builder.query({
-    //   query: () => ({
-    //     url: '/api/users/google',
-    //   }),
-    //   providesTags: ['auth'],
-    // }),
+    fetchGoogleAccount: builder.query({
+      query: () => ({
+        url: '/api/users/google',
+      }),
+      providesTags: ['auth'],
+    }),
     currentUser: builder.query({
       query: () => ({
         url: '/api/users/current',
@@ -56,6 +56,6 @@ export const {
   useRegistrationUserMutation,
   useLoginUserMutation,
   useLogoutUserMutation,
-  // useFetchGoogleAccountQuery,
+  useFetchGoogleAccountQuery,
   useCurrentUserQuery,
 } = authApi;

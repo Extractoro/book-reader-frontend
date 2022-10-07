@@ -86,8 +86,7 @@ function MyTrainingPlayingCheckBox() {
 
   console.log(workoutInfo);
   const doneBook = booksFind.filter(book => book.status === 'done');
-  console.log(doneBook);
-  // console.log(startDateStat);
+
   return (
     <>
       {!isLoading && Loading.remove()}
