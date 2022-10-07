@@ -7,7 +7,8 @@ import Stars from '../Stars/Stars';
 import { AlreadyReadIcon } from './AlreadyReadIcon';
 import BooksInfo from '../BooksInfo/BooksInfo';
 
-import ModalResume from '../../ModalResume/ModalResume'
+import Modal from '../Modal/Modal'
+import FormReview from '../Modal/FormReview/FormReview';
 
 const AlreadyReadCard = book => {
   const [modal, setModal] = useState(false);
@@ -21,6 +22,10 @@ const AlreadyReadCard = book => {
       open: false,
     });
   };
+
+  // if (!book.resume) {
+  //   console.log('резюме не має');
+  // }
 
   const updatedBookTitle =
     book.title.length <= 15 ? book.title : book.title.slice(0, 14) + '...';
@@ -92,10 +97,14 @@ const AlreadyReadCard = book => {
         <span className={s.buttonText}>Резюме</span>
       </button>
       {modal.open && (
-        <ModalResume
-          closeModal={closeModal}
-        >
-        </ModalResume>
+        <Modal type="exit" closeModal={closeModal}>
+          <FormReview
+            closeModal={closeModal}
+            id={book.id}
+            rating={book.rating}
+            resume={book.resume}
+          />
+        </Modal>
       )}
     </li>
   );
