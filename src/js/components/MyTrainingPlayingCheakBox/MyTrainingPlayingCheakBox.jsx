@@ -86,8 +86,8 @@ function MyTrainingPlayingCheckBox() {
 
   return (
     <>
-      {!isFetching && Loading.remove()}
       {!isLoading && Loading.remove()}
+      {!isFetching && Loading.remove()}
 
       <div className={s.statContainer}>
         <div className={s.timerContainer}>
@@ -106,8 +106,8 @@ function MyTrainingPlayingCheckBox() {
         <AddResultStat />
       </div>
 
-      {isLoading && Loading.circle()}
       {isFetching && Loading.circle()}
+      {isLoading && Loading.circle()}
     </>
   );
 }
