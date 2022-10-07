@@ -46,26 +46,17 @@ export default function RegisterPage() {
     }
   };
 
-  const onMessage = () => {
-    if (
-      name.length > 0 &&
-      email.length > 0 &&
-      password.length > 0 &&
-      repeatPassword.length > 0
-    ) {
-      Notify.success('Ви зареєструвалися. Теперь залогінтесь');
+  const handleSubmit = async event => {
+    event.preventDefault();
+    try {
+      await register({ name, email, password, repeatPassword }).unwrap();
+      Notify.success('Ви зареєструвалися. Тепер залогінтесь');
+      formFieldsReset();
+    } catch (error) {
+      Notify.warning(`${error.data.message}`);
+      formFieldsReset();
     }
   };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    register({ name, email, password, repeatPassword });
-    formFieldsReset();
-  };
-
-  // const registerWithGoogle = async () => {
-  //   await google();
-  // };
 
   const formFieldsReset = () => {
     setName('');
@@ -139,11 +130,7 @@ export default function RegisterPage() {
                 placeholder="*********"
               />
             </label>
-            <button
-              className={s.button}
-              type="submit"
-              onClick={() => onMessage()}
-            >
+            <button className={s.button} type="submit">
               Зареєструватися
             </button>
             <p className={s.text}>
@@ -155,10 +142,7 @@ export default function RegisterPage() {
           </form>
         </div>
       </div>
-      <Media
-          query="(min-width: 768px)"
-          render={() => <InfoText />}
-        />
+      <Media query="(min-width: 768px)" render={() => <InfoText />} />
     </div>
   );
 }

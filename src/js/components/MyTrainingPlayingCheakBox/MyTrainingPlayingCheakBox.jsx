@@ -22,7 +22,9 @@ function MyTrainingPlayingCheckBox() {
   const [workoutInfo, setWorkoutInfo] = useState();
   const [isChecked, setIsChecked] = useState();
   const { isFetching } = useFetchAllBooksQuery();
-  const { isLoading } = useFetchAllWorkoutsQuery();
+  const { isLoading } = useFetchAllWorkoutsQuery(workout, {
+    skip: true,
+  });
   const booksFind = [];
 
   useEffect(() => {
