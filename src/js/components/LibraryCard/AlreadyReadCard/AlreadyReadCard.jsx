@@ -58,7 +58,7 @@ const AlreadyReadCard = book => {
               <div className={s.bookMoreInfoPage}>
                 {book.rating ? (
                   <div className={s.marginStar}>
-                    <Stars backRate={book.rating} />
+                    <Stars rating={book.rating} />
                   </div>
                 ) : (
                   <div className={s.marginStar}>
@@ -85,7 +85,7 @@ const AlreadyReadCard = book => {
         <p className={s.bookMoreInfoPage}>{book.pages}</p>
         {book.rating ? (
           <div className={s.marginStar}>
-            <Stars backRate={book.rating} />
+            <Stars rating={book.rating} />
           </div>
         ) : (
           <div className={s.marginStar}>
