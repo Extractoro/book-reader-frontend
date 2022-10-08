@@ -7,14 +7,19 @@ const Navigation = () => {
     <nav className={s['nav']}>
       <NavLink
         to="/library"
-        className={s['link']}
-        activeclassname={s['activeLink']}
+        // className={s['link']}
+        // activeclassname={s['activeLink']}
+        className={({ isActive }) => (isActive ? s['linkActive'] : s['link'])}
       >
         <svg className={s['book']} width="22" height="18">
           <use href={sprite + '#header-vector'}></use>
         </svg>
       </NavLink>
-      <NavLink to="/workout" className={s['link']} activeclassname={s['activeLink']}>
+      <NavLink
+        to="/workout"
+        // className={s['link']} activeclassname={s['activeLink']}
+        className={({ isActive }) => (isActive ? s['linkActive'] : s['link'])}
+      >
         <svg className={s['home']} width="20" height="18">
           <use href={sprite + '#header-home'}></use>
         </svg>
