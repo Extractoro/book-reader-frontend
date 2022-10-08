@@ -17,7 +17,7 @@ const GoalReading = ({ books, dayQuantity, leftBooks }) => {
           <p className={s['text']}>Кількість днів</p>
         </div>
         <div className={s['wrapper']}>
-          <p className={s['number-book']}>{leftBooks}</p>
+          <p className={s['number-book']}>{books.length - leftBooks.length}</p>
           <p className={s['text']}>Залишилось книжок</p>
         </div>
       </div>

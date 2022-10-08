@@ -20,7 +20,7 @@ function MyTrainingPlayingCheckBox() {
   const workout = useSelector(selectWorkout);
   const [allBooks, setAllBooks] = useState();
   const [workoutInfo, setWorkoutInfo] = useState();
-  const [isChecked, setIsChecked] = useState();
+  const [, setIsChecked] = useState();
   const { isFetching } = useFetchAllBooksQuery();
   const { isLoading } = useFetchAllWorkoutsQuery(workout, {
     skip: true,
@@ -86,20 +86,26 @@ function MyTrainingPlayingCheckBox() {
   // const checkedBook = booksFind.find(book => book._id === isChecked);
   // console.log(checkedBook);
 
+  console.log(workoutInfo);
+  const doneBook = booksFind.filter(book => book.status === 'done');
+
   return (
     <>
-      {!isFetching && Loading.remove()}
       {!isLoading && Loading.remove()}
+      {!isFetching && Loading.remove()}
 
       <div className={s.statContainer}>
         <div className={s.timerContainer}>
           <TimerYear />
-          <TimerCountdown />
+          <TimerCountdown
+            endDateStat={endDateStat}
+            startDateStat={startDateStat}
+          />
         </div>
         <GoalReadingStatistics
           books={booksFind}
           dayQuantity={daysStats}
-          // leftBooks={leftBooks}
+          leftBooks={doneBook}
         />
       </div>
       <BookTableCheckBox library={booksFind} setIsChecked={setIsChecked} />
@@ -108,8 +114,8 @@ function MyTrainingPlayingCheckBox() {
         <AddResultStat />
       </div>
 
-      {isLoading && Loading.circle()}
       {isFetching && Loading.circle()}
+      {isLoading && Loading.circle()}
     </>
   );
 }

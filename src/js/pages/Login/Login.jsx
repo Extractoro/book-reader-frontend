@@ -1,14 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import queryString from 'query-string';
+import { useDispatch } from 'react-redux';
+import { googleLogIn } from 'js/redux/auth/auth-slice';
 import { useLoginUserMutation } from 'js/redux/auth/authApi';
 import s from './Login.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import googleIcon from 'images/google/google icon.png';
 import { Notify } from 'notiflix';
 
 export default function LoginPage() {
+  const location = useLocation();
+  const query = queryString.parse(location.search);
+  const dispatch = useDispatch();
   const [login] = useLoginUserMutation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  console.log(location);
+  useEffect(() => {
+    if (query.token) {
+      const { name, email, token } = query;
+      const user = { name, email };
+      dispatch(googleLogIn({ user, token }));
+    }
+  });
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -39,42 +54,40 @@ export default function LoginPage() {
     <div className={s.wrapper}>
       <div className={s.overlay}>
         <div className={s.background}>
+          <button className={s.google}>
+            <img src={googleIcon} alt="google-icon" className={s.google_icon} />
+            <a
+              href="https://book-reader-backend.herokuapp.com/api/users/google"
+              className={s.linkGoogle}
+            >
+              Google
+            </a>
+          </button>
           <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-            <button className={s.google}>
-              <img
-                src={googleIcon}
-                alt="google-icon"
-                className={s.google_icon}
-              />
-              <NavLink to="/#" className={s.linkGoogle}>
-                Google
-              </NavLink>
-            </button>
-            <label className={s.label}>
-              Email
-              <input
-                className={s.input}
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleChange}
-                required
-                placeholder="email@email.com"
-              />
-            </label>
-
-            <label className={s.label}>
-              Password
-              <input
-                className={s.input}
-                type="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-                required
-                placeholder="*********"
-              />
-            </label>
+            <label className={s.label}>Електронна адреса</label>
+            <input
+              className={s.input}
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+              required
+              placeholder="your@email.com"
+              minLength={6}
+              maxLength={40}
+            />
+            <label className={s.label}>Пароль</label>
+            <input
+              className={s.input}
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+              required
+              placeholder="*********"
+              minLength={6}
+              maxLength={30}
+            />
 
             <button className={s.button}>Увійти</button>
             <NavLink to="/register" className={s.linkRegister}>

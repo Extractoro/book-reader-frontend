@@ -11,6 +11,7 @@ import Statistics from '../Statistics';
 const Workout = () => {
   const { isFetching } = useFetchAllWorkoutsQuery();
   const isWorkout = useSelector(selectWorkout);
+
   return (
     <>
       <>
