@@ -13,7 +13,9 @@ import { useState } from 'react';
 import bookSelectors from 'js/redux/books/bookSelectors';
 
 const Library = () => {
-  const { isFetching } = useFetchAllBooksQuery();
+  const { isFetching } = useFetchAllBooksQuery(null, {
+    refetchOnFocus: true,
+  });
   const books = useSelector(selectBooks);
   const [showModal, setShowModal] = useState(true);
   const toggleModal = () => {

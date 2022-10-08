@@ -1,6 +1,6 @@
 import {
   useRegistrationUserMutation,
-  useLoginUserMutation
+  useLoginUserMutation,
   // useFetchGoogleAccountMutation,
 } from 'js/redux/auth/authApi';
 import s from './Register.module.css';
@@ -10,7 +10,6 @@ import InfoText from 'js/components/Infotext/InfoText';
 import { Notify } from 'notiflix';
 import Media from 'react-media';
 import { useState } from 'react';
-
 
 export default function RegisterPage() {
   const [registerUser] = useRegistrationUserMutation();
@@ -22,7 +21,6 @@ export default function RegisterPage() {
   const [password, setPassword] = useState('');
 
   const [repeatPassword, setRepeatPassword] = useState('');
-
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -70,16 +68,20 @@ export default function RegisterPage() {
     <div className={s.wrapper}>
       <div className={s.overlay}>
         <div className={s.background}>
-          <button className={s.google}>
-            <img src={googleIcon} alt="google-icon" className={s.google_icon} />
+          <form className={s.form} onSubmit={handleSubmit}>
             <a
               href="https://book-reader-backend.herokuapp.com/api/users/google"
               className={s.linkGoogle}
             >
-              Google
+              <button className={s.google} type="button">
+                <img
+                  src={googleIcon}
+                  alt="google-icon"
+                  className={s.google_icon}
+                />
+                Google
+              </button>
             </a>
-          </button>
-          <form className={s.form} onSubmit={handleSubmit}>
             <label className={s.label} htmlFor="name">
               Ім’я
             </label>

@@ -1,5 +1,4 @@
 import s from './AddBookRead.module.css';
-import Media from 'react-media';
 import { useCreateWorkoutMutation } from 'js/redux/workout/workoutApi';
 import { Notify } from 'notiflix';
 

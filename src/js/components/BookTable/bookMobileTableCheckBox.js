@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './bookMobileTable.module.css';
-import sprite from '../../../sprites/delete-icon.svg';
+import sprite from '../../../sprites/checkbox.svg';
 // import EllipsisText from "react-ellipsis-text";
 
 export default function BookTableMobile({ library }) {
@@ -15,7 +15,9 @@ export default function BookTableMobile({ library }) {
               <li key={_id} id={_id}>
                 <div className={s['flex-book-container']}>
                   <div>
-                    <input className={s['navIcon']} type="checkbox"></input>
+                    <svg className={s['arrow-back']} width="30" height="25">
+                      <use href={sprite + '#checkbox'} />
+                    </svg>
                     <p className={s['subtitleNameBook']}>{title}</p>
                     <p className={s['subtitle']}>
                       <span className={s['topic']}>Author:</span> {author}

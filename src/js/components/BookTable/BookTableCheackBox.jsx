@@ -5,7 +5,7 @@ import TableCheckBox from './TableCheckBox';
 import React from 'react';
 import BookTableMobileCheckBox from './bookMobileTableCheckBox';
 
-const BookTable = ({ library, setIsChecked }) => {
+const BookTable = ({ library, doneBooks }) => {
   return (
     <div className={s['thumb']}>
       <Media
@@ -18,12 +18,12 @@ const BookTable = ({ library, setIsChecked }) => {
           <>
             {matches.small && (
               <BookTableMobileCheckBox
-                setIsChecked={setIsChecked}
+                doneBooks={doneBooks}
                 library={library}
               />
             )}
             {matches.medium && (
-              <TableCheckBox setIsChecked={setIsChecked} library={library} />
+              <TableCheckBox doneBooks={doneBooks} library={library} />
             )}
           </>
         )}

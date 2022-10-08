@@ -1,0 +1,11 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="checkbox" viewBox="0 0 32 32">
+<path fill="none" stroke="#a6abb9" style="stroke: var(--color1, #a6abb9)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" d="M2.133 1.067h27.733c0.589 0 1.067 0.478 1.067 1.067v27.733c0 0.589-0.478 1.067-1.067 1.067h-27.733c-0.589 0-1.067-0.478-1.067-1.067v-27.733c0-0.589 0.478-1.067 1.067-1.067z"></path>
+</symbol>
+<symbol id="done-checkbox" viewBox="0 0 32 32">
+<path fill="none" stroke="#ff6b08" style="stroke: var(--color2, #ff6b08)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" d="M2.133 1.067h27.733c0.589 0 1.067 0.478 1.067 1.067v27.733c0 0.589-0.478 1.067-1.067 1.067h-27.733c-0.589 0-1.067-0.478-1.067-1.067v-27.733c0-0.589 0.478-1.067 1.067-1.067z"></path>
+<path fill="#ff6b08" style="fill: var(--color2, #ff6b08)" d="M28.695 11.078l-15.872 14.426c-0.14 0.127-0.366 0.127-0.506 0l-9.012-8.191c-0.139-0.127-0.139-0.332 0-0.459l2.19-1.99c0.14-0.127 0.366-0.127 0.506 0l6.57 5.971 13.43-12.206c0.14-0.127 0.366-0.127 0.506 0l2.189 1.99c0.14 0.127 0.14 0.332 0 0.46z"></path>
+</symbol>
+</defs>
+</svg>

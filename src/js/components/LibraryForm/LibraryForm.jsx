@@ -68,15 +68,6 @@ const LibraryForm = () => {
 
   return (
     <>
-      <Media
-        query="(max-width: 767px)"
-        render={() => (
-          <svg className={s['arrow-back']} width="30" height="25">
-            <use href={sprite + '#library-back'} />
-          </svg>
-        )}
-      />
-
       <form className={s['form']} onSubmit={handleSubmit}>
         <div>
           <label htmlFor={nameOfBookInputId} className={s['input-label']}>

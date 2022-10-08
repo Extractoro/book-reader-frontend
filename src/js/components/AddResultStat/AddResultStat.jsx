@@ -6,8 +6,10 @@ import { selectWorkout } from '../../redux/workout/workout-slice';
 import { useSelector } from 'react-redux';
 // import { Loading } from 'notiflix';
 import { nanoid } from 'nanoid';
+import { useLocation } from 'react-router-dom';
 
 function AddResultStat() {
+  const location = useLocation();
   const [selectedDate, setSelectedDate] = useState();
   const [page, setPage] = useState('');
   const workout = useSelector(selectWorkout);
@@ -30,8 +32,6 @@ function AddResultStat() {
 
   const dateNowResult = formatDate(selectedDate);
 
-  console.log(dateNowResult);
-
   useEffect(() => {
     setResult(workout);
   }, [workout]);
@@ -48,12 +48,17 @@ function AddResultStat() {
 
   const handleSubmit = async event => {
     event.preventDefault();
+
     await updateResult({
       id: workoutId,
       factDate: dateNowResult,
       pages: Number(page),
     }).unwrap();
     reset();
+
+    if (result && !result[0].inProgress) {
+      location.reload();
+    }
   };
 
   const reset = () => {

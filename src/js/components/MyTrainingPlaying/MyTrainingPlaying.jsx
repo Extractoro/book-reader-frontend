@@ -19,7 +19,7 @@ function MyTrainingPlaying() {
   const [plannedBooks, setPlannedBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState();
   const [selectedBook, setSelectedBook] = useState('');
-  const { isFetching } = useFetchAllBooksQuery(books);
+  const { isFetching } = useFetchAllBooksQuery();
 
   useEffect(() => {
     setFilteredBooks(
@@ -103,6 +103,43 @@ function MyTrainingPlaying() {
 
   const startDateStat = formatDateStat(startDateUnformatted);
   const endDateStat = formatDateStat(endDateUnformatted);
+
+  // if (
+  //   (startDateReady.slice(8, 10) === '32' &&
+  //     startDateReady.slice(6, 7) === '12') ||
+  //   (endDateReady.slice(8, 10) === '32' &&
+  //     startDateReady.slice(6, 7) === '12') ||
+  //   (startDateStat.slice(8, 10) === '32' &&
+  //     startDateReady.slice(6, 7) === '12') ||
+  //   (endDateStat.slice(8, 10) === '32' && startDateReady.slice(6, 7) === '12')
+  // ) {
+  //   startDateReady.slice(8, 10).slice(0, -1).concat('1');
+  //   endDateReady.slice(8, 10).slice(0, -1).concat('1');
+  //   startDateStat.slice(8, 10).slice(0, -1).concat('1');
+  //   endDateStat.slice(8, 10).slice(0, -1).concat('1');
+
+  //   startDateReady.slice(6, 7).slice(0, -1).concat('01');
+  //   endDateReady.slice(6, 7).slice(0, -1).concat('1');
+  //   startDateStat.slice(6, 7).slice(0, -1).concat('1');
+  //   endDateStat.slice(6, 7).slice(0, -1).concat('1');
+  // }
+
+  // if (
+  //   startDateReady.slice(8, 10) === '32' ||
+  //   endDateReady.slice(8, 10) === '32' ||
+  //   startDateStat.slice(8, 10) === '32' ||
+  //   endDateStat.slice(8, 10) === '32'
+  // ) {
+  //   startDateReady.slice(8, 10).slice(0, -1).concat('1');
+  //   endDateReady.slice(8, 10).slice(0, -1).concat('1');
+  //   startDateStat.slice(8, 10).slice(0, -1).concat('1');
+  //   endDateStat.slice(8, 10).slice(0, -1).concat('1');
+
+  //   String(Number(startDateReady.slice(5, 7) + 1));
+  //   String(Number(endDateReady.slice(5, 7) + 1));
+  //   String(Number(startDateStat.slice(5, 7) + 1));
+  //   String(Number(endDateStat.slice(5, 7) + 1));
+  // }
 
   function getNumberOfDays(start, end) {
     const start_date = new LocalDate.parse(start);

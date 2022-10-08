@@ -6,7 +6,6 @@ import { useLoginUserMutation } from 'js/redux/auth/authApi';
 import s from './Login.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
 import googleIcon from 'images/google/google icon.png';
-import { Notify } from 'notiflix';
 
 export default function LoginPage() {
   const location = useLocation();
@@ -35,35 +34,31 @@ export default function LoginPage() {
     }
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    if (email.length <= 0 || password.length <= 0) {
-      Notify.warning('Заповніть поля');
-      return;
-    }
-    try {
-      await login({ email, password }).unwrap();
-      setEmail('');
-      setPassword('');
-    } catch (error) {
-      Notify.warning(`${error.data.message}`);
-    }
+    login({ email, password });
+    setEmail('');
+    setPassword('');
   };
 
   return (
     <div className={s.wrapper}>
       <div className={s.overlay}>
         <div className={s.background}>
-          <button className={s.google}>
-            <img src={googleIcon} alt="google-icon" className={s.google_icon} />
+          <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
             <a
               href="https://book-reader-backend.herokuapp.com/api/users/google"
               className={s.linkGoogle}
             >
-              Google
+              <button className={s.google} type="button">
+                <img
+                  src={googleIcon}
+                  alt="google-icon"
+                  className={s.google_icon}
+                />
+                Google
+              </button>
             </a>
-          </button>
-          <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
             <label className={s.label}>Електронна адреса</label>
             <input
               className={s.input}

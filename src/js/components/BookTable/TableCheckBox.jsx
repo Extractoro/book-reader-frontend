@@ -1,10 +1,10 @@
 import React from 'react';
 import Media from 'react-media';
 import s from './Table.module.css';
-// import sprite from '../../../sprites/delete-icon.svg';
+import sprite from '../../../sprites/checkbox.svg';
 import st from './TableItem.module.css';
 
-function Table({ library, setIsChecked }) {
+function Table({ library, doneBooks }) {
   let filteredLibrary = library.filter(book => book !== undefined);
 
   return (
@@ -29,12 +29,13 @@ function Table({ library, setIsChecked }) {
             ({ _id: id, title, author, year, totalPages }) => (
               <li className={st.card} key={id} id={id}>
                 <div className={st.iconTitle}>
-                  <input
-                    className={st.navIcon}
-                    type="checkbox"
-                    value={id}
-                    onChange={e => setIsChecked(e.target.value)}
-                  ></input>
+                  <svg className={st['checkbox']} width="15" height="15">
+                    {doneBooks.find(({ _id }) => _id === id) ? (
+                      <use href={sprite + '#done-checkbox'} />
+                    ) : (
+                      <use href={sprite + '#checkbox'} />
+                    )}
+                  </svg>
                   <p className={st.bookTitle}>{title}</p>
                 </div>
                 <div className={st.bookInfoWrapper}>

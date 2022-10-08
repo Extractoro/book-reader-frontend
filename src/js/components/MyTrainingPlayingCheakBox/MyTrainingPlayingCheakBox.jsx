@@ -14,17 +14,22 @@ import StatisticsGraph from 'js/components/Statistics';
 import AddResultStat from 'js/components/AddResultStat';
 import { ChronoUnit, LocalDate } from 'js-joda';
 import GoalReadingStatistics from '../GoalReadingStatistics';
+// import { useLocation } from 'react-router-dom';
 
 function MyTrainingPlayingCheckBox() {
+  // const location = useLocation();
   const books = useSelector(selectBooks);
   const workout = useSelector(selectWorkout);
   const [allBooks, setAllBooks] = useState();
   const [workoutInfo, setWorkoutInfo] = useState();
-  const [, setIsChecked] = useState();
-  const { isFetching } = useFetchAllBooksQuery();
-  const { isLoading } = useFetchAllWorkoutsQuery(workout, {
-    skip: true,
+  const { isFetching } = useFetchAllBooksQuery(null, {
+    refetchOnMountOrArgChange: true,
   });
+
+  const { isLoading } = useFetchAllWorkoutsQuery(null, {
+    refetchOnMountOrArgChange: true,
+  });
+
   const booksFind = [];
 
   useEffect(() => {
@@ -83,11 +88,11 @@ function MyTrainingPlayingCheckBox() {
     }
   }
 
-  // const checkedBook = booksFind.find(book => book._id === isChecked);
-  // console.log(checkedBook);
+  const doneBooks = booksFind.filter(({ status }) => status === 'done');
 
-  console.log(workoutInfo);
-  const doneBook = booksFind.filter(book => book.status === 'done');
+  // if (result && !result[0].inProgress) {
+  //   location.reload();
+  // }
 
   return (
     <>
@@ -105,10 +110,10 @@ function MyTrainingPlayingCheckBox() {
         <GoalReadingStatistics
           books={booksFind}
           dayQuantity={daysStats}
-          leftBooks={doneBook}
+          leftBooks={doneBooks}
         />
       </div>
-      <BookTableCheckBox library={booksFind} setIsChecked={setIsChecked} />
+      <BookTableCheckBox library={booksFind} doneBooks={doneBooks} />
       <div className={s.statFlexContainer}>
         <StatisticsGraph />
         <AddResultStat />

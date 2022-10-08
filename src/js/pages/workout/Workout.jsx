@@ -7,9 +7,10 @@ import { selectWorkout } from '../../redux/workout/workout-slice';
 import { Loading } from 'notiflix';
 import { useFetchAllWorkoutsQuery } from 'js/redux/workout/workoutApi';
 import Statistics from '../Statistics';
-
 const Workout = () => {
-  const { isFetching } = useFetchAllWorkoutsQuery();
+  const { isFetching } = useFetchAllWorkoutsQuery(null, {
+    refetchOnMountOrArgChange: true,
+  });
   const isWorkout = useSelector(selectWorkout);
 
   return (
