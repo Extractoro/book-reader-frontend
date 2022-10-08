@@ -15,20 +15,20 @@ const FormReview = ({ closeModal, id, rating, resume }) => {
   const [ratingBook, setRatingBook] = useState('');
   const [resumeBook, setResumeBook] = useState('');
 
-  const reset = () => {
-    setRatingBook('');
-    setResumeBook('');
-  };
+  // const reset = () => {
+  //   setRatingBook('');
+  //   setResumeBook('');
+  // };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    updateResume({
-      ratingBook: rating,
-      resumeBook: resume,
-      id,
-    });
-    reset();
-  };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   updateResume({
+  //     ratingBook: rating,
+  //     resumeBook: resume,
+  //     id,
+  //   });
+  //   reset();
+  // };
 
   const validationReviewForm = Yup.object().shape({
     resume: Yup.string().min(1, 'Write something').required('Write something'),
@@ -47,7 +47,7 @@ const FormReview = ({ closeModal, id, rating, resume }) => {
           updateResume({
             rating: ratingBook,
             resume: resumeBook,
-            id: id,
+            id,
           });
           resetForm();
           closeModal();
@@ -86,16 +86,18 @@ const FormReview = ({ closeModal, id, rating, resume }) => {
             </div>
 
             <MediaQuery maxWidth={767}>
-              <button
-                type="button"
-                className={s.form__btn__close}
-                onClick={() => closeModal()}
-              >
-                <span className={s.btn__close__text}>Назад</span>
-              </button>
-              <button type="submit" className={s.form__btn__submit}>
-                <span className={s.btn__submit__text}>Зберегти</span>
-              </button>
+              <div className={s.buttonDiv}>
+                <button
+                  type="button"
+                  className={s.form__btn__close}
+                  onClick={() => closeModal()}
+                >
+                  <span className={s.btn__close__text}>Назад</span>
+                </button>
+                <button type="submit" className={s.form__btn__submit}>
+                  <span className={s.btn__submit__text}>Зберегти</span>
+                </button>
+              </div>
             </MediaQuery>
             <MediaQuery minWidth={768}>
               <div className={s.buttonDiv}>
