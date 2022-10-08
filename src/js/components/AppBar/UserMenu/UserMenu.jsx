@@ -1,5 +1,5 @@
 import s from './UserMenu.module.css';
-import { useMatchMedia } from '../../../../hooks/use-match-media';
+// import { useMatchMedia } from '../../../../hooks/use-match-media';
 import { useState } from 'react';
 import Media from 'react-media';
 import ModalLogout from '../../ModalLogout/ModalLogout';
@@ -8,7 +8,7 @@ import { selectCurrentUser } from 'js/redux/auth/auth-slice';
 
 export default function UserMenu() {
   const user = useSelector(selectCurrentUser);
-  const { isMobile } = useMatchMedia();
+  // const { isMobile } = useMatchMedia();
   const [isOpen, setIsOpen] = useState(false);
 
   return (

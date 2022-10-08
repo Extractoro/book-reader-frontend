@@ -9,6 +9,7 @@ import { selectIsLoggedIn, selectCurrentUser } from 'js/redux/auth/auth-slice';
 export default function AppBar() {
   const user = useSelector(selectCurrentUser);
   const isLoggedIn = useSelector(selectIsLoggedIn);
+
   // const { isTablet, isDesktop } = useMatchMedia();
 
   return (
@@ -23,9 +24,7 @@ export default function AppBar() {
               query="(min-width:768px) and (max-width:1279px)"
               render={() => (
                 <div className={s['name-box']}>
-                  <h3 className={s['user-name']}>
-                    {user.name.split('')[0]}
-                  </h3>
+                  <h3 className={s['user-name']}>{user.name.split('')[0]}</h3>
                   <span className={s['name-title']}>{user.name}</span>
                 </div>
               )}

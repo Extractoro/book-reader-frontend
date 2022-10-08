@@ -38,11 +38,16 @@ export default function RegisterPage() {
     }
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
-    registerUser({ name, email, password, repeatPassword });
-    Notify.success('Реєстрація пройшла успішно');
-    formFieldsReset();
+    try {
+      await register({ name, email, password, repeatPassword }).unwrap();
+      Notify.success('Ви зареєструвалися. Тепер залогінтесь');
+      formFieldsReset();
+    } catch (error) {
+      Notify.warning(`${error.data.message}`);
+      formFieldsReset();
+    }
   };
 
   const formFieldsReset = () => {
