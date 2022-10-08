@@ -16,7 +16,6 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  console.log(location);
   useEffect(() => {
     if (query.token) {
       const { name, email, token } = query;
@@ -50,6 +49,7 @@ export default function LoginPage() {
       Notify.warning(`${error.data.message}`);
     }
   };
+
   return (
     <div className={s.wrapper}>
       <div className={s.overlay}>
