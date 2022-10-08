@@ -1,5 +1,6 @@
 import {
   useRegistrationUserMutation,
+  useLoginUserMutation
   // useFetchGoogleAccountMutation,
 } from 'js/redux/auth/authApi';
 import s from './Register.module.css';
@@ -10,12 +11,18 @@ import { Notify } from 'notiflix';
 import Media from 'react-media';
 import { useState } from 'react';
 
+
 export default function RegisterPage() {
   const [registerUser] = useRegistrationUserMutation();
+  const [login] = useLoginUserMutation();
   const [name, setName] = useState('');
+
   const [email, setEmail] = useState('');
+
   const [password, setPassword] = useState('');
+
   const [repeatPassword, setRepeatPassword] = useState('');
+
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -41,8 +48,10 @@ export default function RegisterPage() {
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      await register({ name, email, password, repeatPassword }).unwrap();
-      Notify.success('Ви зареєструвалися. Тепер залогінтесь');
+      await registerUser({ name, email, password, repeatPassword }).unwrap();
+      await login({ email, password }).unwrap();
+
+      // Notify.success('Ви зареєструвалися. Тепер залогінтесь');
       formFieldsReset();
     } catch (error) {
       Notify.warning(`${error.data.message}`);

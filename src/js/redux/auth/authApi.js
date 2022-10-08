@@ -6,7 +6,7 @@ export const authApi = createApi({
     baseUrl: 'https://book-reader-backend.herokuapp.com',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
-      if (token) {
+      if(token) {
         headers.set('authorization', `Bearer ${token}`);
       }
       return headers;
@@ -59,3 +59,4 @@ export const {
   useFetchGoogleAccountQuery,
   useCurrentUserQuery,
 } = authApi;
+
