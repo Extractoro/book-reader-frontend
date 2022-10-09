@@ -6,6 +6,7 @@
 
 .link {
   margin-right: 12px;
+  fill: #a6abb9;
   width: 33px;
   height: 33px;
   border-radius: 50%;
@@ -21,6 +22,7 @@
 
 .linkActive {
   background: #f5f7fa;
+  fill: #ff6b08;
   margin-right: 12px;
   width: 33px;
   height: 33px;
