@@ -17,14 +17,6 @@ const AddBookRead = ({
   filteredLibrary.map(({ _id }) => booksIds.push(_id));
 
   const handleClick = () => {
-    if (
-      Number(endDateReady.slice(0, 4)) < Number(startDateReady.slice(0, 4)) ||
-      Number(endDateReady.slice(6, 7)) < Number(startDateReady.slice(6, 7)) ||
-      Number(endDateReady.slice(8, 10)) < Number(startDateReady.slice(8, 10))
-    ) {
-      Notify.failure('Uncorrect date!');
-      return;
-    }
     Notify.success('Trainings is starting!');
 
     createTraining({

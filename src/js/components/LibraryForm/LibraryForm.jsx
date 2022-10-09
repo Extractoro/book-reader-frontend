@@ -62,7 +62,6 @@ const LibraryForm = () => {
 
       case 'pages':
         if (value > 0) {
-          console.log(value);
           setAmountOfPages(value.trim());
         } else {
           Notify.failure('You cannot write a negative number');

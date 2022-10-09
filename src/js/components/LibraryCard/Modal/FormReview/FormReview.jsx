@@ -9,13 +9,11 @@ import MediaQuery from 'react-responsive';
 import { useState } from 'react';
 
 import { useUpdateBookMutation } from 'js/redux/books/booksApi';
-import { useLocation } from 'react-router-dom';
 
 const FormReview = ({ closeModal, id, rating, resume }) => {
   const [updateResume] = useUpdateBookMutation();
   const [ratingBook, setRatingBook] = useState('');
   const [resumeBook, setResumeBook] = useState('');
-  const location = useLocation();
 
   // const reset = () => {
   //   setRatingBook('');
