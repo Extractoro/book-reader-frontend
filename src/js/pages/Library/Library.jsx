@@ -6,12 +6,12 @@ import sprite from '../../../sprites/library-sprite.svg';
 import s from './Library.module.css';
 import { Loading } from 'notiflix';
 import PlanToReadList from 'js/components/LibraryCard/PlanToReadList';
+import { LibraryButton } from 'js/components/LibraryCard/LibraryButton/LibraryButton';
 import { useSelector } from 'react-redux';
 import {
   getDone,
   getPlan,
   getRead,
-  selectBooks,
 } from 'js/redux/books/books-slice';
 import AlreadyReadList from 'js/components/LibraryCard/AlreadyReadList';
 import { useState } from 'react';
@@ -20,7 +20,7 @@ const Library = () => {
   const { isFetching } = useFetchAllBooksQuery(null, {
     refetchOnMountOrArgChange: true,
   });
-  const books = useSelector(selectBooks);
+  
   const [showModal, setShowModal] = useState(true);
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -36,17 +36,22 @@ const Library = () => {
         {!isFetching && Loading.remove()}
         <LibraryForm />
 
-        {booksDone?.length > 0 ? (
-          <AlreadyReadList library={booksDone} status={'done'} />
-        ) : null}
-        {booksRead?.length > 0 ? (
-          <PlanToReadList library={booksRead} status={'read'} />
-        ) : null}
-        {booksPlan?.length > 0 ? (
-          <PlanToReadList library={booksPlan} status={'plan'} />
-        ) : null}
-
-        {books?.length === 0 ? (
+        {booksPlan?.length || booksRead?.length || booksDone?.length ? (
+          <>
+            <>
+              {booksDone?.length > 0 ? (
+                <AlreadyReadList library={booksDone} status={'done'} />
+              ) : null}
+              {booksRead?.length > 0 ? (
+                <PlanToReadList library={booksRead} status={'read'} />
+              ) : null}
+              {booksPlan?.length > 0 && (
+                <PlanToReadList library={booksPlan} status={'plan'} />
+              )}
+            </>
+            <LibraryButton />
+          </>
+        ) : (
           <>
             <Media
               query="(min-width: 768px)"
@@ -127,7 +132,7 @@ const Library = () => {
               />
             )}
           </>
-        ) : null}
+        )}
       </>
       {isFetching && Loading.circle()}
     </div>
