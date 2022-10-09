@@ -120,3 +120,19 @@ export default booksSlice.reducer;
 export const selectBooks = state => state.books.books;
 export const selectBooksIsError = state => state.books.isError;
 export const selectBooksIsPending = state => state.books.isPending;
+
+export const getPlan = state => {
+  const allBooks = [...selectBooks(state)] || [];
+  console.log(allBooks);
+  return allBooks?.filter(book => book.status === 'plan');
+};
+
+export const getRead = state => {
+  const allBooks = selectBooks(state) || [];
+  return allBooks?.filter(book => book.status === 'read');
+};
+
+export const getDone = state => {
+  const allBooks = selectBooks(state) || [];
+  return allBooks?.filter(book => book.status === 'done');
+};

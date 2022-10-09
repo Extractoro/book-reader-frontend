@@ -4,6 +4,7 @@ import Media from 'react-media';
 import sprite from '../../../sprites/library-sprite.svg';
 import s from './LibraryForm.module.css';
 import { useAddBookMutation } from 'js/redux/books/booksApi';
+import { Notify } from 'notiflix';
 
 const LibraryForm = () => {
   const [add] = useAddBookMutation();
@@ -50,15 +51,23 @@ const LibraryForm = () => {
         break;
 
       case 'year':
-        if (value <= date) {
+        if (value <= date && value > 0) {
           setYearOfBook(value.trim());
         } else {
-          console.log('Notify');
+          Notify.failure(
+            'You cannot write a year less than 0 or greater than the current'
+          );
         }
         break;
 
       case 'pages':
-        setAmountOfPages(value.trim());
+        if (value > 0) {
+          console.log(value);
+          setAmountOfPages(value.trim());
+        } else {
+          Notify.failure('You cannot write a negative number');
+        }
+
         break;
 
       default:

@@ -9,11 +9,13 @@ import MediaQuery from 'react-responsive';
 import { useState } from 'react';
 
 import { useUpdateBookMutation } from 'js/redux/books/booksApi';
+import { useLocation } from 'react-router-dom';
 
 const FormReview = ({ closeModal, id, rating, resume }) => {
   const [updateResume] = useUpdateBookMutation();
   const [ratingBook, setRatingBook] = useState('');
   const [resumeBook, setResumeBook] = useState('');
+  const location = useLocation();
 
   // const reset = () => {
   //   setRatingBook('');
@@ -31,7 +33,10 @@ const FormReview = ({ closeModal, id, rating, resume }) => {
   // };
 
   const validationReviewForm = Yup.object().shape({
-    resume: Yup.string().min(1, 'Write something').required('Write something'),
+    resume: Yup.string()
+      .min(1, 'Write something')
+      .max(1000, 'Write less than 1000 characters')
+      .required('Write something'),
   });
 
   return (
@@ -44,10 +49,11 @@ const FormReview = ({ closeModal, id, rating, resume }) => {
         }}
         validationSchema={validationReviewForm}
         onSubmit={(values, { resetForm }) => {
+          console.log(values);
           updateResume({
-            rating: ratingBook,
-            resume: resumeBook,
-            id,
+            rating: values.rating,
+            resume: values.resume,
+            id: values.id,
           });
           resetForm();
           closeModal();

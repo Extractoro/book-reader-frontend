@@ -7,14 +7,18 @@ import s from './Library.module.css';
 import { Loading } from 'notiflix';
 import PlanToReadList from 'js/components/LibraryCard/PlanToReadList';
 import { useSelector } from 'react-redux';
-import { selectBooks } from 'js/redux/books/books-slice';
+import {
+  getDone,
+  getPlan,
+  getRead,
+  selectBooks,
+} from 'js/redux/books/books-slice';
 import AlreadyReadList from 'js/components/LibraryCard/AlreadyReadList';
 import { useState } from 'react';
-import bookSelectors from 'js/redux/books/bookSelectors';
 
 const Library = () => {
   const { isFetching } = useFetchAllBooksQuery(null, {
-    refetchOnFocus: true,
+    refetchOnMountOrArgChange: true,
   });
   const books = useSelector(selectBooks);
   const [showModal, setShowModal] = useState(true);
@@ -22,9 +26,9 @@ const Library = () => {
     setShowModal(!showModal);
   };
 
-  const booksPlan = useSelector(bookSelectors.getPlan);
-  const booksRead = useSelector(bookSelectors.getRead);
-  const booksDone = useSelector(bookSelectors.getDone);
+  const booksPlan = useSelector(getPlan);
+  const booksRead = useSelector(getRead);
+  const booksDone = useSelector(getDone);
 
   return (
     <div>
