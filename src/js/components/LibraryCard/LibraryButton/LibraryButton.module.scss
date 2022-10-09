@@ -2,7 +2,6 @@
     width: 200px;
     height: 40px;
     border: none;
-    color: #fffff;
     display: block;
 
     margin: 0 auto;
@@ -19,7 +18,8 @@
 }
 
 .buttonText {
-   color: #fffff;
+    padding: 0 30px 0 30px;
+   color: rgb(255, 254, 254);
     font-weight: 600;
     font-size: 16px;
     line-height: 38px;
