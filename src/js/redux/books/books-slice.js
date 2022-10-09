@@ -122,7 +122,7 @@ export const selectBooksIsError = state => state.books.isError;
 export const selectBooksIsPending = state => state.books.isPending;
 
 export const getPlan = state => {
-  const allBooks = [...selectBooks(state)] || [];
+  const allBooks = selectBooks(state) || [];
   console.log(allBooks);
   return allBooks?.filter(book => book.status === 'plan');
 };
