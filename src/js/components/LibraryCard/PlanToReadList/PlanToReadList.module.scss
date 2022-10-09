@@ -8,6 +8,7 @@
 
     @media screen and (min-width: 1280px) {
         width: 1200px;
+        padding-left: 30px;
     }
 }
 
@@ -28,9 +29,10 @@
     font-size: 14px;
     line-height: 2.71;
     color: #242A37;
+    white-space: nowrap;
 
     @media screen and (min-width: 768px) {
-        margin-left: 20px;
+        
         margin-top: 10px;
         font-size: 14px;
         line-height: 2.71;
@@ -112,7 +114,6 @@
     width: 134px;
     height: 38px;
 
-    margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 5px;
 
