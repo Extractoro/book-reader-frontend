@@ -9,9 +9,35 @@ import Chart from 'chart.js/auto';
 import AddBookRead from '../AddBookRead/AddBookRead';
 import Media from 'react-media';
 
-const Statistics = () => {
-  const number = 2;
-  const goal = 1;
+const Statistics = ({ plannedPages, readPages }) => {
+  const OneDay = 86400000;
+  let labelsData = [];
+  let planData = [];
+  let actData = [];
+  let averageAmount = 0;
+
+  // if (readPages) {
+  //   var pages = [];
+  //   for (let i = 0; i < readPages.length; i++) {
+  //     pages.push(`${readPages[i].pages}`);
+  //   }
+
+  //   console.log(pages);
+  // }
+
+  if (readPages) {
+    readPages.forEach(({ factDate, pages }) => {
+      labelsData.push(factDate);
+      actData.push(pages);
+    });
+  }
+
+  function toTimestamp(strDate) {
+    const datum = Date.parse(strDate);
+    return datum / 1000;
+  }
+
+  console.log(toTimestamp('2022-10-10'));
 
   const data = {
     labels: ['', '', '', '', '', '', ''],
@@ -27,19 +53,18 @@ const Statistics = () => {
         PointHitRadius: 7,
 
         data: [
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
+          `${plannedPages}`,
+          `${plannedPages}`,
+          `${plannedPages}`,
+          `${plannedPages}`,
+          `${plannedPages}`,
+          `${plannedPages}`,
+          `${plannedPages}`,
         ],
       },
       {
         label: 'Fact',
         fill: false,
-
         lineTension: 0.3,
         borderColor: '#ff6b08',
         pointBackgroundColor: '#ff6b08',
@@ -47,15 +72,7 @@ const Statistics = () => {
         pointRadius: 7,
         PointHitRadius: 7,
 
-        data: [
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-        ],
+        data: [],
       },
     ],
   };
@@ -77,7 +94,7 @@ const Statistics = () => {
   return (
     <div className={s['thumb']}>
       <p className={s['value']}>
-        Кількість сторінок/день <span>0</span>
+        Кількість сторінок/день <span>{plannedPages}</span>
       </p>
       <div className={s['result']}>
         <Line options={options} data={data} />

@@ -4,9 +4,6 @@ import MediaQuery from 'react-responsive';
 import PlanToReadCard from '../PlanToReadCard/PlanToReadCard';
 
 const PlanToReadList = ({ library, status }) => {
-
-  
-
   return (
     <>
       <div className={s.infoListContainer}>
@@ -23,7 +20,7 @@ const PlanToReadList = ({ library, status }) => {
             <p className={s.page}>Стор.</p>
           </div>
         </MediaQuery>
-        <ul className={s.list}>
+        <ul className={library.length > 3 ? s['moreList'] : s.list}>
           {library.length > 0
             ? library.map(({ _id: id, title, author, year, totalPages }) => (
                 <PlanToReadCard

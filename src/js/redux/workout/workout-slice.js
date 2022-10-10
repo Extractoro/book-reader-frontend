@@ -3,9 +3,10 @@ import { workoutApi } from './workoutApi';
 const { createSlice } = require('@reduxjs/toolkit');
 
 const initialState = {
-  workouts: [],
+  workouts: null,
   isPending: false,
   isError: false,
+  inProgress: false,
 };
 
 const workoutSlice = createSlice({
@@ -24,6 +25,7 @@ const workoutSlice = createSlice({
         workoutApi.endpoints.fetchAllWorkouts.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
+          state.inProgress = payload;
           state.workouts = payload;
         }
       )
@@ -44,6 +46,7 @@ const workoutSlice = createSlice({
         workoutApi.endpoints.createWorkout.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
+          state.inProgress = true;
           state.workouts = payload;
         }
       )
@@ -81,3 +84,4 @@ export default workoutSlice.reducer;
 
 // Selectors
 export const selectWorkout = state => state.workout.workouts;
+export const selectProgress = state => state.workout.inProgress;

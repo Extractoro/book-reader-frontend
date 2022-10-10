@@ -37,8 +37,8 @@ function AddResultStat() {
   }, [workout]);
 
   if (result) {
-    var workoutId = result[0]._id;
-    var dateNow = result[0].dateNow;
+    var workoutId = result[0]?._id;
+    var dateNow = result[0]?.dateNow;
   }
 
   const handleChange = e => {
@@ -56,7 +56,7 @@ function AddResultStat() {
     }).unwrap();
     reset();
 
-    if (result && !result[0].inProgress) {
+    if (result && !result[0]?.inProgress) {
       location.reload();
     }
   };
@@ -103,6 +103,7 @@ function AddResultStat() {
                   name="number"
                   value={page}
                   onChange={handleChange}
+                  min="1"
                 />
               </label>
             </form>

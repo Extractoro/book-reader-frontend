@@ -38,12 +38,15 @@ function MyTrainingPlayingCheckBox() {
   }, [books, workout]);
 
   if (workoutInfo !== undefined) {
-    let workoutDate = workoutInfo[0].finishDate;
+    let workoutDate = workoutInfo[0]?.finishDate;
     if (workoutDate !== undefined) {
       var endYear = workoutDate.slice(0, 4);
       var endMonth = workoutDate.slice(4, 6);
       var endDay = workoutDate.slice(6, 8);
     }
+    var plannedPages = workoutInfo[0]?.plannedPages;
+    var readPages = workoutInfo[0]?.dateNow;
+    console.log(readPages);
   }
 
   let startDateUnformatted = new Date();
@@ -78,8 +81,8 @@ function MyTrainingPlayingCheckBox() {
   if (allBooks !== undefined || workoutInfo !== undefined) {
     for (let i = 0; i < allBooks.length; i++) {
       const el = allBooks[i]._id;
-      for (let j = 0; j < workoutInfo[0].books.length; j++) {
-        const element = workoutInfo[0].books[j];
+      for (let j = 0; j < workoutInfo[0]?.books.length; j++) {
+        const element = workoutInfo[0]?.books[j];
 
         if (el === element) {
           booksFind.push(allBooks[i]);
@@ -89,10 +92,6 @@ function MyTrainingPlayingCheckBox() {
   }
 
   const doneBooks = booksFind.filter(({ status }) => status === 'done');
-
-  // if (result && !result[0].inProgress) {
-  //   location.reload();
-  // }
 
   return (
     <>
@@ -115,7 +114,7 @@ function MyTrainingPlayingCheckBox() {
       </div>
       <BookTableCheckBox library={booksFind} doneBooks={doneBooks} />
       <div className={s.statFlexContainer}>
-        <StatisticsGraph />
+        <StatisticsGraph plannedPages={plannedPages} readPages={readPages} />
         <AddResultStat />
       </div>
 

@@ -21,7 +21,7 @@ const AlreadyReadList = ({ library }) => {
         </>
       )}
 
-      <ul className={s.list}>
+      <ul className={library.length > 3 ? s.moreReadList : s.list}>
         {library.length > 0
           ? library.map(
               ({
