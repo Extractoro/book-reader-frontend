@@ -104,8 +104,6 @@ function MyTrainingPlaying() {
     var startDateStat = formatDateStat(selectedDate);
     var endDateStat = formatDateStat(endDate);
 
-    console.log(startDateReady);
-    console.log(endDateReady);
     var daysStats = getNumberOfDays(startDateStat, endDateStat);
   }
 

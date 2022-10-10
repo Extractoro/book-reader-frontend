@@ -3,15 +3,24 @@ import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
 import MyTrainingPlaying from '../../components/MyTrainingPlaying/MyTrainingPlaying';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { selectWorkout } from '../../redux/workout/workout-slice';
+import { getDone } from '../../redux/books/books-slice';
 import { Loading } from 'notiflix';
-import { useFetchAllWorkoutsQuery } from 'js/redux/workout/workoutApi';
+import {
+  workoutApi,
+  useFetchAllWorkoutsQuery,
+} from 'js/redux/workout/workoutApi';
 import Statistics from '../Statistics';
+
 const Workout = () => {
-  const { isFetching } = useFetchAllWorkoutsQuery(null, {
+  const { isFetching } = useFetchAllWorkoutsQuery(undefined, {
     refetchOnMountOrArgChange: true,
   });
   const isWorkout = useSelector(selectWorkout);
+  // const isDone = useSelector(getDone);
+
+  // const queryStateResult = resultsApi.endpoints.fetchResults.useQueryState();
 
   return (
     <>

@@ -6,6 +6,7 @@ const initialState = {
   workouts: [],
   isPending: false,
   isError: false,
+  inProcess: false,
 };
 
 const workoutSlice = createSlice({

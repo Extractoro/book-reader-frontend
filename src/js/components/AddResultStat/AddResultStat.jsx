@@ -1,12 +1,16 @@
 import s from './AddResultStat.module.css';
 import DatePicker from 'react-datepicker';
 import React, { useState, useEffect } from 'react';
-import { useUpdateWorkoutMutation } from '../../redux/workout/workoutApi';
+import {
+  useUpdateWorkoutMutation,
+  useFetchAllWorkoutsQuery,
+} from '../../redux/workout/workoutApi';
 import { selectWorkout } from '../../redux/workout/workout-slice';
 import { useSelector } from 'react-redux';
-// import { Loading } from 'notiflix';
+import { Notify } from 'notiflix';
 import { nanoid } from 'nanoid';
 import { useLocation } from 'react-router-dom';
+import Statistics from 'js/pages/Statistics';
 
 function AddResultStat() {
   const location = useLocation();
@@ -15,7 +19,7 @@ function AddResultStat() {
   const workout = useSelector(selectWorkout);
   const [result, setResult] = useState('');
 
-  // const { isFetching } = useFetchAllWorkoutsQuery();
+  const { refetch } = useFetchAllWorkoutsQuery();
   const [updateResult] = useUpdateWorkoutMutation();
 
   function formatDate(date) {
@@ -49,12 +53,17 @@ function AddResultStat() {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    await updateResult({
-      id: workoutId,
-      factDate: dateNowResult,
-      pages: Number(page),
-    }).unwrap();
-    reset();
+    try {
+      await updateResult({
+        id: workoutId,
+        factDate: dateNowResult,
+        pages: Number(page),
+      }).unwrap();
+      reset();
+    } catch (error) {
+      Notify.warning(`${error.data.message}`);
+      reset();
+    }
 
     if (result && !result[0].inProgress) {
       location.reload();

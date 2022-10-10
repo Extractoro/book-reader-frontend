@@ -37,6 +37,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-table": "^7.8.0",
+    "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "sass": "^1.55.0",
     "styled-components": "^5.3.5",
