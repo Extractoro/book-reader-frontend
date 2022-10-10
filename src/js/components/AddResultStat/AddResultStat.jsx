@@ -66,6 +66,13 @@ function AddResultStat() {
     setPage('');
   };
 
+  const timeFormat = time => {
+    const hours = Number(time.slice(0, 2)) + 3;
+    const min = time.slice(3, 5);
+    const sec = time.slice(6, 8);
+    return `${hours}:${min}:${sec}`;
+  };
+
   return (
     <>
       <>
@@ -127,7 +134,7 @@ function AddResultStat() {
               {dateNow?.map(({ factDate, time, pages }) => (
                 <li key={nanoid()} className={s['stat-info']}>
                   <p className={s['date']}>{factDate.slice(0, 10)}</p>
-                  <p className={s['hour']}>{time}</p>
+                  <p className={s['hour']}>{timeFormat(time)}</p>
                   <p className={s['date']}>
                     {pages}
                     <span className={s['page']}>стор.</span>

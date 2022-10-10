@@ -44,9 +44,8 @@ function MyTrainingPlayingCheckBox() {
       var endMonth = workoutDate.slice(4, 6);
       var endDay = workoutDate.slice(6, 8);
     }
-    var plannedPages = workoutInfo[0]?.plannedPages;
+    var workoutsInfo = workoutInfo[0];
     var readPages = workoutInfo[0]?.dateNow;
-    console.log(readPages);
   }
 
   let startDateUnformatted = new Date();
@@ -114,7 +113,7 @@ function MyTrainingPlayingCheckBox() {
       </div>
       <BookTableCheckBox library={booksFind} doneBooks={doneBooks} />
       <div className={s.statFlexContainer}>
-        <StatisticsGraph plannedPages={plannedPages} readPages={readPages} />
+        <StatisticsGraph workoutsInfo={workoutsInfo} readPages={readPages} />
         <AddResultStat />
       </div>
 

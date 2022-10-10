@@ -9,38 +9,33 @@ import Chart from 'chart.js/auto';
 import AddBookRead from '../AddBookRead/AddBookRead';
 import Media from 'react-media';
 
-const Statistics = ({ plannedPages, readPages }) => {
-  const OneDay = 86400000;
+const Statistics = ({ workoutsInfo, readPages }) => {
   let labelsData = [];
   let planData = [];
   let actData = [];
-  let averageAmount = 0;
+  let averageAmount = workoutsInfo?.plannedPages;
 
-  // if (readPages) {
-  //   var pages = [];
-  //   for (let i = 0; i < readPages.length; i++) {
-  //     pages.push(`${readPages[i].pages}`);
-  //   }
+  readPages?.forEach(({ factDate, pages }) => {
+    labelsData.push(factDate);
+    actData.push(pages);
+  });
 
-  //   console.log(pages);
-  // }
-
-  if (readPages) {
-    readPages.forEach(({ factDate, pages }) => {
-      labelsData.push(factDate);
-      actData.push(pages);
-    });
+  for (let i = 0; i < labelsData.length; i += 1) {
+    planData.push(averageAmount);
   }
 
-  function toTimestamp(strDate) {
-    const datum = Date.parse(strDate);
-    return datum / 1000;
+  if (!labelsData.length) {
+    labelsData = ['time'];
   }
-
-  console.log(toTimestamp('2022-10-10'));
+  if (!planData.length) {
+    planData = [0];
+  }
+  if (!actData.length) {
+    actData = [-1];
+  }
 
   const data = {
-    labels: ['', '', '', '', '', '', ''],
+    labels: labelsData,
     datasets: [
       {
         label: 'Plan',
@@ -52,15 +47,7 @@ const Statistics = ({ plannedPages, readPages }) => {
         pointRadius: 7,
         PointHitRadius: 7,
 
-        data: [
-          `${plannedPages}`,
-          `${plannedPages}`,
-          `${plannedPages}`,
-          `${plannedPages}`,
-          `${plannedPages}`,
-          `${plannedPages}`,
-          `${plannedPages}`,
-        ],
+        data: planData,
       },
       {
         label: 'Fact',
@@ -72,7 +59,7 @@ const Statistics = ({ plannedPages, readPages }) => {
         pointRadius: 7,
         PointHitRadius: 7,
 
-        data: [],
+        data: actData,
       },
     ],
   };
@@ -94,7 +81,7 @@ const Statistics = ({ plannedPages, readPages }) => {
   return (
     <div className={s['thumb']}>
       <p className={s['value']}>
-        Кількість сторінок/день <span>{plannedPages}</span>
+        Кількість сторінок/день <span>{averageAmount}</span>
       </p>
       <div className={s['result']}>
         <Line options={options} data={data} />
