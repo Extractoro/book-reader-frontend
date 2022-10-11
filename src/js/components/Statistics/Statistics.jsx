@@ -9,12 +9,33 @@ import Chart from 'chart.js/auto';
 import AddBookRead from '../AddBookRead/AddBookRead';
 import Media from 'react-media';
 
-const Statistics = () => {
-  const number = 2;
-  const goal = 1;
+const Statistics = ({ workoutsInfo, readPages }) => {
+  let labelsData = [];
+  let planData = [];
+  let actData = [];
+  let averageAmount = workoutsInfo?.plannedPages;
+
+  readPages?.forEach(({ factDate, pages }) => {
+    labelsData.push(factDate);
+    actData.push(pages);
+  });
+
+  for (let i = 0; i < labelsData.length; i += 1) {
+    planData.push(averageAmount);
+  }
+
+  if (!labelsData.length) {
+    labelsData = ['time'];
+  }
+  if (!planData.length) {
+    planData = [0];
+  }
+  if (!actData.length) {
+    actData = [-1];
+  }
 
   const data = {
-    labels: ['', '', '', '', '', '', ''],
+    labels: labelsData,
     datasets: [
       {
         label: 'Plan',
@@ -26,20 +47,11 @@ const Statistics = () => {
         pointRadius: 7,
         PointHitRadius: 7,
 
-        data: [
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-          `${goal}`,
-        ],
+        data: planData,
       },
       {
         label: 'Fact',
         fill: false,
-
         lineTension: 0.3,
         borderColor: '#ff6b08',
         pointBackgroundColor: '#ff6b08',
@@ -47,15 +59,7 @@ const Statistics = () => {
         pointRadius: 7,
         PointHitRadius: 7,
 
-        data: [
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-          `${number}`,
-        ],
+        data: actData,
       },
     ],
   };
@@ -77,7 +81,7 @@ const Statistics = () => {
   return (
     <div className={s['thumb']}>
       <p className={s['value']}>
-        Кількість сторінок/день <span>0</span>
+        Кількість сторінок/день <span>{averageAmount}</span>
       </p>
       <div className={s['result']}>
         <Line options={options} data={data} />

@@ -24,6 +24,20 @@
 
   @media screen and (min-width: 1280px) {
     width: 1200px;
+  }
+}
+
+.moreReadList {
+  width: 270px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    box-shadow: none;
+    width: 678px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1200px;
     overflow-y: auto;
     height: 210px;
   }
@@ -69,8 +83,11 @@
   white-space: nowrap;
 
   @media screen and (min-width: 1280px) {
+
     margin-right: 287px;
-   
+
+    margin-left: 59px;
+
   }
 }
 

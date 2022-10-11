@@ -3,15 +3,20 @@ import GlobalCSS from '../../../GlobalCss/global.css';
 import React from 'react';
 import MyTrainingPlaying from '../../components/MyTrainingPlaying/MyTrainingPlaying';
 import { useSelector } from 'react-redux';
-import { selectWorkout } from '../../redux/workout/workout-slice';
+import {
+  selectProgress,
+  selectWorkout,
+} from '../../redux/workout/workout-slice';
 import { Loading } from 'notiflix';
 import { useFetchAllWorkoutsQuery } from 'js/redux/workout/workoutApi';
 import Statistics from '../Statistics';
+
 const Workout = () => {
   const { isFetching } = useFetchAllWorkoutsQuery(null, {
     refetchOnMountOrArgChange: true,
   });
   const isWorkout = useSelector(selectWorkout);
+  // const inProgress = useSelector(selectProgress);
 
   return (
     <>
@@ -21,8 +26,8 @@ const Workout = () => {
           <GlobalCSS />
 
           <Wrapper>
-            {isWorkout.length === 0 && <MyTrainingPlaying />}
-            {isWorkout.length === 1 && <Statistics />}
+            {!isWorkout && <MyTrainingPlaying />}
+            {isWorkout && <Statistics />}
           </Wrapper>
 
           {/* <AddResultStat /> */}

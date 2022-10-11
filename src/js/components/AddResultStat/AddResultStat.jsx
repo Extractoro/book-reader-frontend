@@ -37,8 +37,8 @@ function AddResultStat() {
   }, [workout]);
 
   if (result) {
-    var workoutId = result[0]._id;
-    var dateNow = result[0].dateNow;
+    var workoutId = result[0]?._id;
+    var dateNow = result[0]?.dateNow;
   }
 
   const handleChange = e => {
@@ -56,7 +56,7 @@ function AddResultStat() {
     }).unwrap();
     reset();
 
-    if (result && !result[0].inProgress) {
+    if (result && !result[0]?.inProgress) {
       location.reload();
     }
   };
@@ -64,6 +64,13 @@ function AddResultStat() {
   const reset = () => {
     setSelectedDate('');
     setPage('');
+  };
+
+  const timeFormat = time => {
+    const hours = Number(time.slice(0, 2)) + 3;
+    const min = time.slice(3, 5);
+    const sec = time.slice(6, 8);
+    return `${hours}:${min}:${sec}`;
   };
 
   return (
@@ -103,6 +110,7 @@ function AddResultStat() {
                   name="number"
                   value={page}
                   onChange={handleChange}
+                  min="1"
                 />
               </label>
             </form>
@@ -126,7 +134,7 @@ function AddResultStat() {
               {dateNow?.map(({ factDate, time, pages }) => (
                 <li key={nanoid()} className={s['stat-info']}>
                   <p className={s['date']}>{factDate.slice(0, 10)}</p>
-                  <p className={s['hour']}>{time}</p>
+                  <p className={s['hour']}>{timeFormat(time)}</p>
                   <p className={s['date']}>
                     {pages}
                     <span className={s['page']}>стор.</span>

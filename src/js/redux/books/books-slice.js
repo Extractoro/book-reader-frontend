@@ -81,7 +81,6 @@ const booksSlice = createSlice({
         booksApi.endpoints.updateBook.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.books = payload;
         }
       )
       .addMatcher(
@@ -123,7 +122,6 @@ export const selectBooksIsPending = state => state.books.isPending;
 
 export const getPlan = state => {
   const allBooks = selectBooks(state) || [];
-  console.log(allBooks);
   return allBooks?.filter(book => book.status === 'plan');
 };
 

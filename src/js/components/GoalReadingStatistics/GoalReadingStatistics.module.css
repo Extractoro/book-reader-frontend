@@ -59,7 +59,7 @@ ul {
 
 .number-book {
   margin-top: 20px;
-  padding: 11px 39px 11px 39px;
+  padding: 23px;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
@@ -80,7 +80,7 @@ ul {
 @media screen and (min-width: 1280px) {
   .number-book {
     margin-top: 48px;
-    padding: 31px 37px 31px 37px;
+    padding: 23px;
   }
 }
 
@@ -108,7 +108,7 @@ ul {
 @media screen and (min-width: 1280px) {
   .number {
     margin-top: 48px;
-    padding: 31px 37px 31px 37px;
+    padding: 23px;
   }
 }
 

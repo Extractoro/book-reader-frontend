@@ -10,7 +10,10 @@ const TimerCountdown = ({ endDateStat }) => {
   let interval = useRef();
 
   const startTimer = endDate => {
-    const countdownDate = new Date(endDate).getTime();
+    if (endDate) {
+      var countdownDate = new Date(endDate).getTime();
+    }
+
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -45,22 +48,22 @@ const TimerCountdown = ({ endDateStat }) => {
       </div>
       <div className={s.timer}>
         <div className={s.data}>
-          <div className={s.count}>{timerDays}</div>
+          <div className={s.count}>{timerDays ? timerDays : null}</div>
           <p className={s.name}>дн</p>
         </div>
         <span className={s.dots}>:</span>
         <div className={s.data}>
-          <div className={s.count}>{timerHours}</div>
+          <div className={s.count}>{timerHours ? timerHours : null}</div>
           <p className={s.name}>год</p>
         </div>
         <span className={s.dots}>:</span>
         <div className={s.data}>
-          <div className={s.count}>{timerMinutes}</div>
+          <div className={s.count}>{timerMinutes ? timerMinutes : null}</div>
           <p className={s.name}>хв</p>
         </div>
         <span className={s.dots}>:</span>
         <div className={s.second}>
-          <div className={s.count}>{timerSecond}</div>
+          <div className={s.count}>{timerSecond ? timerSecond : null}</div>
           <p className={s.name}>сек</p>
         </div>
       </div>
