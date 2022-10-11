@@ -9,7 +9,7 @@ import { selectBooks } from 'js/redux/books/books-slice';
 import { useFetchAllBooksQuery } from 'js/redux/books/booksApi';
 import { Loading } from 'notiflix';
 import { createPortal } from 'react-dom';
-import s from '../ModalMyTrainingPlaying/ModalMyTrainingPlaying.module.css'
+import s from '../ModalMyTrainingPlaying/ModalMyTrainingPlaying.module.css';
 const modalRoot = document.querySelector('#modal-root');
 
 function ModalMyTrainingPlaying() {
@@ -48,7 +48,7 @@ function ModalMyTrainingPlaying() {
   //       backBook = book._id === bookId;
   //     }
 
-      // console.log('backBook', backBook);
+  // console.log('backBook', backBook);
   //     return backBook;
   //   });
 
@@ -91,34 +91,34 @@ function ModalMyTrainingPlaying() {
   const startDateReady = formatDate(startDateUnformatted);
   const endDateReady = formatDate(endDateUnformatted);
 
-  console.log('startDateReady', startDateReady);
-  console.log('endDateReady', endDateReady);
+  // console.log('startDateReady', startDateReady);
+  // console.log('endDateReady', endDateReady);
 
-  return createPortal (
+  return createPortal(
     <section className={s.backdrop}>
       <div className={s.modal}>
-      {!isFetching && Loading.remove()}
-      <TrainingForm
-        setSelectedBook={setSelectedBook}
-        handleClick={handleClick}
-        filteredBooks={filteredBooks}
-        selectedDate={selectedDate}
-        setSelectedDate={setSelectedDate}
-        endDate={endDate}
-        setEndDate={setEndDate}
-      />
+        {!isFetching && Loading.remove()}
+        <TrainingForm
+          setSelectedBook={setSelectedBook}
+          handleClick={handleClick}
+          filteredBooks={filteredBooks}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+        />
 
-      {/* <BookTable library={plannedBooks} onDelete={onDelete} /> */}
-      <AddBookRead
-        setEndDate={setEndDate}
-        setSelectedDate={setSelectedDate}
-        setPlannedBooks={setPlannedBooks}
-        library={plannedBooks}
-        startDateReady={startDateReady}
-        endDateReady={endDateReady}
-      />
-      {/* <Statistics /> */}
-      {isFetching && Loading.circle()}
+        {/* <BookTable library={plannedBooks} onDelete={onDelete} /> */}
+        <AddBookRead
+          setEndDate={setEndDate}
+          setSelectedDate={setSelectedDate}
+          setPlannedBooks={setPlannedBooks}
+          library={plannedBooks}
+          startDateReady={startDateReady}
+          endDateReady={endDateReady}
+        />
+        {/* <Statistics /> */}
+        {isFetching && Loading.circle()}
       </div>
     </section>,
     modalRoot

@@ -47,7 +47,7 @@ const FormReview = ({ closeModal, id, rating, resume }) => {
         }}
         validationSchema={validationReviewForm}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
+          // console.log(values);
           updateResume({
             rating: values.rating,
             resume: values.resume,
