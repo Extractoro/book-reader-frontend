@@ -6,7 +6,6 @@ const initialState = {
   workouts: null,
   isPending: false,
   isError: false,
-  inProgress: false,
 };
 
 const workoutSlice = createSlice({
@@ -25,8 +24,10 @@ const workoutSlice = createSlice({
         workoutApi.endpoints.fetchAllWorkouts.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.inProgress = payload;
           state.workouts = payload;
+          if (state.workouts[0]?.inProcess) {
+            return (state.workouts = null);
+          }
         }
       )
       .addMatcher(
@@ -46,8 +47,10 @@ const workoutSlice = createSlice({
         workoutApi.endpoints.createWorkout.matchFulfilled,
         (state, { payload }) => {
           state.isPending = false;
-          state.inProgress = true;
           state.workouts = payload;
+          if (state.workouts[0]?.inProcess) {
+            return (state.workouts = null);
+          }
         }
       )
       .addMatcher(
@@ -68,6 +71,9 @@ const workoutSlice = createSlice({
         (state, { payload }) => {
           state.isPending = false;
           state.workouts = payload;
+          if (state.workouts[0]?.inProcess) {
+            return (state.workouts = null);
+          }
         }
       )
       .addMatcher(

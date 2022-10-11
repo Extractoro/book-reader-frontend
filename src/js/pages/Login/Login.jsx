@@ -6,6 +6,7 @@ import { useLoginUserMutation } from 'js/redux/auth/authApi';
 import s from './Login.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
 import googleIcon from 'images/google/google icon.png';
+import { Notify } from 'notiflix';
 
 export default function LoginPage() {
   const location = useLocation();
@@ -34,11 +35,17 @@ export default function LoginPage() {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    login({ email, password });
-    setEmail('');
-    setPassword('');
+    try {
+      await login({ email, password }).unwrap();
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      Notify.warning(`${error.data.message}`);
+      setEmail('');
+      setPassword('');
+    }
   };
 
   return (

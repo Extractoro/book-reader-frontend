@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useUpdateWorkoutMutation } from '../../redux/workout/workoutApi';
 import { selectWorkout } from '../../redux/workout/workout-slice';
 import { useSelector } from 'react-redux';
-// import { Loading } from 'notiflix';
+import { Notify } from 'notiflix';
 import { nanoid } from 'nanoid';
 import { useLocation } from 'react-router-dom';
 
@@ -48,13 +48,17 @@ function AddResultStat() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-
-    await updateResult({
-      id: workoutId,
-      factDate: dateNowResult,
-      pages: Number(page),
-    }).unwrap();
-    reset();
+    try {
+      await updateResult({
+        id: workoutId,
+        factDate: dateNowResult,
+        pages: Number(page),
+      }).unwrap();
+      reset();
+    } catch (error) {
+      Notify.warning(`${error.data.message}`);
+      reset();
+    }
 
     if (result && !result[0]?.inProgress) {
       location.reload();

@@ -1,10 +1,24 @@
 import { createPortal } from 'react-dom';
 import sprite from '../../../sprites/modalcongrats.svg';
 import s from '../ModalCongrats/ModalCongrats.module.css';
+import { useFetchAllWorkoutsQuery } from 'js/redux/workout/workoutApi';
+import React, { useState } from 'react';
 
 const modalRoot = document.querySelector('#modal-root');
 
-function ModalCongrats() {
+function ModalCongrats({ isOpen, onClose }) {
+  const { data: workout } = useFetchAllWorkoutsQuery(null, {
+    refetchOnMountOrArgChange: true,
+  });
+
+  const [content, setContent] = useState(workout[0]);
+  console.log(content);
+  const onContentChanged = () => {
+    setContent(null);
+  };
+
+  // if (!isOpen) return null;
+
   return createPortal(
     <>
       <div className={s.backdrop}>
@@ -14,7 +28,9 @@ function ModalCongrats() {
           </svg>
           <p className={s.text}>Вітаю! Ще одна книга прочитана.</p>
           <div className={s.sectionBtn}>
-            <button className={s.modalBtn}>Готово</button>
+            <button className={s.modalBtn} onClick={onContentChanged}>
+              Готово
+            </button>
           </div>
         </div>
       </div>
