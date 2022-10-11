@@ -5,7 +5,7 @@ import PlanToReadCard from '../PlanToReadCard/PlanToReadCard';
 import { NavLink } from 'react-router-dom';
 
 const PlanToReadList = ({ library, status }) => {
-  console.log(library.length);
+  // console.log(library.length);
   return (
     <>
       <div className={s.infoListContainer}>

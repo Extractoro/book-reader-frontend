@@ -29,7 +29,12 @@ const FormReview = ({ id, rating, resume, closeModal }) => {
         }}
         validationSchema={validationReviewForm}
         onSubmit={(values, { resetForm }) => {
-          updateResume(values);
+          updateResume({
+            rating: values.rating,
+            resume: values.resume,
+            id: values.id,
+          });
+
           resetForm();
           closeModal();
           Notify.success('Твій відгук збережено');
