@@ -19,15 +19,22 @@ const AddBookRead = ({
   const handleClick = () => {
     Notify.success('Trainings is starting!');
 
-    createTraining({
-      startDate: startDateReady,
-      finishDate: endDateReady,
-      books: booksIds,
-    });
+    try {
+      createTraining({
+        startDate: startDateReady,
+        finishDate: endDateReady,
+        books: booksIds,
+      });
 
-    setPlannedBooks([]);
-    setSelectedDate();
-    setEndDate();
+      setPlannedBooks([]);
+      setSelectedDate();
+      setEndDate();
+    } catch (error) {
+      Notify.warning(`${error.data.message}`);
+      setPlannedBooks([]);
+      setSelectedDate();
+      setEndDate();
+    }
   };
 
   return (

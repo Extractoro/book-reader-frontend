@@ -48,8 +48,6 @@ export default function RegisterPage() {
     try {
       await registerUser({ name, email, password, repeatPassword }).unwrap();
       await login({ email, password }).unwrap();
-
-      // Notify.success('Ви зареєструвалися. Тепер залогінтесь');
       formFieldsReset();
     } catch (error) {
       Notify.warning(`${error.data.message}`);
