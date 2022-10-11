@@ -6,29 +6,11 @@ import Rating from '../FormReview/Rating/Rating';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import MediaQuery from 'react-responsive';
-import { useState } from 'react';
 
 import { useUpdateBookMutation } from 'js/redux/books/booksApi';
 
-const FormReview = ({ closeModal, id, rating, resume }) => {
+const FormReview = ({ id, rating, resume, closeModal }) => {
   const [updateResume] = useUpdateBookMutation();
-  const [ratingBook, setRatingBook] = useState('');
-  const [resumeBook, setResumeBook] = useState('');
-
-  // const reset = () => {
-  //   setRatingBook('');
-  //   setResumeBook('');
-  // };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   updateResume({
-  //     ratingBook: rating,
-  //     resumeBook: resume,
-  //     id,
-  //   });
-  //   reset();
-  // };
 
   const validationReviewForm = Yup.object().shape({
     resume: Yup.string()
@@ -47,12 +29,12 @@ const FormReview = ({ closeModal, id, rating, resume }) => {
         }}
         validationSchema={validationReviewForm}
         onSubmit={(values, { resetForm }) => {
-          // console.log(values);
           updateResume({
             rating: values.rating,
             resume: values.resume,
             id: values.id,
           });
+
           resetForm();
           closeModal();
           Notify.success('Твій відгук збережено');

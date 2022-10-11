@@ -1,0 +1,29 @@
+.button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    display: block;
+
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    background-color: #FF6B08;
+    
+
+    &:hover,
+    &:focus {
+        background-color: #f79279;
+    }
+}
+
+.buttonText {
+    padding: 0 30px 0 30px;
+   color: rgb(255, 254, 254);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 38px;
+    display: block;
+
+    margin: 0 auto;
+}
