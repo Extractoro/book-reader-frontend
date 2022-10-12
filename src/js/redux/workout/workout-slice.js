@@ -12,7 +12,11 @@ const initialState = {
 const workoutSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+    onClearWorkout(state) {
+      state.workouts = null;
+    },
+  },
   extraReducers: builder => {
     builder
       .addMatcher(
@@ -85,3 +89,6 @@ export default workoutSlice.reducer;
 // Selectors
 export const selectWorkout = state => state.workout.workouts;
 export const selectProgress = state => state.workout.inProgress;
+
+// Action
+export const { onClearWorkout } = workoutSlice.actions;
