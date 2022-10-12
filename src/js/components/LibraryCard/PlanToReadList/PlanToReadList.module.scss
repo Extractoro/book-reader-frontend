@@ -6,11 +6,10 @@
     width: 678px;
   }
 
-    @media screen and (min-width: 1280px) {
-        width: 1200px;
-        padding-left: 30px;
-    }
-
+  @media screen and (min-width: 1280px) {
+    width: 1200px;
+    padding-left: 30px;
+  }
 }
 
 .bookColumns {
@@ -50,25 +49,22 @@
     font-size: 14px;
     line-height: 2.71;
 
-    color: #242A37;
+    color: #242a37;
     white-space: nowrap;
 
     @media screen and (min-width: 768px) {
-        
-        margin-top: 10px;
-        font-size: 14px;
-        line-height: 2.71;
-        
-            width: 349px;
-    margin-right: 30px;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 2.71;
 
+      width: 349px;
+      margin-right: 30px;
     }
 
-
-
-  @media screen and (min-width: 1280px) {
-    width: 265px;
-    margin-right: 327px;
+    @media screen and (min-width: 1280px) {
+      width: 265px;
+      margin-right: 327px;
+    }
   }
 }
 
@@ -137,11 +133,10 @@
   width: 134px;
   height: 38px;
 
-    margin-top: 20px;
-    margin-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 
   margin-left: 20px;
-
 
   font-weight: 600;
   font-size: 19px;
