@@ -11,7 +11,7 @@ const AlreadyReadList = ({ library }) => {
           <p className={s.sectionTitle}>Прочитано</p>
           <MediaQuery minWidth={768}>
             <div className={s.bookInfo}>
-              <p className={s.title}>Назва</p>
+              <p className={s.title}>Назва книги</p>
               <p className={s.author}>Автор:</p>
               <p className={s.year}>Рік:</p>
               <p className={s.page}>Стор.:</p>

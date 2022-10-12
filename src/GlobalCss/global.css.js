@@ -7,7 +7,7 @@ export default createGlobalStyle`
     padding: 0px;
   }
 
-
+a,
   .link {
     text-decoration: none;
   }
