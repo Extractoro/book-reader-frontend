@@ -37,11 +37,6 @@ const PlanToReadList = ({ library, status }) => {
               ))
             : null}
         </ul>
-        {status === 'plan' && (
-          <NavLink className={s.btnTraining} to="/workout">
-            My training
-          </NavLink>
-        )}
       </div>
     </>
   );

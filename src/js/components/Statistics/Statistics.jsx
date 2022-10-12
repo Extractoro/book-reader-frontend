@@ -86,18 +86,6 @@ const Statistics = ({ workoutsInfo, readPages }) => {
       <div className={s['result']}>
         <Line options={options} data={data} />
       </div>
-
-      <Media queries={{ medium: '(max-width: 767px)' }}>
-        {matches => (
-          <>
-            {matches.medium && (
-              <div className={s['thumbBtn']}>
-                <Link className={s['btnAddMyTraining']}>+</Link>
-              </div>
-            )}
-          </>
-        )}
-      </Media>
     </div>
   );
 };

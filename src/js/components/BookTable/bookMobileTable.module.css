@@ -88,7 +88,7 @@
   display: block;
   margin-right: 12px;
 } */
-.navIcon{
+.navIcon {
   width: 40px;
 }
 
@@ -128,4 +128,14 @@
 }
 li {
   list-style-type: none;
+}
+
+.checkbox {
+  margin-right: 25px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.flex_books {
+  display: flex;
 }

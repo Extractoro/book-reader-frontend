@@ -3,7 +3,7 @@ import s from './bookMobileTable.module.css';
 import sprite from '../../../sprites/checkbox.svg';
 // import EllipsisText from "react-ellipsis-text";
 
-export default function BookTableMobile({ library }) {
+export default function BookTableMobile({ library, doneBooks }) {
   let filteredLibrary = library.filter(book => book !== undefined);
 
   return (
@@ -11,29 +11,40 @@ export default function BookTableMobile({ library }) {
       <section className={s['section']}>
         {filteredLibrary?.length > 0 && (
           <ul className={s['table']}>
-            {filteredLibrary.map(({ _id, title, author, year, totalPages }) => (
-              <li key={_id} id={_id}>
-                <div className={s['flex-book-container']}>
-                  <div>
-                    <svg className={s['arrow-back']} width="30" height="25">
-                      <use href={sprite + '#checkbox'} />
-                    </svg>
-                    <p className={s['subtitleNameBook']}>{title}</p>
-                    <p className={s['subtitle']}>
-                      <span className={s['topic']}>Author:</span> {author}
-                    </p>
-                    <p className={s['subtitle']}>
-                      <span className={s['topic']}>Year:</span>
-                      {year}
-                    </p>
-                    <p className={s['subtitle']}>
-                      <span className={s['topic']}>Pages:</span>
-                      {totalPages}
-                    </p>
+            {filteredLibrary.map(
+              ({ _id: id, title, author, year, totalPages }) => (
+                <li key={id} id={id}>
+                  <div className={s['flex-book-container']}>
+                    <div className={s['flex_books']}>
+                      <div>
+                        <svg className={s['checkbox']} width="15" height="15">
+                          {doneBooks.find(({ _id }) => _id === id) ? (
+                            <use href={sprite + '#done-checkbox'} />
+                          ) : (
+                            <use href={sprite + '#checkbox'} />
+                          )}
+                        </svg>
+                      </div>
+
+                      <div>
+                        <p className={s['subtitleNameBook']}>{title}</p>
+                        <p className={s['subtitle']}>
+                          <span className={s['topic']}>Author:</span> {author}
+                        </p>
+                        <p className={s['subtitle']}>
+                          <span className={s['topic']}>Year:</span>
+                          {year}
+                        </p>
+                        <p className={s['subtitle']}>
+                          <span className={s['topic']}>Pages:</span>
+                          {totalPages}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              )
+            )}
           </ul>
         )}
       </section>
