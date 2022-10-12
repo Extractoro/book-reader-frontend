@@ -13,7 +13,9 @@ const GoalReading = ({ books, dayQuantity }) => {
           <p className={s['text']}>Кількість книжок</p>
         </div>
         <div className={s['wrapper']}>
-          <p className={s['number']}>{dayQuantity}</p>
+          <p className={s['number']}>
+            {dayQuantity !== undefined && dayQuantity > 0 ? dayQuantity : 0}
+          </p>
           <p className={s['text']}>Кількість днів</p>
         </div>
       </div>

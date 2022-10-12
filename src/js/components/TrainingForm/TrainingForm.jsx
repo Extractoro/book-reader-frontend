@@ -14,9 +14,6 @@ const TrainingForm = ({
   return (
     <div className={s['thumb']}>
       <form className={s.form}>
-        <svg className={s.iconBack} width="24" height="12">
-          <use href={sprite + '#icon-back'}></use>
-        </svg>
         <h2 className={s.title}>Моє тренування</h2>
         <div className={s.datePicker}>
           <div className={s['datePickerWrapper']}>
