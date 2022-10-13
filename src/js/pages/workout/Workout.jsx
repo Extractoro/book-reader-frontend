@@ -4,7 +4,8 @@ import React from 'react';
 import MyTrainingPlaying from '../../components/MyTrainingPlaying/MyTrainingPlaying';
 import ModalCongrats from '../../components/ModalCongrats/ModalCongrats';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectWorkout } from '../../redux/workout/workout-slice';
+import { selectWorkout, clearWorkout } from '../../redux/workout/workout-slice';
+import reset from '../../redux/workout/workout-slice';
 import { Loading } from 'notiflix';
 import { useState, useEffect } from 'react';
 
@@ -16,31 +17,35 @@ const Workout = () => {
     refetchOnMountOrArgChange: true,
   });
   const isWorkout = useSelector(selectWorkout);
-  console.log(isWorkout);
+  const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState(false);
 
-  // useEffect(() => {
-  //   if (isWorkout[0]?.inProcess) {
-  //     setIsOpenModal(true);
-  //     console.log(isWorkout);
-  //   }
-  // }, [isWorkout]);
+  const handleClose = () => {
+    dispatch(clearWorkout());
+    setIsOpenModal(false);
+  };
+
+  useEffect(() => {
+    if (isWorkout && !isWorkout[0]?.inProgress) {
+      setIsOpenModal(true);
+    }
+  }, [isWorkout]);
 
   return (
     <>
       <>
-        {!isWorkout && Loading.remove()}
+        {!isFetching && Loading.remove()}
         <WorkoutContainer>
           <GlobalCSS />
 
           <Wrapper>
             {!isWorkout && <MyTrainingPlaying />}
             {isWorkout && <Statistics />}
-            {isWorkout && !isWorkout[0]?.inProcess && <ModalCongrats />}
+            {isOpenModal && <ModalCongrats onClose={handleClose} />}
           </Wrapper>
         </WorkoutContainer>
       </>
-      {isWorkout && Loading.circle()}
+      {isFetching && Loading.circle()}
     </>
   );
 };
